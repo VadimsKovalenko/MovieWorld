@@ -1,10 +1,10 @@
 import UIKit
 
-final class MainViewController: UIViewController {
+final class MainViewController: BaseViewController {
+    
+    // MARK: Lifecycle functions
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        view.backgroundColor = .red
     }
 }

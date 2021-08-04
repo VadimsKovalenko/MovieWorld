@@ -1,7 +1,7 @@
 import UIKit
 
-final class CategoryViewController: BaseViewController {
-
+class BaseViewController: UIViewController {
+    
     // MARK: Lifecycle functions
     
     override func viewDidLoad() {
