@@ -1,6 +1,10 @@
 import UIKit
 
 final class MainCollectionViewCell: UICollectionViewCell {
+    
+    // MARK: Properties
+    
+    static let reuseIdentifier = "MainCollectionViewCell"
 
     // MARK: IBOutlets
     
@@ -10,15 +14,9 @@ final class MainCollectionViewCell: UICollectionViewCell {
     
     // MARK: Actions
     
-    func configure(model: MainMovie) {
+    func configure(model: Movie) {
         movieImageView.image = model.image
-        descriptionLabel.text = model.descriptionLabel
-        dateAndGenreLabel.text = model.dateAndGenreLabel
+        descriptionLabel.text = model.name
+        dateAndGenreLabel.text = model.dateAndGenre
     }
-}
-
-struct MainMovie {
-    var image: UIImage
-    var descriptionLabel: String
-    var dateAndGenreLabel: String
 }
