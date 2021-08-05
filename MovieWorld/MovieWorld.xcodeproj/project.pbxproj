@@ -20,7 +20,6 @@
 		519C15D426BA93CE005084D4 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519C15D226BA93CE005084D4 /* ProfileViewController.swift */; };
 		519C15D526BA93CE005084D4 /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 519C15D326BA93CE005084D4 /* ProfileViewController.xib */; };
 		519C15D926BAAE9C005084D4 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519C15D726BAAE9C005084D4 /* BaseViewController.swift */; };
-		519C15DA26BAAE9C005084D4 /* BaseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 519C15D826BAAE9C005084D4 /* BaseViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,7 +38,6 @@
 		519C15D226BA93CE005084D4 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		519C15D326BA93CE005084D4 /* ProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
 		519C15D726BAAE9C005084D4 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
-		519C15D826BAAE9C005084D4 /* BaseViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BaseViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,7 +172,6 @@
 			isa = PBXGroup;
 			children = (
 				519C15D726BAAE9C005084D4 /* BaseViewController.swift */,
-				519C15D826BAAE9C005084D4 /* BaseViewController.xib */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -245,7 +242,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				519C15D526BA93CE005084D4 /* ProfileViewController.xib in Resources */,
-				519C15DA26BAAE9C005084D4 /* BaseViewController.xib in Resources */,
 				519C15B326BA85C4005084D4 /* LaunchScreen.storyboard in Resources */,
 				519C15B026BA85C4005084D4 /* Assets.xcassets in Resources */,
 				519C15D126BA93AC005084D4 /* SearchViewController.xib in Resources */,
