@@ -14,7 +14,8 @@ final class MainViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        mainTableView.register(UINib(nibName: "MainTableViewCell", bundle: nil), forCellReuseIdentifier: "MainTableViewCell")
+        mainTableView.register(UINib(nibName: AppConstans.mainTableViewCellIdentifier, bundle: nil),
+                               forCellReuseIdentifier: AppConstans.mainTableViewCellIdentifier)
     }
 }
 
@@ -32,7 +33,7 @@ extension MainViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView,
                    cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "MainTableViewCell", for: indexPath) as? MainTableViewCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: AppConstans.mainTableViewCellIdentifier, for: indexPath) as? MainTableViewCell else {
             return UITableViewCell()
         }
         
