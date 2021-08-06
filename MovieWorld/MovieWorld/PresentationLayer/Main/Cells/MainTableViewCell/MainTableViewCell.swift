@@ -2,6 +2,13 @@ import UIKit
 
 final class MainTableViewCell: UITableViewCell {
     
+    // MARK: Constans
+    
+    private enum Constans {
+        static let contentInsert: CGFloat = 16
+        
+    }
+    
     // MARK: Properties
     
     static let reuseIdentifier = "MainTableViewCell"
@@ -15,11 +22,7 @@ final class MainTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
            super.awakeFromNib()
-        mainCollectionView.register(UINib(nibName: MainCollectionViewCell.reuseIdentifier, bundle: nil),
-                                    forCellWithReuseIdentifier: MainCollectionViewCell.reuseIdentifier)
-        mainCollectionView.delegate = self
-        mainCollectionView.dataSource = self
-        mainCollectionView.reloadData()
+        setupCollectionViewCell()
        }
     
     // MARK: IBActions
@@ -27,12 +30,21 @@ final class MainTableViewCell: UITableViewCell {
     @IBAction func allButtonPressed(_ sender: UIButton) {
     }
     
-    // MARK: Flow functions
+    // MARK: Actions
     
-    func configure(model: MainMovieSection) {
+     func configure(model: MainMovieSection) {
         titleLabel.text = model.title
         movies = model.movies
         
+    }
+    
+    private func setupCollectionViewCell() {
+        mainCollectionView.register(UINib(nibName: MainCollectionViewCell.reuseIdentifier, bundle: nil),
+                                    forCellWithReuseIdentifier: MainCollectionViewCell.reuseIdentifier)
+        mainCollectionView.delegate = self
+        mainCollectionView.dataSource = self
+        mainCollectionView.contentInset.left = Constans.contentInsert
+        mainCollectionView.contentInset.right = Constans.contentInsert
     }
 }
 
@@ -50,12 +62,11 @@ extension MainTableViewCell: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AppConstans.mainCollectionViewCellIdentifier,
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MainCollectionViewCell.reuseIdentifier,
                                                             for: indexPath) as? MainCollectionViewCell else {
             return UICollectionViewCell()
         }
         cell.configure(model: movies[indexPath.item])
-        cell.backgroundColor = .red
         return cell
     }
 }
@@ -65,17 +76,6 @@ extension MainTableViewCell: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
-        CGSize(width: 150, height: 250)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView,
-                        layout collectionViewLayout: UICollectionViewLayout,
-                        minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        5
-    }
-    func collectionView(_ collectionView: UICollectionView,
-                        layout collectionViewLayout: UICollectionViewLayout,
-                        minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        5
+        CGSize(width: 130 , height: 237)
     }
 }

@@ -2,6 +2,13 @@ import UIKit
 
 final class MainViewController: BaseViewController {
     
+    // MARK: Constans
+    
+    private enum Constans {
+        static let rowHeight: CGFloat = 281
+        static let navigationTitle = "Season"
+    }
+    
     // MARK: IBOutlets
     
     @IBOutlet weak var mainTableView: UITableView!
@@ -37,8 +44,17 @@ final class MainViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupUI()
+    }
+    
+    // MARK: Actions
+    
+    private func setupUI() {
+        navigationItem.title = Constans.navigationTitle
+        navigationController?.navigationBar.prefersLargeTitles = true
         mainTableView.register(UINib(nibName: MainTableViewCell.reuseIdentifier, bundle: nil),
                                forCellReuseIdentifier: MainTableViewCell.reuseIdentifier)
+        mainTableView.rowHeight = Constans.rowHeight
     }
 }
 
@@ -63,9 +79,5 @@ extension MainViewController: UITableViewDataSource {
         cell.configure(model: movies[indexPath.row])
         
         return cell
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 300
     }
 }
