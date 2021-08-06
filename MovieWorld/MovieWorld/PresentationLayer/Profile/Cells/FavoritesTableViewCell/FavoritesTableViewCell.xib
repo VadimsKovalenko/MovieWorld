@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="FavoritesTableViewCell" id="nM1-aR-wyb" customClass="FavoritesTableViewCell" customModule="MovieWorld" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="120"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nM1-aR-wyb" id="XEx-ha-QTS">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="120"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CK6-aF-HaN">
+                        <rect key="frame" x="16" y="10" width="80" height="100"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="80" id="yzr-YT-s7G"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Green Book" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bBm-kL-Amh">
+                        <rect key="frame" x="112" y="10" width="192" height="21"/>
+                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="2018, USA" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="16i-lm-1fm">
+                        <rect key="frame" x="112" y="34" width="192" height="16"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Comedy, Drama, Foreign" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HvW-VX-Rui">
+                        <rect key="frame" x="112" y="51" width="192" height="37"/>
+                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="13"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IMDB 8.2, KP 8.3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z81-34-qJf">
+                        <rect key="frame" x="112" y="96" width="116" height="16"/>
+                        <color key="backgroundColor" red="0.28445821999999998" green="0.57822227479999999" blue="0.35293006900000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="13"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="20"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="HvW-VX-Rui" secondAttribute="trailing" constant="16" id="6NP-pZ-B46"/>
+                    <constraint firstItem="z81-34-qJf" firstAttribute="top" secondItem="HvW-VX-Rui" secondAttribute="bottom" constant="8" id="88Q-9D-e7o"/>
+                    <constraint firstAttribute="bottom" secondItem="z81-34-qJf" secondAttribute="bottom" constant="8" id="Buc-N5-Hft"/>
+                    <constraint firstItem="HvW-VX-Rui" firstAttribute="leading" secondItem="CK6-aF-HaN" secondAttribute="trailing" constant="16" id="COi-3k-dcw"/>
+                    <constraint firstAttribute="bottom" secondItem="CK6-aF-HaN" secondAttribute="bottom" constant="10" id="HYO-a5-1rD"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="z81-34-qJf" secondAttribute="trailing" constant="76" id="LEy-s2-dJU"/>
+                    <constraint firstItem="bBm-kL-Amh" firstAttribute="top" secondItem="XEx-ha-QTS" secondAttribute="top" constant="10" id="M6N-6J-w2v"/>
+                    <constraint firstAttribute="trailing" secondItem="16i-lm-1fm" secondAttribute="trailing" constant="16" id="MJ5-c0-rot"/>
+                    <constraint firstItem="CK6-aF-HaN" firstAttribute="leading" secondItem="XEx-ha-QTS" secondAttribute="leading" constant="16" id="NHU-oO-alA"/>
+                    <constraint firstAttribute="trailing" secondItem="bBm-kL-Amh" secondAttribute="trailing" constant="16" id="QFu-mv-oqb"/>
+                    <constraint firstItem="z81-34-qJf" firstAttribute="leading" secondItem="CK6-aF-HaN" secondAttribute="trailing" constant="16" id="Rld-NR-bJB"/>
+                    <constraint firstItem="16i-lm-1fm" firstAttribute="leading" secondItem="CK6-aF-HaN" secondAttribute="trailing" constant="16" id="SBa-QT-IJd"/>
+                    <constraint firstItem="16i-lm-1fm" firstAttribute="top" secondItem="bBm-kL-Amh" secondAttribute="bottom" constant="3" id="VlQ-43-MNk"/>
+                    <constraint firstItem="HvW-VX-Rui" firstAttribute="top" secondItem="16i-lm-1fm" secondAttribute="bottom" constant="1" id="YuZ-6y-DTo"/>
+                    <constraint firstItem="CK6-aF-HaN" firstAttribute="top" secondItem="XEx-ha-QTS" secondAttribute="top" constant="10" id="wUS-sN-AkM"/>
+                    <constraint firstItem="bBm-kL-Amh" firstAttribute="leading" secondItem="CK6-aF-HaN" secondAttribute="trailing" constant="16" id="wg5-bB-R8a"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="EZs-sM-hHx"/>
+            <connections>
+                <outlet property="dateLabel" destination="16i-lm-1fm" id="Y5N-G6-MgO"/>
+                <outlet property="genreLabel" destination="HvW-VX-Rui" id="5In-Rb-XZv"/>
+                <outlet property="imageViewFavorites" destination="CK6-aF-HaN" id="cAB-eJ-wwE"/>
+                <outlet property="scoreLabel" destination="z81-34-qJf" id="w4n-Hc-Jcp"/>
+                <outlet property="titleLabel" destination="bBm-kL-Amh" id="9PE-uU-BZ1"/>
+            </connections>
+            <point key="canvasLocation" x="-71" y="37"/>
+        </tableViewCell>
+    </objects>
+</document>

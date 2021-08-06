@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="DetailMainTableViewCell" id="KGk-i7-Jjw" customClass="DetailMainTableViewCell" customModule="MovieWorld" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="120"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="120"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eL0-iV-htw">
+                        <rect key="frame" x="16" y="10" width="80" height="100"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="80" id="ICn-YM-oTi"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Green Book" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sh9-5w-b9c">
+                        <rect key="frame" x="112" y="10" width="192" height="21"/>
+                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="2018, USA" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1RA-vE-NuM">
+                        <rect key="frame" x="112" y="34" width="192" height="16"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Comedy, Drama, Foreign" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7na-Ed-dhq">
+                        <rect key="frame" x="112" y="51" width="192" height="37"/>
+                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="13"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IMDB 8.2, KP 8.3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Udm-lM-DQq">
+                        <rect key="frame" x="112" y="96" width="116" height="16"/>
+                        <color key="backgroundColor" red="0.28445821999999998" green="0.57822227479999999" blue="0.35293006900000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="13"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="20"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="7na-Ed-dhq" firstAttribute="leading" secondItem="eL0-iV-htw" secondAttribute="trailing" constant="16" id="0Zm-SN-eIV"/>
+                    <constraint firstAttribute="trailing" secondItem="7na-Ed-dhq" secondAttribute="trailing" constant="16" id="2tQ-zl-07H"/>
+                    <constraint firstItem="Udm-lM-DQq" firstAttribute="leading" secondItem="eL0-iV-htw" secondAttribute="trailing" constant="16" id="3zz-kg-9N4"/>
+                    <constraint firstAttribute="bottom" secondItem="eL0-iV-htw" secondAttribute="bottom" constant="10" id="9J8-hd-O24"/>
+                    <constraint firstAttribute="trailing" secondItem="1RA-vE-NuM" secondAttribute="trailing" constant="16" id="CDg-1u-uMC"/>
+                    <constraint firstItem="eL0-iV-htw" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="EKx-nn-Krr"/>
+                    <constraint firstAttribute="trailing" secondItem="Sh9-5w-b9c" secondAttribute="trailing" constant="16" id="PXJ-2u-OwG"/>
+                    <constraint firstItem="Sh9-5w-b9c" firstAttribute="leading" secondItem="eL0-iV-htw" secondAttribute="trailing" constant="16" id="QZm-Jb-I9I"/>
+                    <constraint firstItem="Sh9-5w-b9c" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="aL0-Q6-RDK"/>
+                    <constraint firstItem="eL0-iV-htw" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="d3d-SV-Ezh"/>
+                    <constraint firstAttribute="bottom" secondItem="Udm-lM-DQq" secondAttribute="bottom" constant="8" id="fmZ-cN-UJZ"/>
+                    <constraint firstItem="1RA-vE-NuM" firstAttribute="leading" secondItem="eL0-iV-htw" secondAttribute="trailing" constant="16" id="hTk-r2-F1B"/>
+                    <constraint firstItem="1RA-vE-NuM" firstAttribute="top" secondItem="Sh9-5w-b9c" secondAttribute="bottom" constant="3" id="kiN-Eu-QO3"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="Udm-lM-DQq" secondAttribute="trailing" constant="76" id="oY4-oJ-d0r"/>
+                    <constraint firstItem="Udm-lM-DQq" firstAttribute="top" secondItem="7na-Ed-dhq" secondAttribute="bottom" constant="8" id="xb3-XI-inW"/>
+                    <constraint firstItem="7na-Ed-dhq" firstAttribute="top" secondItem="1RA-vE-NuM" secondAttribute="bottom" constant="1" id="yvz-Il-a5x"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="dateLabel" destination="1RA-vE-NuM" id="vEQ-LX-Dh3"/>
+                <outlet property="detailImageView" destination="eL0-iV-htw" id="ZDy-KH-nFW"/>
+                <outlet property="genreLabel" destination="7na-Ed-dhq" id="TjF-Sg-B3M"/>
+                <outlet property="scoreLabel" destination="Udm-lM-DQq" id="dTw-z5-mIK"/>
+                <outlet property="titleLabel" destination="Sh9-5w-b9c" id="1qc-KD-NBs"/>
+            </connections>
+            <point key="canvasLocation" x="-71" y="37"/>
+        </tableViewCell>
+    </objects>
+</document>

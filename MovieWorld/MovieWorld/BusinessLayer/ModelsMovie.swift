@@ -9,6 +9,8 @@ struct Movie {
     var image: UIImage
     var name: String
     var dateAndGenre: String
+    var ratingIMDB: String
+    var ratingKP: String
 }
 
 struct CategoryMovie {

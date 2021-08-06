@@ -37,6 +37,11 @@
                     <state key="normal" title="Sing In / Sing Up">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="5"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <action selector="singInSingUpButtonPressed:" destination="-1" eventType="touchUpInside" id="zLC-Z3-ccJ"/>
                     </connections>

@@ -49,7 +49,10 @@ final class MainTableViewCell: UITableViewCell {
 
 // MARK: - UICollectionViewDelegate
 extension MainTableViewCell: UICollectionViewDelegate {
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let mainViewController = MainViewController()
+        
+    }
 }
 
 // MARK: UICollectionViewDataSource
