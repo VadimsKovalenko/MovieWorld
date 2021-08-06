@@ -9,16 +9,15 @@ final class MainTableViewCell: UITableViewCell {
         
     }
     
-    // MARK: Properties
-    
-    static let reuseIdentifier = "MainTableViewCell"
-    var movies = [Movie]()
-
     // MARK: IBOutlets
     
     @IBOutlet private weak var mainCollectionView: UICollectionView!
     @IBOutlet private weak var titleLabel: UILabel!
     
+    // MARK: Properties
+    
+    static let reuseIdentifier = "MainTableViewCell"
+    var movies = [Movie]()
     
     override func awakeFromNib() {
            super.awakeFromNib()

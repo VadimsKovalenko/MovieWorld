@@ -7,6 +7,10 @@ final class SearchViewController: BaseViewController {
     private enum Constans {
         static let navigationTitle = "Search"
     }
+    
+    // MARK: Properties
+    
+    private let searchController = UISearchController()
 
     // MARK: Lifecycle functions
     
@@ -19,6 +23,8 @@ final class SearchViewController: BaseViewController {
     
     private func setupUI() {
         navigationItem.title = Constans.navigationTitle
+        navigationItem.searchController = searchController
         navigationController?.navigationBar.prefersLargeTitles = true
+        
     }
 }
