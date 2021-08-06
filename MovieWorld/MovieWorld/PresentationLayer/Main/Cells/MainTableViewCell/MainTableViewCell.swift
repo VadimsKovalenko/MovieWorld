@@ -16,8 +16,8 @@ final class MainTableViewCell: UITableViewCell {
 
     // MARK: IBOutlets
     
-    @IBOutlet weak var mainCollectionView: UICollectionView!
-    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet private weak var mainCollectionView: UICollectionView!
+    @IBOutlet private weak var titleLabel: UILabel!
     
     
     override func awakeFromNib() {
