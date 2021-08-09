@@ -12,11 +12,15 @@ final class DetailCategoryTableViewCell: UITableViewCell {
     
     // MARK: Properties
     
-    static let reuseIdentifier = "HistoryTableViewCell"
+    static let reuseIdentifier = "DetailCategoryTableViewCell"
     
     // MARK: Actions
     
     func configure(model: Movie) {
-        
+        imageViewCategory.image = model.image
+        titleLabel.text = model.name
+        dateLabel.text = model.dateAndGenre
+        genreLabel.text = model.dateAndGenre
+        scoreLabel.text = "IMDB \(model.ratingIMDB), KP \(model.ratingKP)"
     }
 }

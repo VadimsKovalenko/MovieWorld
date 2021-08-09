@@ -5,7 +5,6 @@ final class TabBarController: UITabBarController {
     // MARK: Properties
     
     @IBInspectable var defaultIndex: Int = 1
-    static var shared: TabBarController?
     
     private lazy var mainVC: UINavigationController = {
         let vc = MainViewController()
@@ -43,10 +42,7 @@ final class TabBarController: UITabBarController {
         self.init()
         delegate = self
         defaultIndex = index
-        TabBarController.shared = self
-        
     }
-    
     
     // MARK: Lifecycle functions
     

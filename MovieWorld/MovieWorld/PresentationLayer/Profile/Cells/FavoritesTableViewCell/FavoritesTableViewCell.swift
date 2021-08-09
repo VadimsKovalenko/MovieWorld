@@ -17,6 +17,10 @@ final class FavoritesTableViewCell: UITableViewCell {
     // MARK: Actions
     
     func configure(model: Movie) {
-        
+        imageViewFavorites.image = model.image
+        titleLabel.text = model.name
+        dateLabel.text = model.dateAndGenre
+        genreLabel.text = model.dateAndGenre
+        scoreLabel.text = "IMBD \(model.ratingIMDB), KP \(model.ratingKP)"
     }
 }

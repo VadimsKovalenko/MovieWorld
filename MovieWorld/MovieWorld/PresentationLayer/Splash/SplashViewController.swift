@@ -3,7 +3,7 @@ import UIKit
 final class SplashViewController: UIViewController {
     
     // MARK: IBOutlets
-
+    
     @IBOutlet private weak var activityIndicatorView: UIActivityIndicatorView!
     
     // MARK: Lifecycle functions
@@ -24,9 +24,7 @@ final class SplashViewController: UIViewController {
     // MARK: Actions
     
     private func pushToHome() {
-       let tabBar = TabBarController()
-        let tabBarController = TabBarController(index: tabBar.defaultIndex)
-        AppDelegate.shared.changeRooViewController(tabBarController)
+        AppDelegate.shared.showHome()
     }
     
     private func startAnimatingSpinner() {

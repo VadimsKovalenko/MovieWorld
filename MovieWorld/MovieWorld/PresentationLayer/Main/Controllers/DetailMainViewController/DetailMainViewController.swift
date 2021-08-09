@@ -19,7 +19,7 @@ class DetailMainViewController: UIViewController {
     // MARK: Properties
     
     var movies = [Movie]()
-    private let refreshControl: UIRefreshControl = {
+    private lazy var refreshControl: UIRefreshControl = {
        let refresh = UIRefreshControl()
         refresh.tintColor = UIColor(hue: Constans.hue, saturation: Constans.saturation, brightness: Constans.brightness, alpha: Constans.alpha)
         refresh.addTarget(self, action: #selector(refreshControlPressed), for: .touchUpInside)
@@ -39,8 +39,6 @@ class DetailMainViewController: UIViewController {
     @IBAction private func refreshControlPressed(_ refreshControll: UIRefreshControl) {
         
     }
-    
-    // MARK: Actions
     
     private func setupUI() {
         navigationItem.title = Constans.navigationTitle

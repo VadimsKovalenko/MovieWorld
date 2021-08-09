@@ -10,6 +10,7 @@ final class HistoryViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupUI()
     }
     
     // MARK: Actions
@@ -17,7 +18,9 @@ final class HistoryViewController: UIViewController {
     private func setupUI() {
         navigationItem.title = "History"
         navigationController?.navigationBar.prefersLargeTitles = true
-        
+        historyTableView.register(UINib(nibName: HistoryTableViewCell.reuseIdentifier,
+                                        bundle: nil),
+                                  forCellReuseIdentifier: HistoryTableViewCell.reuseIdentifier)
     }
 }
 

@@ -95,8 +95,6 @@ final class CategoryViewController: BaseViewController {
         setupUI()
     }
     
-    // MARK: Actions
-    
     private func setupUI() {
         navigationItem.title = Constans.navigationTitle
         navigationController?.navigationBar.prefersLargeTitles = true
@@ -110,13 +108,10 @@ final class CategoryViewController: BaseViewController {
 // MARK: - UITableViewDelegate
 extension CategoryViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let detailCategoryViewController = storyboard?.instantiateViewController(identifier: "DetailCategoryViewController.xib") as? DetailCategoryViewController else {
-            return
-        }
-        guard let urapMovies = categoryMovies.first else { return }
-        detailCategoryViewController.movies = urapMovies.movie
-        navigationController?.pushViewController(detailCategoryViewController, animated: true)
-        
+        let detailCategoryViewController = DetailCategoryViewController()
+        detailCategoryViewController.movies = categoryMovies[indexPath.row].movie
+        navigationController?.pushViewController(detailCategoryViewController,
+                                                 animated: true)
     }
 }
 

@@ -17,7 +17,11 @@ final class HistoryTableViewCell: UITableViewCell {
     // MARK: Actions
     
     func configure(model: Movie) {
-        
+        imageViewHistory.image = model.image
+        titleLabel.text = model.name
+        dateLabel.text = model.dateAndGenre
+        genreLabel.text = model.dateAndGenre
+        scoreLabel.text = "IMDB \(model.ratingIMDB), KP \(model.ratingKP)"
     }
 
 }

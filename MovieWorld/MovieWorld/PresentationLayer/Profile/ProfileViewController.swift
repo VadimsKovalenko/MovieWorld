@@ -36,6 +36,19 @@ final class ProfileViewController: BaseViewController {
     
     // MARK: Actions
     
+    private func selectController(_ indexPath: IndexPath) -> UIViewController {
+        switch indexPath.row {
+        case 0:
+            return FavoritesViewController()
+        case 1:
+            return HistoryViewController()
+        case 2:
+            return SettingsViewController()
+        default:
+            return  ReportAProblemViewController()
+        }
+    }
+    
     private func setupUI() {
         navigationItem.title = Constans.navigationTitle
         navigationController?.navigationBar.prefersLargeTitles = true
@@ -48,7 +61,9 @@ final class ProfileViewController: BaseViewController {
 
 // MARK: - UITableViewDelegate
 extension ProfileViewController: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        navigationController?.pushViewController(selectController(indexPath), animated: true)
+    }
 }
 
 // MARK: - UITableViewDataSource

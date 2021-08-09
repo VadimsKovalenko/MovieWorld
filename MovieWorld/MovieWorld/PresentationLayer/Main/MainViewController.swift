@@ -62,9 +62,7 @@ final class MainViewController: BaseViewController {
 extension MainViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let detailMainViewController = storyboard?.instantiateViewController(withIdentifier: "DetailMainViewController") as? DetailMainViewController else {
-            return
-        }
+        let detailMainViewController = DetailMainViewController()
         guard let move = movies.first else { return }
         detailMainViewController.movies = move.movies
         self.navigationController?.pushViewController(detailMainViewController, animated: true)

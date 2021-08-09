@@ -2,6 +2,12 @@ import UIKit
 
 final class DetailCategoryViewController: UIViewController {
     
+    // MARK: Constans
+    
+    private enum Constans {
+        static let rowHeight: CGFloat = 120
+    }
+    
     // MARK: IBOutlets
     
     @IBOutlet private weak var detailCategoryTableView: UITableView!
@@ -17,13 +23,12 @@ final class DetailCategoryViewController: UIViewController {
         setupUI()
     }
     
-    // MARK: Actions
-    
     private func setupUI() {
         navigationController?.navigationBar.prefersLargeTitles = true
         detailCategoryTableView.register(UINib(nibName: DetailCategoryTableViewCell.reuseIdentifier,
                                                bundle: nil),
                                          forCellReuseIdentifier: DetailCategoryTableViewCell.reuseIdentifier)
+        detailCategoryTableView.rowHeight = Constans.rowHeight
     }
 }
 
