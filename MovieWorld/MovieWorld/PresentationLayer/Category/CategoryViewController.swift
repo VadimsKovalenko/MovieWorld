@@ -14,18 +14,78 @@ final class CategoryViewController: BaseViewController {
     
     // MARK: Properties
     
-    private let categoryMovies = [CategoryMovie(name: "Top 250"),
-                                  CategoryMovie(name: "Paramount Movies"),
-                                  CategoryMovie(name: "Disaster movies"),
-                                  CategoryMovie(name: "My french film festival"),
-                                  CategoryMovie(name: "Post-apocalyptic movies"),
-                                  CategoryMovie(name: "Sony movies"),
-                                  CategoryMovie(name: "'START' movies"),
-                                  CategoryMovie(name: "Movies about killers"),
-                                  CategoryMovie(name: "Movies with Joaquin Phoenix"),
-                                  CategoryMovie(name: "Movies about parent-children relationships"),
-                                  CategoryMovie(name: "Cyberpunk movies"),
-                                  CategoryMovie(name: "Movies that push boundaries")
+    private let categoryMovies = [CategoryMovie(name: "Top 250", movie: [Movie(image: UIImage(named: "21Bridges")!, name: "21 Bridges", dateAndGenre: "2019,Drama", ratingIMDB: "8,3", ratingKP: "5,6"),
+                                                                         Movie(image: UIImage(named: "TheGoodLiar")!, name: "The Good Liar", dateAndGenre: "2019,Drama", ratingIMDB: "8,3", ratingKP: "5,6"),
+                                                                         Movie(image: UIImage(named: "Terminator")!, name: "Terminator:D...", dateAndGenre: "2019,Adventures", ratingIMDB: "8,3", ratingKP: "5,6"),
+                                                                         Movie(image: UIImage(named: "DoctorSleep")!, name: "Doctor Sleep", dateAndGenre: "2019,Foreign", ratingIMDB: "8,3", ratingKP: "5,6"),
+                                                                         Movie(image: UIImage(named: "DowntonAbbey")!, name: "Downton Abbey", dateAndGenre: "2019,Drama", ratingIMDB: "8,3", ratingKP: "5,6")
+    ]),
+    CategoryMovie(name: "Paramount Movies", movie: [Movie(image: UIImage(named: "GreenBook")!, name: "Green Book", dateAndGenre: "2018,Comedy", ratingIMDB: "8,3", ratingKP: "5,6"),
+                                                    Movie(image: UIImage(named: "WindRiver")!, name: "Wind River", dateAndGenre: "2017, Action movie", ratingIMDB: "8,3", ratingKP: "5,6"),
+                                                    Movie(image: UIImage(named: "Jumandji")!, name: "Jumandji: Wel...", dateAndGenre: "2017,Comedy", ratingIMDB: "8,3", ratingKP: "5,6"),
+                                                    Movie(image: UIImage(named: "VoxLux")!, name: "Vox Lux", dateAndGenre: "2018,Musicial", ratingIMDB: "8,3", ratingKP: "5,6"),
+                                                    Movie(image: UIImage(named: "Acts")!, name: "Acts of Venge...", dateAndGenre: "2017,Action movie", ratingIMDB: "8,3", ratingKP: "5,6")
+    ]),
+    CategoryMovie(name: "Disaster movies", movie: [Movie(image: UIImage(named: "RayDonovan")!, name: "Ray Donovan", dateAndGenre: "2013-2019,Crime", ratingIMDB: "8,3", ratingKP: "5,6"),
+                                                   Movie(image: UIImage(named: "Billions")!, name: "Billions", dateAndGenre: "2016-2018,Drama", ratingIMDB: "8,3", ratingKP: "5,6"),
+                                                   Movie(image: UIImage(named: "HisDarkMate")!, name: "His Dark Mate...", dateAndGenre: "2019,Adventures", ratingIMDB: "8,3", ratingKP: "5,6"),
+                                                   Movie(image: UIImage(named: "Chernobyl")!, name: "Chernobyl", dateAndGenre: "2019,Drama", ratingIMDB: "8,3", ratingKP: "5,6"),
+                                                   Movie(image: UIImage(named: "Maigret")!, name: "Maigret", dateAndGenre: "2016,Detective", ratingIMDB: "8,3", ratingKP: "5,6")
+    ]),
+    CategoryMovie(name: "My french film festival", movie: [Movie(image: UIImage(named: "21Bridges")!, name: "21 Bridges", dateAndGenre: "2019,Drama", ratingIMDB: "8,3", ratingKP: "5,6"),
+                                                           Movie(image: UIImage(named: "TheGoodLiar")!, name: "The Good Liar", dateAndGenre: "2019,Drama", ratingIMDB: "8,3", ratingKP: "5,6"),
+                                                           Movie(image: UIImage(named: "Terminator")!, name: "Terminator:D...", dateAndGenre: "2019,Adventures", ratingIMDB: "8,3", ratingKP: "5,6"),
+                                                           Movie(image: UIImage(named: "DoctorSleep")!, name: "Doctor Sleep", dateAndGenre: "2019,Foreign", ratingIMDB: "8,3", ratingKP: "5,6"),
+                                                           Movie(image: UIImage(named: "DowntonAbbey")!, name: "Downton Abbey", dateAndGenre: "2019,Drama", ratingIMDB: "8,3", ratingKP: "5,6")
+    ]),
+    CategoryMovie(name: "Post-apocalyptic movies", movie: [Movie(image: UIImage(named: "GreenBook")!, name: "Green Book", dateAndGenre: "2018,Comedy", ratingIMDB: "8,3", ratingKP: "5,6"),
+                                                           Movie(image: UIImage(named: "WindRiver")!, name: "Wind River", dateAndGenre: "2017, Action movie", ratingIMDB: "8,3", ratingKP: "5,6"),
+                                                           Movie(image: UIImage(named: "Jumandji")!, name: "Jumandji: Wel...", dateAndGenre: "2017,Comedy", ratingIMDB: "8,3", ratingKP: "5,6"),
+                                                           Movie(image: UIImage(named: "VoxLux")!, name: "Vox Lux", dateAndGenre: "2018,Musicial", ratingIMDB: "8,3", ratingKP: "5,6"),
+                                                           Movie(image: UIImage(named: "Acts")!, name: "Acts of Venge...", dateAndGenre: "2017,Action movie", ratingIMDB: "8,3", ratingKP: "5,6")
+    ]),
+    CategoryMovie(name: "Sony movies", movie: [Movie(image: UIImage(named: "RayDonovan")!, name: "Ray Donovan", dateAndGenre: "2013-2019,Crime", ratingIMDB: "8,3", ratingKP: "5,6"),
+                                               Movie(image: UIImage(named: "Billions")!, name: "Billions", dateAndGenre: "2016-2018,Drama", ratingIMDB: "8,3", ratingKP: "5,6"),
+                                               Movie(image: UIImage(named: "HisDarkMate")!, name: "His Dark Mate...", dateAndGenre: "2019,Adventures", ratingIMDB: "8,3", ratingKP: "5,6"),
+                                               Movie(image: UIImage(named: "Chernobyl")!, name: "Chernobyl", dateAndGenre: "2019,Drama", ratingIMDB: "8,3", ratingKP: "5,6"),
+                                               Movie(image: UIImage(named: "Maigret")!, name: "Maigret", dateAndGenre: "2016,Detective", ratingIMDB: "8,3", ratingKP: "5,6")
+    ]),
+    CategoryMovie(name: "'START' movies", movie: [Movie(image: UIImage(named: "21Bridges")!, name: "21 Bridges", dateAndGenre: "2019,Drama", ratingIMDB: "8,3", ratingKP: "5,6"),
+                                                  Movie(image: UIImage(named: "TheGoodLiar")!, name: "The Good Liar", dateAndGenre: "2019,Drama", ratingIMDB: "8,3", ratingKP: "5,6"),
+                                                  Movie(image: UIImage(named: "Terminator")!, name: "Terminator:D...", dateAndGenre: "2019,Adventures", ratingIMDB: "8,3", ratingKP: "5,6"),
+                                                  Movie(image: UIImage(named: "DoctorSleep")!, name: "Doctor Sleep", dateAndGenre: "2019,Foreign", ratingIMDB: "8,3", ratingKP: "5,6"),
+                                                  Movie(image: UIImage(named: "DowntonAbbey")!, name: "Downton Abbey", dateAndGenre: "2019,Drama", ratingIMDB: "8,3", ratingKP: "5,6")
+    ]),
+    CategoryMovie(name: "Movies about killers", movie: [Movie(image: UIImage(named: "GreenBook")!, name: "Green Book", dateAndGenre: "2018,Comedy", ratingIMDB: "8,3", ratingKP: "5,6"),
+                                                        Movie(image: UIImage(named: "WindRiver")!, name: "Wind River", dateAndGenre: "2017, Action movie", ratingIMDB: "8,3", ratingKP: "5,6"),
+                                                        Movie(image: UIImage(named: "Jumandji")!, name: "Jumandji: Wel...", dateAndGenre: "2017,Comedy", ratingIMDB: "8,3", ratingKP: "5,6"),
+                                                        Movie(image: UIImage(named: "VoxLux")!, name: "Vox Lux", dateAndGenre: "2018,Musicial", ratingIMDB: "8,3", ratingKP: "5,6"),
+                                                        Movie(image: UIImage(named: "Acts")!, name: "Acts of Venge...", dateAndGenre: "2017,Action movie", ratingIMDB: "8,3", ratingKP: "5,6")
+    ]),
+    CategoryMovie(name: "Movies with Joaquin Phoenix", movie: [Movie(image: UIImage(named: "RayDonovan")!, name: "Ray Donovan", dateAndGenre: "2013-2019,Crime", ratingIMDB: "8,3", ratingKP: "5,6"),
+                                                               Movie(image: UIImage(named: "Billions")!, name: "Billions", dateAndGenre: "2016-2018,Drama", ratingIMDB: "8,3", ratingKP: "5,6"),
+                                                               Movie(image: UIImage(named: "HisDarkMate")!, name: "His Dark Mate...", dateAndGenre: "2019,Adventures", ratingIMDB: "8,3", ratingKP: "5,6"),
+                                                               Movie(image: UIImage(named: "Chernobyl")!, name: "Chernobyl", dateAndGenre: "2019,Drama", ratingIMDB: "8,3", ratingKP: "5,6"),
+                                                               Movie(image: UIImage(named: "Maigret")!, name: "Maigret", dateAndGenre: "2016,Detective", ratingIMDB: "8,3", ratingKP: "5,6")
+    ]),
+    CategoryMovie(name: "Movies about parent-children relationships", movie: [Movie(image: UIImage(named: "21Bridges")!, name: "21 Bridges", dateAndGenre: "2019,Drama", ratingIMDB: "8,3", ratingKP: "5,6"),
+                                                                              Movie(image: UIImage(named: "TheGoodLiar")!, name: "The Good Liar", dateAndGenre: "2019,Drama", ratingIMDB: "8,3", ratingKP: "5,6"),
+                                                                              Movie(image: UIImage(named: "Terminator")!, name: "Terminator:D...", dateAndGenre: "2019,Adventures", ratingIMDB: "8,3", ratingKP: "5,6"),
+                                                                              Movie(image: UIImage(named: "DoctorSleep")!, name: "Doctor Sleep", dateAndGenre: "2019,Foreign", ratingIMDB: "8,3", ratingKP: "5,6"),
+                                                                              Movie(image: UIImage(named: "DowntonAbbey")!, name: "Downton Abbey", dateAndGenre: "2019,Drama", ratingIMDB: "8,3", ratingKP: "5,6")
+    ]),
+    CategoryMovie(name: "Cyberpunk movies", movie: [Movie(image: UIImage(named: "GreenBook")!, name: "Green Book", dateAndGenre: "2018,Comedy", ratingIMDB: "8,3", ratingKP: "5,6"),
+                                                    Movie(image: UIImage(named: "WindRiver")!, name: "Wind River", dateAndGenre: "2017, Action movie", ratingIMDB: "8,3", ratingKP: "5,6"),
+                                                    Movie(image: UIImage(named: "Jumandji")!, name: "Jumandji: Wel...", dateAndGenre: "2017,Comedy", ratingIMDB: "8,3", ratingKP: "5,6"),
+                                                    Movie(image: UIImage(named: "VoxLux")!, name: "Vox Lux", dateAndGenre: "2018,Musicial", ratingIMDB: "8,3", ratingKP: "5,6"),
+                                                    Movie(image: UIImage(named: "Acts")!, name: "Acts of Venge...", dateAndGenre: "2017,Action movie", ratingIMDB: "8,3", ratingKP: "5,6")
+    ]),
+    CategoryMovie(name: "Movies that push boundaries", movie: [Movie(image: UIImage(named: "RayDonovan")!, name: "Ray Donovan", dateAndGenre: "2013-2019,Crime", ratingIMDB: "8,3", ratingKP: "5,6"),
+                                                               Movie(image: UIImage(named: "Billions")!, name: "Billions", dateAndGenre: "2016-2018,Drama", ratingIMDB: "8,3", ratingKP: "5,6"),
+                                                               Movie(image: UIImage(named: "HisDarkMate")!, name: "His Dark Mate...", dateAndGenre: "2019,Adventures", ratingIMDB: "8,3", ratingKP: "5,6"),
+                                                               Movie(image: UIImage(named: "Chernobyl")!, name: "Chernobyl", dateAndGenre: "2019,Drama", ratingIMDB: "8,3", ratingKP: "5,6"),
+                                                               Movie(image: UIImage(named: "Maigret")!, name: "Maigret", dateAndGenre: "2016,Detective", ratingIMDB: "8,3", ratingKP: "5,6")
+    ])
     ]
     
     // MARK: Lifecycle functions
@@ -49,7 +109,15 @@ final class CategoryViewController: BaseViewController {
 
 // MARK: - UITableViewDelegate
 extension CategoryViewController: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let detailCategoryViewController = storyboard?.instantiateViewController(identifier: "DetailCategoryViewController.xib") as? DetailCategoryViewController else {
+            return
+        }
+        guard let urapMovies = categoryMovies.first else { return }
+        detailCategoryViewController.movies = urapMovies.movie
+        navigationController?.pushViewController(detailCategoryViewController, animated: true)
+        
+    }
 }
 
 // MARK: - UITableViewDataSource

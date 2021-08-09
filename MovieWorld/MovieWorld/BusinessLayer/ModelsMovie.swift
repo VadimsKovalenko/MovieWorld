@@ -15,6 +15,7 @@ struct Movie {
 
 struct CategoryMovie {
     var name: String
+    var movie: [Movie]
 }
 
 struct ProfileMovie {

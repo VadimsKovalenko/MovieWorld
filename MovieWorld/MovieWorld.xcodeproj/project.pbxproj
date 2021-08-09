@@ -43,6 +43,8 @@
 		516A271026BD6877008890FB /* DetailCategoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 516A270E26BD6877008890FB /* DetailCategoryViewController.xib */; };
 		516A271426BD68D4008890FB /* DetailCategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 516A271226BD68D4008890FB /* DetailCategoryTableViewCell.swift */; };
 		516A271526BD68D4008890FB /* DetailCategoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 516A271326BD68D4008890FB /* DetailCategoryTableViewCell.xib */; };
+		516A271926C11845008890FB /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 516A271726C11845008890FB /* SplashViewController.swift */; };
+		516A271A26C11845008890FB /* SplashViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 516A271826C11845008890FB /* SplashViewController.xib */; };
 		519C15A726BA85C3005084D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519C15A626BA85C3005084D4 /* AppDelegate.swift */; };
 		519C15B026BA85C4005084D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 519C15AF26BA85C4005084D4 /* Assets.xcassets */; };
 		519C15B326BA85C4005084D4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 519C15B126BA85C4005084D4 /* LaunchScreen.storyboard */; };
@@ -95,6 +97,8 @@
 		516A270E26BD6877008890FB /* DetailCategoryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailCategoryViewController.xib; sourceTree = "<group>"; };
 		516A271226BD68D4008890FB /* DetailCategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCategoryTableViewCell.swift; sourceTree = "<group>"; };
 		516A271326BD68D4008890FB /* DetailCategoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailCategoryTableViewCell.xib; sourceTree = "<group>"; };
+		516A271726C11845008890FB /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		516A271826C11845008890FB /* SplashViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SplashViewController.xib; sourceTree = "<group>"; };
 		519C15A326BA85C3005084D4 /* MovieWorld.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieWorld.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		519C15A626BA85C3005084D4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		519C15AF26BA85C4005084D4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -325,6 +329,15 @@
 			path = DetailCategoryTableViewCell;
 			sourceTree = "<group>";
 		};
+		516A271626C1180F008890FB /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				516A271726C11845008890FB /* SplashViewController.swift */,
+				516A271826C11845008890FB /* SplashViewController.xib */,
+			);
+			path = Splash;
+			sourceTree = "<group>";
+		};
 		519C159A26BA85C3005084D4 = {
 			isa = PBXGroup;
 			children = (
@@ -373,6 +386,7 @@
 			isa = PBXGroup;
 			children = (
 				519C15DB26BAAEC7005084D4 /* TabBar */,
+				516A271626C1180F008890FB /* Splash */,
 				519C15D626BAAE87005084D4 /* Base */,
 				519C15C226BA92F1005084D4 /* Main */,
 				519C15C326BA931A005084D4 /* Category */,
@@ -546,6 +560,7 @@
 				516A26D326BD4168008890FB /* ProfileTableViewCell.xib in Resources */,
 				516A26DE26BD49AB008890FB /* DetailMainTableViewCell.xib in Resources */,
 				516A26FF26BD5EA7008890FB /* HistoryTableViewCell.xib in Resources */,
+				516A271A26C11845008890FB /* SplashViewController.xib in Resources */,
 				516A26FB26BD5E81008890FB /* FavoritesTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -576,6 +591,7 @@
 				519C15C826BA9369005084D4 /* MainViewController.swift in Sources */,
 				516A26FA26BD5E81008890FB /* FavoritesTableViewCell.swift in Sources */,
 				519C15A726BA85C3005084D4 /* AppDelegate.swift in Sources */,
+				516A271926C11845008890FB /* SplashViewController.swift in Sources */,
 				516A26C226BBF599008890FB /* MainCollectionViewCell.swift in Sources */,
 				516A26D726BD479A008890FB /* DetailMainViewController.swift in Sources */,
 				516A270926BD66AC008890FB /* SearchTableViewCell.swift in Sources */,

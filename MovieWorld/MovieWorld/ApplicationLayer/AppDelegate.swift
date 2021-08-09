@@ -15,5 +15,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
         return true
     }
+    
+    func changeRooViewController(_ viewController: UIViewController) {
+        let snapShot: UIView = (window?.snapshotView(afterScreenUpdates: false))!
+        viewController.view.addSubview(snapShot)
+        
+        window?.rootViewController = viewController
+            
+        UIView.animate(withDuration: 0.3) {
+            snapShot.layer.opacity = 0
+            snapShot.layer.transform = CATransform3DMakeScale(1.5, 1.5, 1.5)
+        } completion: { _ in
+            snapShot.removeFromSuperview()
+        }
+
+    }
+}
+
+// MARK: - AppDelegate
+extension AppDelegate {
+    static var shared =  UIApplication.shared.delegate as! AppDelegate
 }
 
