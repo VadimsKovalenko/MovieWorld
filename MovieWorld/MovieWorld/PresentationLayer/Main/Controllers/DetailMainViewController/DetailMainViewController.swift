@@ -6,6 +6,10 @@ class DetailMainViewController: UIViewController {
     
     private enum Constans {
         static let navigationTitle = "Movie"
+        static let hue: CGFloat = 6
+        static let saturation: CGFloat = 58
+        static let brightness: CGFloat = 90
+        static let alpha: CGFloat = 1
     }
     
     // MARK: IBOutlets
@@ -15,12 +19,25 @@ class DetailMainViewController: UIViewController {
     // MARK: Properties
     
     var movies = [Movie]()
+    private let refreshControl: UIRefreshControl = {
+       let refresh = UIRefreshControl()
+        refresh.tintColor = UIColor(hue: Constans.hue, saturation: Constans.saturation, brightness: Constans.brightness, alpha: Constans.alpha)
+        refresh.addTarget(self, action: #selector(refreshControlPressed), for: .touchUpInside)
+        
+        return refresh
+    }()
         
     // MARK: Lifecycle functions
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+    }
+    
+    // MARK: IBActions
+    
+    @IBAction private func refreshControlPressed(_ refreshControll: UIRefreshControl) {
+        
     }
     
     // MARK: Actions
@@ -31,7 +48,7 @@ class DetailMainViewController: UIViewController {
         detailMainTableView.register(UINib(nibName: DetailMainTableViewCell.reuseIdentifier,
                                            bundle: nil),
                                      forCellReuseIdentifier: DetailMainTableViewCell.reuseIdentifier)
-        
+        detailMainTableView.refreshControl = refreshControl
     }
 }
 

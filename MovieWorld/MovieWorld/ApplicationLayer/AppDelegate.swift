@@ -12,7 +12,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let rootVC = TabBarController()
         let test = SplashViewController()
         
-        window?.rootViewController = test
+        window?.rootViewController = rootVC
         window?.makeKeyAndVisible()
         return true
     }

@@ -45,6 +45,10 @@
 		516A271526BD68D4008890FB /* DetailCategoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 516A271326BD68D4008890FB /* DetailCategoryTableViewCell.xib */; };
 		516A271926C11845008890FB /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 516A271726C11845008890FB /* SplashViewController.swift */; };
 		516A271A26C11845008890FB /* SplashViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 516A271826C11845008890FB /* SplashViewController.xib */; };
+		516A271E26C1395E008890FB /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 516A271C26C1395E008890FB /* FilterViewController.swift */; };
+		516A271F26C1395E008890FB /* FilterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 516A271D26C1395E008890FB /* FilterViewController.xib */; };
+		516A272426C13B24008890FB /* CountryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 516A272226C13B24008890FB /* CountryViewController.swift */; };
+		516A272526C13B24008890FB /* CountryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 516A272326C13B24008890FB /* CountryViewController.xib */; };
 		519C15A726BA85C3005084D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519C15A626BA85C3005084D4 /* AppDelegate.swift */; };
 		519C15B026BA85C4005084D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 519C15AF26BA85C4005084D4 /* Assets.xcassets */; };
 		519C15B326BA85C4005084D4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 519C15B126BA85C4005084D4 /* LaunchScreen.storyboard */; };
@@ -99,6 +103,10 @@
 		516A271326BD68D4008890FB /* DetailCategoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailCategoryTableViewCell.xib; sourceTree = "<group>"; };
 		516A271726C11845008890FB /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		516A271826C11845008890FB /* SplashViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SplashViewController.xib; sourceTree = "<group>"; };
+		516A271C26C1395E008890FB /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
+		516A271D26C1395E008890FB /* FilterViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterViewController.xib; sourceTree = "<group>"; };
+		516A272226C13B24008890FB /* CountryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryViewController.swift; sourceTree = "<group>"; };
+		516A272326C13B24008890FB /* CountryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CountryViewController.xib; sourceTree = "<group>"; };
 		519C15A326BA85C3005084D4 /* MovieWorld.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieWorld.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		519C15A626BA85C3005084D4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		519C15AF26BA85C4005084D4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -338,6 +346,33 @@
 			path = Splash;
 			sourceTree = "<group>";
 		};
+		516A271B26C1394C008890FB /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				516A272026C13AF0008890FB /* FilterViewController */,
+				516A272126C13B04008890FB /* CountryViewController */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		516A272026C13AF0008890FB /* FilterViewController */ = {
+			isa = PBXGroup;
+			children = (
+				516A271C26C1395E008890FB /* FilterViewController.swift */,
+				516A271D26C1395E008890FB /* FilterViewController.xib */,
+			);
+			path = FilterViewController;
+			sourceTree = "<group>";
+		};
+		516A272126C13B04008890FB /* CountryViewController */ = {
+			isa = PBXGroup;
+			children = (
+				516A272226C13B24008890FB /* CountryViewController.swift */,
+				516A272326C13B24008890FB /* CountryViewController.xib */,
+			);
+			path = CountryViewController;
+			sourceTree = "<group>";
+		};
 		519C159A26BA85C3005084D4 = {
 			isa = PBXGroup;
 			children = (
@@ -448,6 +483,7 @@
 		519C15C426BA9324005084D4 /* Search */ = {
 			isa = PBXGroup;
 			children = (
+				516A271B26C1394C008890FB /* Controllers */,
 				516A270626BD6695008890FB /* Cells */,
 				519C15CE26BA93AC005084D4 /* SearchViewController.swift */,
 				519C15CF26BA93AC005084D4 /* SearchViewController.xib */,
@@ -545,6 +581,7 @@
 				519C15B026BA85C4005084D4 /* Assets.xcassets in Resources */,
 				516A271026BD6877008890FB /* DetailCategoryViewController.xib in Resources */,
 				516A26CE26BD3A4C008890FB /* CategoryTableViewCell.xib in Resources */,
+				516A272526C13B24008890FB /* CountryViewController.xib in Resources */,
 				516A26EF26BD597A008890FB /* SettingsViewController.xib in Resources */,
 				516A270326BD5EDA008890FB /* SettingsTableViewCell.xib in Resources */,
 				519C15D126BA93AC005084D4 /* SearchViewController.xib in Resources */,
@@ -561,6 +598,7 @@
 				516A26DE26BD49AB008890FB /* DetailMainTableViewCell.xib in Resources */,
 				516A26FF26BD5EA7008890FB /* HistoryTableViewCell.xib in Resources */,
 				516A271A26C11845008890FB /* SplashViewController.xib in Resources */,
+				516A271F26C1395E008890FB /* FilterViewController.xib in Resources */,
 				516A26FB26BD5E81008890FB /* FavoritesTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -575,6 +613,7 @@
 				516A26BE26BBF412008890FB /* AppConstans.swift in Sources */,
 				516A270526BD5FD2008890FB /* Collection+Extension.swift in Sources */,
 				516A26D226BD4168008890FB /* ProfileTableViewCell.swift in Sources */,
+				516A272426C13B24008890FB /* CountryViewController.swift in Sources */,
 				519C15D426BA93CE005084D4 /* ProfileViewController.swift in Sources */,
 				516A26DD26BD49AB008890FB /* DetailMainTableViewCell.swift in Sources */,
 				519C15D026BA93AC005084D4 /* SearchViewController.swift in Sources */,
@@ -588,6 +627,7 @@
 				516A26F226BD5994008890FB /* ReportAProblemViewController.swift in Sources */,
 				516A26C926BC223A008890FB /* UIView+Extension.swift in Sources */,
 				516A271426BD68D4008890FB /* DetailCategoryTableViewCell.swift in Sources */,
+				516A271E26C1395E008890FB /* FilterViewController.swift in Sources */,
 				519C15C826BA9369005084D4 /* MainViewController.swift in Sources */,
 				516A26FA26BD5E81008890FB /* FavoritesTableViewCell.swift in Sources */,
 				519C15A726BA85C3005084D4 /* AppDelegate.swift in Sources */,
