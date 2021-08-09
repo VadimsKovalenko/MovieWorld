@@ -4,6 +4,9 @@ final class TabBarController: UITabBarController {
     
     // MARK: Properties
     
+    @IBInspectable var defaultIndex: Int = 1
+    static var shared: TabBarController?
+    
     private lazy var mainVC: UINavigationController = {
         let vc = MainViewController()
         let nv = UINavigationController(rootViewController: vc)
@@ -36,10 +39,24 @@ final class TabBarController: UITabBarController {
         return nv
     }()
     
+    convenience init(index: Int) {
+        self.init()
+        delegate = self
+        defaultIndex = index
+        TabBarController.shared = self
+        
+    }
+    
+    
     // MARK: Lifecycle functions
     
     override func viewDidLoad() {
         super.viewDidLoad()
         viewControllers = [mainVC,categoryVC,searchVC,profileVC]
     }
+}
+
+// MARK: - UITabBarControllerDelegate
+extension TabBarController: UITabBarControllerDelegate {
+    
 }
