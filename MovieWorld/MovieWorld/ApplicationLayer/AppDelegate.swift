@@ -10,8 +10,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         window = UIWindow(frame: UIScreen.main.bounds)
         let rootVC = TabBarController()
+        let test = SplashViewController()
         
-        window?.rootViewController = rootVC
+        window?.rootViewController = test
         window?.makeKeyAndVisible()
         return true
     }

@@ -12,9 +12,9 @@ final class SearchViewController: BaseViewController {
     
     private let searchController = UISearchController()
     private let filterButtonItem: UIBarButtonItem = {
-       let filter = UIBarButtonItem()
+       var filter = UIBarButtonItem()
         filter.image = UIImage(named: "icon-filter")
-        filter.tintColor = UIColor(
+        return filter
     }()
 
     // MARK: Lifecycle functions
