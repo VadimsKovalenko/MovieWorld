@@ -11,6 +11,11 @@ final class SearchViewController: BaseViewController {
     // MARK: Properties
     
     private let searchController = UISearchController()
+    private let filterButtonItem: UIBarButtonItem = {
+       let filter = UIBarButtonItem()
+        filter.image = UIImage(named: "icon-filter")
+        filter.tintColor = UIColor(
+    }()
 
     // MARK: Lifecycle functions
     
@@ -23,8 +28,13 @@ final class SearchViewController: BaseViewController {
     
     private func setupUI() {
         navigationItem.title = Constans.navigationTitle
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "icon-filter"), style: .plain, target: self, action: #selector(editButtonPressed))
         navigationItem.searchController = searchController
         navigationController?.navigationBar.prefersLargeTitles = true
+        
+    }
+    
+    @IBAction private func editButtonPressed(_ barButtonItem: UIBarButtonItem) {
         
     }
 }

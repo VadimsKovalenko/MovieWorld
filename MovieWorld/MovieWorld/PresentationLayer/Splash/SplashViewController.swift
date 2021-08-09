@@ -24,7 +24,9 @@ class SplashViewController: UIViewController {
     // MARK: Actions
     
     private func pushToHome() {
-       
+       let bar = TabBarController()
+        guard let urapBar = bar.viewControllers?.first else { return }
+        AppDelegate.shared.changeRooViewController(urapBar)
     }
     
     private func startAnimatingSpinner() {
