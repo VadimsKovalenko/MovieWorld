@@ -17,6 +17,6 @@ final class MainCollectionViewCell: UICollectionViewCell {
     func configure(model: Movie) {
         movieImageView.image = model.image
         descriptionLabel.text = model.name
-        dateAndGenreLabel.text = model.dateAndGenre
+        dateAndGenreLabel.text = "\(model.date), \(model.genre)"
     }
 }

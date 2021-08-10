@@ -19,8 +19,8 @@ final class DetailCategoryTableViewCell: UITableViewCell {
     func configure(model: Movie) {
         imageViewCategory.image = model.image
         titleLabel.text = model.name
-        dateLabel.text = model.dateAndGenre
-        genreLabel.text = model.dateAndGenre
+        dateLabel.text = model.date
+        genreLabel.text = model.genre
         scoreLabel.text = "IMDB \(model.ratingIMDB), KP \(model.ratingKP)"
     }
 }

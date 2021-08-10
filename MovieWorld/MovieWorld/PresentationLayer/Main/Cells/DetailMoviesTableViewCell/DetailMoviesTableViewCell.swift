@@ -1,10 +1,10 @@
 import UIKit
 
-final class FavoritesTableViewCell: UITableViewCell {
- 
+final class DetailMoviesTableViewCell: UITableViewCell {
+
     // MARK: IBOutlets
     
-    @IBOutlet private weak var imageViewFavorites: UIImageView!
+    @IBOutlet private weak var detailImageView: UIImageView!
     @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var dateLabel: UILabel!
     @IBOutlet private weak var genreLabel: UILabel!
@@ -12,15 +12,15 @@ final class FavoritesTableViewCell: UITableViewCell {
     
     // MARK: Properties
     
-    static let reuseIdentifier = "FavoritesTableViewCell"
+    static let reuseIdentifier = "DetailMoviesTableViewCell"
     
     // MARK: Actions
     
     func configure(model: Movie) {
-        imageViewFavorites.image = model.image
+        imageView?.image = model.image
         titleLabel.text = model.name
-        dateLabel.text = model.date
-        genreLabel.text = model.genre
-        scoreLabel.text = "IMBD \(model.ratingIMDB), KP \(model.ratingKP)"
+        dateLabel.text = model.dateAndGenre
+        genreLabel.text = model.dateAndGenre
+        scoreLabel.text = "IMDB \(model.ratingIMDB), KP \(model.ratingKP)"
     }
 }

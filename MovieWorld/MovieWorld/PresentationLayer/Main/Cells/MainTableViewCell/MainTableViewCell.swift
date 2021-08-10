@@ -1,5 +1,10 @@
 import UIKit
 
+protocol MainTableViewCellDelegate: AnyObject {
+    func detailWasTapped(at section: [Movie])
+    func detailWasTappedCollection(at index: Movie)
+}
+
 final class MainTableViewCell: UITableViewCell {
     
     // MARK: Constans
@@ -18,20 +23,20 @@ final class MainTableViewCell: UITableViewCell {
     
     static let reuseIdentifier = "MainTableViewCell"
     var movies = [Movie]()
+    weak var delegate: MainTableViewCellDelegate?
     
     override func awakeFromNib() {
-           super.awakeFromNib()
+        super.awakeFromNib()
         setupCollectionViewCell()
-       }
+    }
     
     // MARK: IBActions
     
     @IBAction func allButtonPressed(_ sender: UIButton) {
+        delegate?.detailWasTapped(at: movies)
     }
     
-    // MARK: Actions
-    
-     func configure(model: MainMovieSection) {
+    func configure(model: MainMovieSection) {
         titleLabel.text = model.title
         movies = model.movies
         
@@ -50,8 +55,7 @@ final class MainTableViewCell: UITableViewCell {
 // MARK: - UICollectionViewDelegate
 extension MainTableViewCell: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let mainViewController = MainViewController()
-        
+        delegate?.detailWasTappedCollection(at: movies[indexPath.row])
     }
 }
 

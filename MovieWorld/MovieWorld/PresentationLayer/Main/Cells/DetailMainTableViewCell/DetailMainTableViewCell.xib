@@ -21,6 +21,11 @@
                         <constraints>
                             <constraint firstAttribute="width" constant="80" id="ICn-YM-oTi"/>
                         </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="5"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Green Book" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sh9-5w-b9c">
                         <rect key="frame" x="112" y="10" width="192" height="21"/>
@@ -48,7 +53,7 @@
                         <nil key="highlightedColor"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                <real key="value" value="20"/>
+                                <real key="value" value="5"/>
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </label>
@@ -80,7 +85,7 @@
                 <outlet property="scoreLabel" destination="Udm-lM-DQq" id="dTw-z5-mIK"/>
                 <outlet property="titleLabel" destination="Sh9-5w-b9c" id="1qc-KD-NBs"/>
             </connections>
-            <point key="canvasLocation" x="-71" y="37"/>
+            <point key="canvasLocation" x="-71.014492753623188" y="36.830357142857139"/>
         </tableViewCell>
     </objects>
 </document>

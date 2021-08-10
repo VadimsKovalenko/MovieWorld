@@ -5,6 +5,7 @@ class DetailMainViewController: UIViewController {
     // MARK: Constans
     
     private enum Constans {
+        static let rowHeight: CGFloat = 120
         static let navigationTitle = "Movie"
         static let hue: CGFloat = 6
         static let saturation: CGFloat = 58
@@ -46,16 +47,17 @@ class DetailMainViewController: UIViewController {
         detailMainTableView.register(UINib(nibName: DetailMainTableViewCell.reuseIdentifier,
                                            bundle: nil),
                                      forCellReuseIdentifier: DetailMainTableViewCell.reuseIdentifier)
+        detailMainTableView.rowHeight = Constans.rowHeight
         detailMainTableView.refreshControl = refreshControl
     }
 }
 
-// MARK: -
+// MARK: - UITableViewDelegate
 extension DetailMainViewController: UITableViewDelegate {
     
 }
 
-// MARK: -
+// MARK: - UITableViewDataSource
 extension DetailMainViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         movies.count

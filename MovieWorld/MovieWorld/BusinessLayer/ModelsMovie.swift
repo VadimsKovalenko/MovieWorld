@@ -8,7 +8,8 @@ struct MainMovieSection {
 struct Movie {
     var image: UIImage
     var name: String
-    var dateAndGenre: String
+    var date: String
+    var genre: String
     var ratingIMDB: String
     var ratingKP: String
 }
@@ -20,4 +21,10 @@ struct CategoryMovie {
 
 struct ProfileMovie {
     var name: String
+}
+
+struct Acter {
+    var image: UIImage
+    var firstName: String
+    var lastName: String
 }

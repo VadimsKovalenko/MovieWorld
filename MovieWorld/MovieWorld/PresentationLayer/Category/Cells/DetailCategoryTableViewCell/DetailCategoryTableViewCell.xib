@@ -41,14 +41,14 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IMDB 8.2, KP 8.3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f85-Ge-YKR">
-                        <rect key="frame" x="112" y="96" width="116" height="16"/>
+                        <rect key="frame" x="112" y="96" width="120" height="16"/>
                         <color key="backgroundColor" red="0.28445821999999998" green="0.57822227479999999" blue="0.35293006900000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="13"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                <real key="value" value="20"/>
+                                <real key="value" value="5"/>
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </label>
@@ -63,7 +63,7 @@
                     <constraint firstAttribute="bottom" secondItem="bLP-tY-elq" secondAttribute="bottom" constant="10" id="Hob-Jz-oUP"/>
                     <constraint firstItem="lZG-cV-MUj" firstAttribute="top" secondItem="Yqb-TY-QkG" secondAttribute="bottom" constant="3" id="MC0-Be-kXx"/>
                     <constraint firstAttribute="trailing" secondItem="lZG-cV-MUj" secondAttribute="trailing" constant="16" id="NfD-2y-cgW"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="f85-Ge-YKR" secondAttribute="trailing" constant="76" id="RGp-Pc-Unc"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="f85-Ge-YKR" secondAttribute="trailing" constant="72" id="RGp-Pc-Unc"/>
                     <constraint firstItem="Chl-CV-J6a" firstAttribute="leading" secondItem="bLP-tY-elq" secondAttribute="trailing" constant="16" id="Rym-7Z-xOL"/>
                     <constraint firstAttribute="bottom" secondItem="f85-Ge-YKR" secondAttribute="bottom" constant="8" id="XuU-8M-Xf9"/>
                     <constraint firstItem="Chl-CV-J6a" firstAttribute="top" secondItem="lZG-cV-MUj" secondAttribute="bottom" constant="1" id="Yqd-7D-Fa9"/>
