@@ -12,8 +12,8 @@ final class CategoryTableViewCell: UITableViewCell {
     
     // MARK: Actions
     
-    func configure(model: CategoryMovie) {
-        titleLabel.text = model.name
+    func configure(model: MainMovieSection) {
+        titleLabel.text = model.title
     }
     
 }

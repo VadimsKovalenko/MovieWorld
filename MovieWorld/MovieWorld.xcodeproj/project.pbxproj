@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5120E19C26C3C2E60050E7FA /* CastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5120E19A26C3C2E60050E7FA /* CastViewController.swift */; };
+		5120E19D26C3C2E60050E7FA /* CastViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5120E19B26C3C2E60050E7FA /* CastViewController.xib */; };
+		5120E1A126C3C50A0050E7FA /* MainCastTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5120E19F26C3C50A0050E7FA /* MainCastTableViewCell.swift */; };
+		5120E1A226C3C50A0050E7FA /* MainCastTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5120E1A026C3C50A0050E7FA /* MainCastTableViewCell.xib */; };
+		5120E1A626C3C5520050E7FA /* DetailCastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5120E1A426C3C5520050E7FA /* DetailCastViewController.swift */; };
+		5120E1A726C3C5520050E7FA /* DetailCastViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5120E1A526C3C5520050E7FA /* DetailCastViewController.xib */; };
+		5120E1AD26C3DC850050E7FA /* CastDetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5120E1AB26C3DC850050E7FA /* CastDetailCollectionViewCell.swift */; };
+		5120E1AE26C3DC850050E7FA /* CastDetailCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5120E1AC26C3DC850050E7FA /* CastDetailCollectionViewCell.xib */; };
+		5120E1B126C3DCA00050E7FA /* CastDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5120E1AF26C3DCA00050E7FA /* CastDetailTableViewCell.swift */; };
+		5120E1B226C3DCA00050E7FA /* CastDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5120E1B026C3DCA00050E7FA /* CastDetailTableViewCell.xib */; };
 		516A26BB26BBEAC0008890FB /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 516A26B926BBEAC0008890FB /* MainTableViewCell.swift */; };
 		516A26BC26BBEAC0008890FB /* MainTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 516A26BA26BBEAC0008890FB /* MainTableViewCell.xib */; };
 		516A26BE26BBF412008890FB /* AppConstans.swift in Sources */ = {isa = PBXBuildFile; fileRef = 516A26BD26BBF412008890FB /* AppConstans.swift */; };
@@ -75,6 +85,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5120E19A26C3C2E60050E7FA /* CastViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastViewController.swift; sourceTree = "<group>"; };
+		5120E19B26C3C2E60050E7FA /* CastViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CastViewController.xib; sourceTree = "<group>"; };
+		5120E19F26C3C50A0050E7FA /* MainCastTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCastTableViewCell.swift; sourceTree = "<group>"; };
+		5120E1A026C3C50A0050E7FA /* MainCastTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainCastTableViewCell.xib; sourceTree = "<group>"; };
+		5120E1A426C3C5520050E7FA /* DetailCastViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCastViewController.swift; sourceTree = "<group>"; };
+		5120E1A526C3C5520050E7FA /* DetailCastViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailCastViewController.xib; sourceTree = "<group>"; };
+		5120E1AB26C3DC850050E7FA /* CastDetailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastDetailCollectionViewCell.swift; sourceTree = "<group>"; };
+		5120E1AC26C3DC850050E7FA /* CastDetailCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CastDetailCollectionViewCell.xib; sourceTree = "<group>"; };
+		5120E1AF26C3DCA00050E7FA /* CastDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastDetailTableViewCell.swift; sourceTree = "<group>"; };
+		5120E1B026C3DCA00050E7FA /* CastDetailTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CastDetailTableViewCell.xib; sourceTree = "<group>"; };
 		516A26B926BBEAC0008890FB /* MainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
 		516A26BA26BBEAC0008890FB /* MainTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainTableViewCell.xib; sourceTree = "<group>"; };
 		516A26BD26BBF412008890FB /* AppConstans.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstans.swift; sourceTree = "<group>"; };
@@ -155,6 +175,60 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5120E19926C3C2C30050E7FA /* CastViewController */ = {
+			isa = PBXGroup;
+			children = (
+				5120E19A26C3C2E60050E7FA /* CastViewController.swift */,
+				5120E19B26C3C2E60050E7FA /* CastViewController.xib */,
+			);
+			path = CastViewController;
+			sourceTree = "<group>";
+		};
+		5120E19E26C3C4B80050E7FA /* MainCastTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				5120E19F26C3C50A0050E7FA /* MainCastTableViewCell.swift */,
+				5120E1A026C3C50A0050E7FA /* MainCastTableViewCell.xib */,
+			);
+			path = MainCastTableViewCell;
+			sourceTree = "<group>";
+		};
+		5120E1A326C3C5280050E7FA /* DetailCastViewController */ = {
+			isa = PBXGroup;
+			children = (
+				5120E1A426C3C5520050E7FA /* DetailCastViewController.swift */,
+				5120E1A526C3C5520050E7FA /* DetailCastViewController.xib */,
+			);
+			path = DetailCastViewController;
+			sourceTree = "<group>";
+		};
+		5120E1A826C3C5640050E7FA /* MainViewController */ = {
+			isa = PBXGroup;
+			children = (
+				519C15C626BA9369005084D4 /* MainViewController.swift */,
+				519C15C726BA9369005084D4 /* MainViewController.xib */,
+			);
+			path = MainViewController;
+			sourceTree = "<group>";
+		};
+		5120E1A926C3DC4C0050E7FA /* CastDetailTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				5120E1AF26C3DCA00050E7FA /* CastDetailTableViewCell.swift */,
+				5120E1B026C3DCA00050E7FA /* CastDetailTableViewCell.xib */,
+			);
+			path = CastDetailTableViewCell;
+			sourceTree = "<group>";
+		};
+		5120E1AA26C3DC590050E7FA /* CastDetailCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				5120E1AB26C3DC850050E7FA /* CastDetailCollectionViewCell.swift */,
+				5120E1AC26C3DC850050E7FA /* CastDetailCollectionViewCell.xib */,
+			);
+			path = CastDetailCollectionViewCell;
+			sourceTree = "<group>";
+		};
 		516A26B626BBEA53008890FB /* MainTableViewCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -176,6 +250,9 @@
 		516A26C426BC013B008890FB /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				5120E1AA26C3DC590050E7FA /* CastDetailCollectionViewCell */,
+				5120E1A926C3DC4C0050E7FA /* CastDetailTableViewCell */,
+				5120E19E26C3C4B80050E7FA /* MainCastTableViewCell */,
 				516A273726C2A438008890FB /* TrailersAndGalleryCollectionViewCell */,
 				516A273626C2A423008890FB /* TrailersAndGalleryTableViewCell */,
 				516A273526C2A413008890FB /* CastTableViewCell */,
@@ -217,6 +294,9 @@
 		516A26D426BD475A008890FB /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				5120E1A826C3C5640050E7FA /* MainViewController */,
+				5120E1A326C3C5280050E7FA /* DetailCastViewController */,
+				5120E19926C3C2C30050E7FA /* CastViewController */,
 				516A272626C27C22008890FB /* DetailMoviesViewController */,
 				516A26D926BD4961008890FB /* DetailMainViewController */,
 			);
@@ -533,8 +613,6 @@
 			children = (
 				516A26D426BD475A008890FB /* Controllers */,
 				516A26C426BC013B008890FB /* Cells */,
-				519C15C626BA9369005084D4 /* MainViewController.swift */,
-				519C15C726BA9369005084D4 /* MainViewController.xib */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -651,6 +729,7 @@
 				516A271526BD68D4008890FB /* DetailCategoryTableViewCell.xib in Resources */,
 				516A273426C2A0E0008890FB /* CastCollectionViewCell.xib in Resources */,
 				519C15B026BA85C4005084D4 /* Assets.xcassets in Resources */,
+				5120E19D26C3C2E60050E7FA /* CastViewController.xib in Resources */,
 				516A271026BD6877008890FB /* DetailCategoryViewController.xib in Resources */,
 				516A26CE26BD3A4C008890FB /* CategoryTableViewCell.xib in Resources */,
 				516A273B26C2A460008890FB /* CastTableViewCell.xib in Resources */,
@@ -670,11 +749,15 @@
 				516A26D826BD479A008890FB /* DetailMainViewController.xib in Resources */,
 				516A26D326BD4168008890FB /* ProfileTableViewCell.xib in Resources */,
 				516A26DE26BD49AB008890FB /* DetailMainTableViewCell.xib in Resources */,
+				5120E1AE26C3DC850050E7FA /* CastDetailCollectionViewCell.xib in Resources */,
 				516A26FF26BD5EA7008890FB /* HistoryTableViewCell.xib in Resources */,
 				516A271A26C11845008890FB /* SplashViewController.xib in Resources */,
 				516A271F26C1395E008890FB /* FilterViewController.xib in Resources */,
+				5120E1A226C3C50A0050E7FA /* MainCastTableViewCell.xib in Resources */,
 				516A273F26C2A49B008890FB /* TrailerAndGalleryTableViewCell.xib in Resources */,
+				5120E1A726C3C5520050E7FA /* DetailCastViewController.xib in Resources */,
 				516A26FB26BD5E81008890FB /* FavoritesTableViewCell.xib in Resources */,
+				5120E1B226C3DCA00050E7FA /* CastDetailTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -686,13 +769,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				516A26BE26BBF412008890FB /* AppConstans.swift in Sources */,
+				5120E1B126C3DCA00050E7FA /* CastDetailTableViewCell.swift in Sources */,
 				516A270526BD5FD2008890FB /* Collection+Extension.swift in Sources */,
 				516A26D226BD4168008890FB /* ProfileTableViewCell.swift in Sources */,
 				516A272926C27C57008890FB /* DetailMoviesViewController.swift in Sources */,
 				516A272426C13B24008890FB /* CountryViewController.swift in Sources */,
+				5120E19C26C3C2E60050E7FA /* CastViewController.swift in Sources */,
 				519C15D426BA93CE005084D4 /* ProfileViewController.swift in Sources */,
 				516A26DD26BD49AB008890FB /* DetailMainTableViewCell.swift in Sources */,
 				519C15D026BA93AC005084D4 /* SearchViewController.swift in Sources */,
+				5120E1A126C3C50A0050E7FA /* MainCastTableViewCell.swift in Sources */,
 				516A26EE26BD597A008890FB /* SettingsViewController.swift in Sources */,
 				516A273326C2A0E0008890FB /* CastCollectionViewCell.swift in Sources */,
 				516A270F26BD6877008890FB /* DetailCategoryViewController.swift in Sources */,
@@ -707,7 +793,9 @@
 				516A273A26C2A460008890FB /* CastTableViewCell.swift in Sources */,
 				516A26C926BC223A008890FB /* UIView+Extension.swift in Sources */,
 				516A271426BD68D4008890FB /* DetailCategoryTableViewCell.swift in Sources */,
+				5120E1A626C3C5520050E7FA /* DetailCastViewController.swift in Sources */,
 				516A271E26C1395E008890FB /* FilterViewController.swift in Sources */,
+				5120E1AD26C3DC850050E7FA /* CastDetailCollectionViewCell.swift in Sources */,
 				519C15C826BA9369005084D4 /* MainViewController.swift in Sources */,
 				516A26FA26BD5E81008890FB /* FavoritesTableViewCell.swift in Sources */,
 				519C15A726BA85C3005084D4 /* AppDelegate.swift in Sources */,

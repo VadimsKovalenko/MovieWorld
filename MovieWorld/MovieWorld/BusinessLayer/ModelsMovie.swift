@@ -12,11 +12,7 @@ struct Movie {
     var genre: String
     var ratingIMDB: String
     var ratingKP: String
-}
-
-struct CategoryMovie {
-    var name: String
-    var movie: [Movie]
+    var acter: [Acter]
 }
 
 struct ProfileMovie {

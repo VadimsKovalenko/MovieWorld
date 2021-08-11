@@ -11,7 +11,6 @@ final class MainTableViewCell: UITableViewCell {
     
     private enum Constans {
         static let contentInsert: CGFloat = 16
-        
     }
     
     // MARK: IBOutlets
@@ -43,7 +42,8 @@ final class MainTableViewCell: UITableViewCell {
     }
     
     private func setupCollectionViewCell() {
-        mainCollectionView.register(UINib(nibName: MainCollectionViewCell.reuseIdentifier, bundle: nil),
+        mainCollectionView.register(UINib(nibName: MainCollectionViewCell.reuseIdentifier,
+                                          bundle: nil),
                                     forCellWithReuseIdentifier: MainCollectionViewCell.reuseIdentifier)
         mainCollectionView.delegate = self
         mainCollectionView.dataSource = self
@@ -54,19 +54,23 @@ final class MainTableViewCell: UITableViewCell {
 
 // MARK: - UICollectionViewDelegate
 extension MainTableViewCell: UICollectionViewDelegate {
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    func collectionView(
+                        _ collectionView: UICollectionView,
+                        didSelectItemAt indexPath: IndexPath) {
         delegate?.detailWasTappedCollection(at: movies[indexPath.row])
     }
 }
 
 // MARK: UICollectionViewDataSource
 extension MainTableViewCell: UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView,
+    func collectionView(
+                        _ collectionView: UICollectionView,
                         numberOfItemsInSection section: Int) -> Int {
         movies.count
     }
     
-    func collectionView(_ collectionView: UICollectionView,
+    func collectionView(
+                        _ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MainCollectionViewCell.reuseIdentifier,
                                                             for: indexPath) as? MainCollectionViewCell else {
@@ -79,7 +83,8 @@ extension MainTableViewCell: UICollectionViewDataSource {
 
 // MARK: - UICollectionViewDelegateFlowLayout
 extension MainTableViewCell: UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView,
+    func collectionView(
+                        _ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
         CGSize(width: 130 , height: 237)

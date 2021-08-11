@@ -2,11 +2,15 @@ import UIKit
 
 final class DetailMoviesViewController: UIViewController {
     
+    // MARK: Constans
+    
+    private enum Constans {
+        static let rowHeight: CGFloat = 192
+    }
+    
     // MARK: IBOutlets
     
-//    @IBOutlet private weak var castTableView: UITableView!
-//    @IBOutlet private weak var trailersAndGalleryTableView: UITableView!
-//
+    @IBOutlet private weak var castTableView: UITableView!
     @IBOutlet private weak var timeMovie: UILabel!
     @IBOutlet private weak var descriptionMovie: UITextView!
     @IBOutlet private weak var detailImageView: UIImageView!
@@ -18,7 +22,7 @@ final class DetailMoviesViewController: UIViewController {
     // MARK: Properties
     
     private lazy var bookMark: UIBarButtonItem = {
-       let bookMark = UIBarButtonItem()
+        let bookMark = UIBarButtonItem()
         bookMark.image = UIImage(systemName: "bookmark")
         bookMark.action = #selector(bookMarkButtonPressed(_:))
         return bookMark
@@ -40,9 +44,46 @@ final class DetailMoviesViewController: UIViewController {
         detailDateLabel.text = movies.first?.date
         detailDateLabel.text = movies.first?.genre
         detailScoreLabel.text = "IMDB \(movies.first?.ratingIMDB ?? "--"), KP \(movies.first?.ratingKP ?? "--")"
+        castTableView.register(UINib(nibName: CastTableViewCell.reuseIdentifier,
+                                     bundle: nil),
+                               forCellReuseIdentifier: CastTableViewCell.reuseIdentifier)
+        castTableView.rowHeight = Constans.rowHeight
     }
     
     @IBAction private func bookMarkButtonPressed(_ barButtonPressed: UIBarButtonItem) {
         
     }
+}
+
+// MARK: - UITableViewDataSource
+extension DetailMoviesViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: CastTableViewCell.reuseIdentifier,
+                                                       for: indexPath) as? CastTableViewCell else {
+            return UITableViewCell()
+        }
+        cell.delegate = self
+        cell.configure(model: movies[indexPath.row])
+        return cell
+    }
+}
+
+// MARK: - CastTableViewCellDelegate 
+extension DetailMoviesViewController: CastTableViewCellDelegate {
+    func detailWasTapped(at section: [Acter]) {
+        let castViewController = CastViewController()
+        guard let urapActers = movies.first?.acter else { return }
+        castViewController.acters = urapActers
+        navigationController?.pushViewController(castViewController, animated: true)
+    }
+    
+    func detailWasTappedCollection(at index: Acter) {
+        
+    }
+    
+    
 }
