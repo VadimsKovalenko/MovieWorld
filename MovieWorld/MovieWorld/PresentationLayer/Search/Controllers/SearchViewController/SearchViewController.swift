@@ -15,20 +15,28 @@ final class SearchViewController: BaseViewController {
     // MARK: Properties
     
     private let searchController: UISearchController = {
-       let searchController = UISearchController()
-        searchController.searchBar.tintColor = UIColor(hue: Constans.hue, saturation: Constans.saturation, brightness: Constans.brightness, alpha: Constans.alpha)
+        let searchController = UISearchController()
+        searchController.searchBar.tintColor = UIColor(
+            hue: Constans.hue,
+            saturation: Constans.saturation,
+            brightness: Constans.brightness,
+            alpha: Constans.alpha)
         searchController.hidesNavigationBarDuringPresentation = false
         return searchController
     }()
     private let filterButtonItem: UIBarButtonItem = {
-       let filter = UIBarButtonItem()
+        let filter = UIBarButtonItem()
         filter.image = UIImage(named: "icon-filter")
         filter.style = .plain
         filter.action = #selector(editButtonPressed(_:))
-        filter.tintColor = UIColor(hue: Constans.hue, saturation: Constans.saturation, brightness: Constans.brightness, alpha: Constans.alpha)
+        filter.tintColor = UIColor(
+            hue: Constans.hue,
+            saturation: Constans.saturation,
+            brightness: Constans.brightness,
+            alpha: Constans.alpha)
         return filter
     }()
-
+    
     // MARK: Lifecycle functions
     
     override func viewDidLoad() {
@@ -43,10 +51,8 @@ final class SearchViewController: BaseViewController {
         navigationItem.rightBarButtonItem = filterButtonItem
         navigationItem.searchController = searchController
         navigationController?.navigationBar.prefersLargeTitles = true
-        
     }
     
     @IBAction private func editButtonPressed(_ barButtonItem: UIBarButtonItem) {
-        
     }
 }

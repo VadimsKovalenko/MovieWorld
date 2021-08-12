@@ -11,6 +11,7 @@ final class MainTableViewCell: UITableViewCell {
     
     private enum Constans {
         static let contentInsert: CGFloat = 16
+        static let collectionViewSize = CGSize(width: 130 , height: 237)
     }
     
     // MARK: IBOutlets
@@ -38,13 +39,13 @@ final class MainTableViewCell: UITableViewCell {
     func configure(model: MainMovieSection) {
         titleLabel.text = model.title
         movies = model.movies
-        
     }
     
     private func setupCollectionViewCell() {
-        mainCollectionView.register(UINib(nibName: MainCollectionViewCell.reuseIdentifier,
-                                          bundle: nil),
-                                    forCellWithReuseIdentifier: MainCollectionViewCell.reuseIdentifier)
+        mainCollectionView.register(
+            UINib(nibName: MainCollectionViewCell.reuseIdentifier,
+                  bundle: nil),
+            forCellWithReuseIdentifier: MainCollectionViewCell.reuseIdentifier)
         mainCollectionView.delegate = self
         mainCollectionView.dataSource = self
         mainCollectionView.contentInset.left = Constans.contentInsert
@@ -55,8 +56,8 @@ final class MainTableViewCell: UITableViewCell {
 // MARK: - UICollectionViewDelegate
 extension MainTableViewCell: UICollectionViewDelegate {
     func collectionView(
-                        _ collectionView: UICollectionView,
-                        didSelectItemAt indexPath: IndexPath) {
+        _ collectionView: UICollectionView,
+        didSelectItemAt indexPath: IndexPath) {
         delegate?.detailWasTappedCollection(at: movies[indexPath.row])
     }
 }
@@ -64,16 +65,17 @@ extension MainTableViewCell: UICollectionViewDelegate {
 // MARK: UICollectionViewDataSource
 extension MainTableViewCell: UICollectionViewDataSource {
     func collectionView(
-                        _ collectionView: UICollectionView,
-                        numberOfItemsInSection section: Int) -> Int {
+        _ collectionView: UICollectionView,
+        numberOfItemsInSection section: Int) -> Int {
         movies.count
     }
     
     func collectionView(
-                        _ collectionView: UICollectionView,
-                        cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MainCollectionViewCell.reuseIdentifier,
-                                                            for: indexPath) as? MainCollectionViewCell else {
+        _ collectionView: UICollectionView,
+        cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(
+                withReuseIdentifier: MainCollectionViewCell.reuseIdentifier,
+                for: indexPath) as? MainCollectionViewCell else {
             return UICollectionViewCell()
         }
         cell.configure(model: movies[indexPath.item])
@@ -84,9 +86,9 @@ extension MainTableViewCell: UICollectionViewDataSource {
 // MARK: - UICollectionViewDelegateFlowLayout
 extension MainTableViewCell: UICollectionViewDelegateFlowLayout {
     func collectionView(
-                        _ collectionView: UICollectionView,
-                        layout collectionViewLayout: UICollectionViewLayout,
-                        sizeForItemAt indexPath: IndexPath) -> CGSize {
-        CGSize(width: 130 , height: 237)
+        _ collectionView: UICollectionView,
+        layout collectionViewLayout: UICollectionViewLayout,
+        sizeForItemAt indexPath: IndexPath) -> CGSize {
+        Constans.collectionViewSize
     }
 }

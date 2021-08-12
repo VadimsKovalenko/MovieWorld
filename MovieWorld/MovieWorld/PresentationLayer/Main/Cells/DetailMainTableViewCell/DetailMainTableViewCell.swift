@@ -1,7 +1,7 @@
 import UIKit
 
-class DetailMainTableViewCell: UITableViewCell {
-
+final class DetailMainTableViewCell: UITableViewCell {
+    
     // MARK: IBOutlets
     
     @IBOutlet private weak var detailImageView: UIImageView!

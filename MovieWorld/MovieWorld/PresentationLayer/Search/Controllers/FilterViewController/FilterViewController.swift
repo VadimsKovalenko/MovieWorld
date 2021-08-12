@@ -20,7 +20,11 @@ final class FilterViewController: UIViewController {
         reset.title = Constans.resetButtonItem
         reset.style = .plain
         reset.action = #selector(resetButtonPressed)
-        reset.tintColor = UIColor(hue: Constans.hue, saturation: Constans.saturation, brightness: Constans.brightness, alpha: Constans.alpha)
+        reset.tintColor = UIColor(
+            hue: Constans.hue,
+            saturation: Constans.saturation,
+            brightness: Constans.brightness,
+            alpha: Constans.alpha)
         return reset
     }()
     
@@ -38,11 +42,9 @@ final class FilterViewController: UIViewController {
     // MARK: IBActions
     
     @IBAction private func showButtonPressed(_ sender: UIButton) {
-        
     }
     
     @IBAction private func resetButtonPressed(_ barButtonItem: UIBarButtonItem) {
-        
     }
     
     // MARK: Actions
@@ -56,16 +58,19 @@ final class FilterViewController: UIViewController {
 
 // MARK: - UITableViewDelegate
 extension FilterViewController: UITableViewDelegate {
-    
 }
 
 // MARK: - UITableViewDataSource
 extension FilterViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(
+        _ tableView: UITableView,
+        numberOfRowsInSection section: Int) -> Int {
         1
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(
+        _ tableView: UITableView,
+        cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         UITableViewCell()
     }
 }

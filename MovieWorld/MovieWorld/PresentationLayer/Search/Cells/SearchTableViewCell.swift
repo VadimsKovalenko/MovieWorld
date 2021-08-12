@@ -17,6 +17,5 @@ final class SearchTableViewCell: UITableViewCell {
     // MARK: Actions
     
     func configure(model: Movie) {
-        
     }
 }

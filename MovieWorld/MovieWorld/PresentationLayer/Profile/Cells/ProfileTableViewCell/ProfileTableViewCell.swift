@@ -1,7 +1,7 @@
 import UIKit
 
 final class ProfileTableViewCell: UITableViewCell {
-
+    
     // MARK: IBOutlets
     
     @IBOutlet private weak var titleLabel: UILabel!

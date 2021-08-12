@@ -52,33 +52,40 @@ final class ProfileViewController: BaseViewController {
     private func setupUI() {
         navigationItem.title = Constans.navigationTitle
         navigationController?.navigationBar.prefersLargeTitles = true
-        profileTableView.register(UINib(nibName: ProfileTableViewCell.reuseIdentifier,
-                                        bundle: nil),
-                                  forCellReuseIdentifier: ProfileTableViewCell.reuseIdentifier)
+        profileTableView.register(
+            UINib(nibName: ProfileTableViewCell.reuseIdentifier,
+                  bundle: nil),
+            forCellReuseIdentifier: ProfileTableViewCell.reuseIdentifier)
         profileTableView.tableFooterView = UIView()
     }
 }
 
 // MARK: - UITableViewDelegate
 extension ProfileViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    func tableView(
+        _ tableView: UITableView,
+        didSelectRowAt indexPath: IndexPath) {
         navigationController?.pushViewController(selectController(indexPath), animated: true)
     }
 }
 
 // MARK: - UITableViewDataSource
 extension ProfileViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(
+        _ tableView: UITableView,
+        numberOfRowsInSection section: Int) -> Int {
         profiles.count
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: ProfileTableViewCell.reuseIdentifier,
-                                                       for: indexPath) as? ProfileTableViewCell else {
+    func tableView(
+        _ tableView: UITableView,
+        cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(
+                withIdentifier: ProfileTableViewCell.reuseIdentifier,
+                for: indexPath) as? ProfileTableViewCell else {
             return UITableViewCell()
         }
         cell.configure(model: profiles[indexPath.row])
-        
         return cell
     }
     

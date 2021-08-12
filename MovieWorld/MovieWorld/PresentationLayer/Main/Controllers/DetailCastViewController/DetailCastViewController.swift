@@ -2,6 +2,12 @@ import UIKit
 
 final class DetailCastViewController: UIViewController {
     
+    // MARK: Constans
+    
+    private enum Constans {
+        static let rowHeight: CGFloat = 276
+    }
+    
     // MARK: IBOutlets
     
     @IBOutlet private weak var detailCastImageView: UIImageView!
@@ -11,7 +17,6 @@ final class DetailCastViewController: UIViewController {
     @IBOutlet private weak var detailCastTableView: UITableView!
     @IBOutlet private weak var detailCastTextView: UITextView!
     
-    
     // MARK: Properties
     
     private lazy var bookMark: UIBarButtonItem = {
@@ -20,7 +25,7 @@ final class DetailCastViewController: UIViewController {
         bookMark.action = #selector(bookMarkButtonPressed(_:))
         return bookMark
     }()
-    var movies = [Movie]()
+    var acters = [Acter]()
     
     // MARK: Lifecycle functions
     
@@ -33,14 +38,14 @@ final class DetailCastViewController: UIViewController {
         navigationItem.rightBarButtonItem = bookMark
         navigationItem.backButtonTitle = ""
         navigationController?.navigationBar.prefersLargeTitles = true
-        guard let acter = movies.first?.acter.first else { return }
-        detailCastImageView.image = acter.image
-        detailCastFirstNameLabel.text = acter.firstName
-        detailCastLastNameLabel.text = acter.lastName
         detailCastTableView.register(
             UINib(nibName: CastDetailTableViewCell.reuseIdentifier,
                   bundle: nil),
             forCellReuseIdentifier: CastDetailTableViewCell.reuseIdentifier)
+        detailCastTableView.rowHeight = Constans.rowHeight
+        detailCastImageView.image = acters.first?.image
+        detailCastFirstNameLabel.text = acters.first?.firstName
+        detailCastLastNameLabel.text = acters.first?.lastName
     }
     
     // MARK: Actions
@@ -71,7 +76,7 @@ extension DetailCastViewController: UITableViewDataSource {
                 for: indexPath) as? CastDetailTableViewCell else {
             return UITableViewCell()
         }
-        cell.configure(model: movies[indexPath.row])
+        cell.configure(model: acters[indexPath.row])
         return cell
     }
 }

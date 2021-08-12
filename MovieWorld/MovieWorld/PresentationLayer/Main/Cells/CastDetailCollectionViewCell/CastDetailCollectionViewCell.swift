@@ -14,7 +14,7 @@ final class CastDetailCollectionViewCell: UICollectionViewCell {
     
     // MARK: Actions
     
-    func configure(model: Movie) {
+    func configure(model: Filmography) {
         castImageView.image = model.image
         castDescriptionLabel.text = model.name
         castDateAndGenreLabel.text = "\(model.date), \(model.genre)"

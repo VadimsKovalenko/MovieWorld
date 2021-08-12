@@ -17,7 +17,11 @@ final class CountryViewController: UIViewController {
     
     private let searchController: UISearchController = {
         let searchController = UISearchController()
-        searchController.searchBar.tintColor = UIColor(hue: Constans.hue, saturation: Constans.saturation, brightness: Constans.brightness, alpha: Constans.alpha)
+        searchController.searchBar.tintColor = UIColor(
+            hue: Constans.hue,
+            saturation: Constans.saturation,
+            brightness: Constans.brightness,
+            alpha: Constans.alpha)
         searchController.hidesNavigationBarDuringPresentation = false
         return searchController
     }()
@@ -26,7 +30,11 @@ final class CountryViewController: UIViewController {
         reset.title = Constans.resetButtonItem
         reset.style = .plain
         reset.action = #selector(resetButtonPressed)
-        reset.tintColor = UIColor(hue: Constans.hue, saturation: Constans.saturation, brightness: Constans.brightness, alpha: Constans.alpha)
+        reset.tintColor = UIColor(
+            hue: Constans.hue,
+            saturation: Constans.saturation,
+            brightness: Constans.brightness,
+            alpha: Constans.alpha)
         return reset
     }()
     
@@ -43,11 +51,9 @@ final class CountryViewController: UIViewController {
     // MARK: IBActions
     
     @IBAction private func resetButtonPressed(_ barButtonItem: UIBarButtonItem) {
-        
     }
-
-    @IBAction private func selectButtonPressed(_ sender: UIButton) {
     
+    @IBAction private func selectButtonPressed(_ sender: UIButton) {
     }
     
     // MARK: Actions
@@ -62,17 +68,19 @@ final class CountryViewController: UIViewController {
 
 // MARK: - UITableViewDelegate
 extension CountryViewController: UITableViewDelegate {
-    
 }
 
 // MARK: - UITableViewDataSource
 extension CountryViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(
+        _ tableView: UITableView,
+        numberOfRowsInSection section: Int) -> Int {
         1
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(
+        _ tableView: UITableView,
+        cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         UITableViewCell()
     }
 }
-

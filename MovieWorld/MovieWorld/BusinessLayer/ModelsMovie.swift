@@ -23,4 +23,16 @@ struct Acter {
     var image: UIImage
     var firstName: String
     var lastName: String
+    var films: [Filmography]
+}
+
+struct Settings {
+    var name: String
+}
+
+struct Filmography {
+    var image: UIImage
+    var name: String
+    var date: String
+    var genre: String
 }

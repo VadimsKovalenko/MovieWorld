@@ -15,5 +15,4 @@ final class CategoryTableViewCell: UITableViewCell {
     func configure(model: MainMovieSection) {
         titleLabel.text = model.title
     }
-    
 }

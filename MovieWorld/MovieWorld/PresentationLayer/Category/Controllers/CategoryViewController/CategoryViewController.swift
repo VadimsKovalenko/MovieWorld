@@ -1,12 +1,11 @@
 import UIKit
 
-final class MainViewController: BaseViewController {
+final class CategoryViewController: BaseViewController {
     
     // MARK: Constans
     
     private enum Constans {
-        static let rowHeight: CGFloat = 281
-        static let navigationTitle = "Season"
+        static let navigationTitle = "Category"
         static let hue: CGFloat = 6
         static let saturation: CGFloat = 58
         static let brightness: CGFloat = 90
@@ -15,370 +14,370 @@ final class MainViewController: BaseViewController {
     
     // MARK: IBOutlets
     
-    @IBOutlet private weak var mainTableView: UITableView!
+    @IBOutlet private weak var categoryTableView: UITableView!
     
     // MARK: Properties
     
-    private var movies = [MainMovieSection(title: "New", movies: [Movie(image: UIImage(named: "21Bridges")!, name: "21 Bridges", date: "2019", genre: "Drama", ratingIMDB: "8,3", ratingKP: "5,6",
-                                                                        acter: [Acter(image: UIImage(named: "Dwayne")!, firstName: "Dwayne", lastName: "Johnson",
-                                                                                      films: [Filmography(image: UIImage(named: "GreenBook")!, name: "GreenBook", date: "2013-2019", genre: "Crime"),
-                                                                                              Filmography(image: UIImage(named: "WindRiver")!, name: "Wind River", date: "2017", genre: "Action movie"),
-                                                                                              Filmography(image: UIImage(named: "21Bridges")!, name: "21 Bridges", date: "2019", genre: "Drama"),
-                                                                                              Filmography(image: UIImage(named: "TheGoodLiar")!, name: "The Good Liar", date: "2019", genre: "Drama"),
-                                                                                              Filmography(image: UIImage(named: "DoctorSleep")!, name: "Doctor Sleep ", date: "2019", genre: "Foreign")
-                                                                                      ]),
-                                                                                Acter(image: UIImage(named: "Kevin")!, firstName: "Kevin", lastName: "Hart",
-                                                                                      films: [Filmography(image: UIImage(named: "GreenBook")!, name: "GreenBook", date: "2013-2019", genre: "Crime"),
-                                                                                              Filmography(image: UIImage(named: "WindRiver")!, name: "Wind River", date: "2017", genre: "Action movie"),
-                                                                                              Filmography(image: UIImage(named: "21Bridges")!, name: "21 Bridges", date: "2019", genre: "Drama"),
-                                                                                              Filmography(image: UIImage(named: "TheGoodLiar")!, name: "The Good Liar", date: "2019", genre: "Drama"),
-                                                                                              Filmography(image: UIImage(named: "DoctorSleep")!, name: "Doctor Sleep ", date: "2019", genre: "Foreign")
-                                                                                      ]),
-                                                                                Acter(image: UIImage(named: "Jack")!, firstName: "Jack", lastName: "Black",
-                                                                                      films: [Filmography(image: UIImage(named: "GreenBook")!, name: "GreenBook", date: "2013-2019", genre: "Crime"),
-                                                                                              Filmography(image: UIImage(named: "WindRiver")!, name: "Wind River", date: "2017", genre: "Action movie"),
-                                                                                              Filmography(image: UIImage(named: "21Bridges")!, name: "21 Bridges", date: "2019", genre: "Drama"),
-                                                                                              Filmography(image: UIImage(named: "TheGoodLiar")!, name: "The Good Liar", date: "2019", genre: "Drama"),
-                                                                                              Filmography(image: UIImage(named: "DoctorSleep")!, name: "Doctor Sleep ", date: "2019", genre: "Foreign")
-                                                                                      ]),
-                                                                                Acter(image: UIImage(named: "Karen")!, firstName: "Karen", lastName: "Gillan",
-                                                                                      films: [Filmography(image: UIImage(named: "GreenBook")!, name: "GreenBook", date: "2013-2019", genre: "Crime"),
-                                                                                              Filmography(image: UIImage(named: "WindRiver")!, name: "Wind River", date: "2017", genre: "Action movie"),
-                                                                                              Filmography(image: UIImage(named: "21Bridges")!, name: "21 Bridges", date: "2019", genre: "Drama"),
-                                                                                              Filmography(image: UIImage(named: "TheGoodLiar")!, name: "The Good Liar", date: "2019", genre: "Drama"),
-                                                                                              Filmography(image: UIImage(named: "DoctorSleep")!, name: "Doctor Sleep ", date: "2019", genre: "Foreign")
-                                                                                      ]),
-                                                                                Acter(image: UIImage(named: "Rhys")!, firstName: "Rhys", lastName: "Darbv",
-                                                                                      films: [Filmography(image: UIImage(named: "GreenBook")!, name: "GreenBook", date: "2013-2019", genre: "Crime"),
-                                                                                              Filmography(image: UIImage(named: "WindRiver")!, name: "Wind River", date: "2017", genre: "Action movie"),
-                                                                                              Filmography(image: UIImage(named: "21Bridges")!, name: "21 Bridges", date: "2019", genre: "Drama"),
-                                                                                              Filmography(image: UIImage(named: "TheGoodLiar")!, name: "The Good Liar", date: "2019", genre: "Drama"),
-                                                                                              Filmography(image: UIImage(named: "DoctorSleep")!, name: "Doctor Sleep ", date: "2019", genre: "Foreign")
-                                                                                      ]),
-                                                                                Acter(image: UIImage(named: "Bobby")!, firstName: "Bobby", lastName: "Cannavale",
-                                                                                      films: [Filmography(image: UIImage(named: "GreenBook")!, name: "GreenBook", date: "2013-2019", genre: "Crime"),
-                                                                                              Filmography(image: UIImage(named: "WindRiver")!, name: "Wind River", date: "2017", genre: "Action movie"),
-                                                                                              Filmography(image: UIImage(named: "21Bridges")!, name: "21 Bridges", date: "2019", genre: "Drama"),
-                                                                                              Filmography(image: UIImage(named: "TheGoodLiar")!, name: "The Good Liar", date: "2019", genre: "Drama"),
-                                                                                              Filmography(image: UIImage(named: "DoctorSleep")!, name: "Doctor Sleep ", date: "2019", genre: "Foreign")
-                                                                                      ]),
-                                                                                Acter(image: UIImage(named: "Nick")!, firstName: "Nick", lastName: "Jonas",
-                                                                                      films: [Filmography(image: UIImage(named: "GreenBook")!, name: "GreenBook", date: "2013-2019", genre: "Crime"),
-                                                                                              Filmography(image: UIImage(named: "WindRiver")!, name: "Wind River", date: "2017", genre: "Action movie"),
-                                                                                              Filmography(image: UIImage(named: "21Bridges")!, name: "21 Bridges", date: "2019", genre: "Drama"),
-                                                                                              Filmography(image: UIImage(named: "TheGoodLiar")!, name: "The Good Liar", date: "2019", genre: "Drama"),
-                                                                                              Filmography(image: UIImage(named: "DoctorSleep")!, name: "Doctor Sleep ", date: "2019", genre: "Foreign")
-                                                                                      ]),
-                                                                                Acter(image: UIImage(named: "Alex")!, firstName: "Alex", lastName: "Wolff",
-                                                                                      films: [Filmography(image: UIImage(named: "GreenBook")!, name: "GreenBook", date: "2013-2019", genre: "Crime"),
-                                                                                              Filmography(image: UIImage(named: "WindRiver")!, name: "Wind River", date: "2017", genre: "Action movie"),
-                                                                                              Filmography(image: UIImage(named: "21Bridges")!, name: "21 Bridges", date: "2019", genre: "Drama"),
-                                                                                              Filmography(image: UIImage(named: "TheGoodLiar")!, name: "The Good Liar", date: "2019", genre: "Drama"),
-                                                                                              Filmography(image: UIImage(named: "DoctorSleep")!, name: "Doctor Sleep ", date: "2019", genre: "Foreign")
-                                                                                      ]),
-                                                                                Acter(image: UIImage(named: "Ser'Dar")!, firstName: "Ser'Dar..", lastName: "Blain",
-                                                                                      films: [Filmography(image: UIImage(named: "GreenBook")!, name: "GreenBook", date: "2013-2019", genre: "Crime"),
-                                                                                              Filmography(image: UIImage(named: "WindRiver")!, name: "Wind River", date: "2017", genre: "Action movie"),
-                                                                                              Filmography(image: UIImage(named: "21Bridges")!, name: "21 Bridges", date: "2019", genre: "Drama"),
-                                                                                              Filmography(image: UIImage(named: "TheGoodLiar")!, name: "The Good Liar", date: "2019", genre: "Drama"),
-                                                                                              Filmography(image: UIImage(named: "DoctorSleep")!, name: "Doctor Sleep ", date: "2019", genre: "Foreign")
-                                                                                      ]),
-                                                                                Acter(image: UIImage(named: "Madison")!, firstName: "Madison", lastName: "Iseman",
-                                                                                      films: [Filmography(image: UIImage(named: "GreenBook")!, name: "GreenBook", date: "2013-2019", genre: "Crime"),
-                                                                                              Filmography(image: UIImage(named: "WindRiver")!, name: "Wind River", date: "2017", genre: "Action movie"),
-                                                                                              Filmography(image: UIImage(named: "21Bridges")!, name: "21 Bridges", date: "2019", genre: "Drama"),
-                                                                                              Filmography(image: UIImage(named: "TheGoodLiar")!, name: "The Good Liar", date: "2019", genre: "Drama"),
-                                                                                              Filmography(image: UIImage(named: "DoctorSleep")!, name: "Doctor Sleep ", date: "2019", genre: "Foreign")
-                                                                                      ])
-                                                                        ]),
-                                                                  Movie(image: UIImage(named: "TheGoodLiar")!, name: "The Good Liar", date: "2019", genre: "Drama", ratingIMDB: "8,3", ratingKP: "5,6",
-                                                                        acter: [Acter(image: UIImage(named: "Dwayne")!, firstName: "Dwayne", lastName: "Johnson",
-                                                                                      films: [Filmography(image: UIImage(named: "GreenBook")!, name: "GreenBook", date: "2013-2019", genre: "Crime"),
-                                                                                              Filmography(image: UIImage(named: "WindRiver")!, name: "Wind River", date: "2017", genre: "Action movie"),
-                                                                                              Filmography(image: UIImage(named: "21Bridges")!, name: "21 Bridges", date: "2019", genre: "Drama"),
-                                                                                              Filmography(image: UIImage(named: "TheGoodLiar")!, name: "The Good Liar", date: "2019", genre: "Drama"),
-                                                                                              Filmography(image: UIImage(named: "DoctorSleep")!, name: "Doctor Sleep ", date: "2019", genre: "Foreign")
-                                                                                      ]),
-                                                                                Acter(image: UIImage(named: "Kevin")!, firstName: "Kevin", lastName: "Hart",
-                                                                                      films: [Filmography(image: UIImage(named: "GreenBook")!, name: "GreenBook", date: "2013-2019", genre: "Crime"),
-                                                                                              Filmography(image: UIImage(named: "WindRiver")!, name: "Wind River", date: "2017", genre: "Action movie"),
-                                                                                              Filmography(image: UIImage(named: "21Bridges")!, name: "21 Bridges", date: "2019", genre: "Drama"),
-                                                                                              Filmography(image: UIImage(named: "TheGoodLiar")!, name: "The Good Liar", date: "2019", genre: "Drama"),
-                                                                                              Filmography(image: UIImage(named: "DoctorSleep")!, name: "Doctor Sleep ", date: "2019", genre: "Foreign")
-                                                                                      ]),
-                                                                                Acter(image: UIImage(named: "Jack")!, firstName: "Jack", lastName: "Black",
-                                                                                      films: [Filmography(image: UIImage(named: "GreenBook")!, name: "GreenBook", date: "2013-2019", genre: "Crime"),
-                                                                                              Filmography(image: UIImage(named: "WindRiver")!, name: "Wind River", date: "2017", genre: "Action movie"),
-                                                                                              Filmography(image: UIImage(named: "21Bridges")!, name: "21 Bridges", date: "2019", genre: "Drama"),
-                                                                                              Filmography(image: UIImage(named: "TheGoodLiar")!, name: "The Good Liar", date: "2019", genre: "Drama"),
-                                                                                              Filmography(image: UIImage(named: "DoctorSleep")!, name: "Doctor Sleep ", date: "2019", genre: "Foreign")
-                                                                                      ]),
-                                                                                Acter(image: UIImage(named: "Karen")!, firstName: "Karen", lastName: "Gillan",
-                                                                                      films: [Filmography(image: UIImage(named: "GreenBook")!, name: "GreenBook", date: "2013-2019", genre: "Crime"),
-                                                                                              Filmography(image: UIImage(named: "WindRiver")!, name: "Wind River", date: "2017", genre: "Action movie"),
-                                                                                              Filmography(image: UIImage(named: "21Bridges")!, name: "21 Bridges", date: "2019", genre: "Drama"),
-                                                                                              Filmography(image: UIImage(named: "TheGoodLiar")!, name: "The Good Liar", date: "2019", genre: "Drama"),
-                                                                                              Filmography(image: UIImage(named: "DoctorSleep")!, name: "Doctor Sleep ", date: "2019", genre: "Foreign")
-                                                                                      ]),
-                                                                                Acter(image: UIImage(named: "Rhys")!, firstName: "Rhys", lastName: "Darbv",
-                                                                                      films: [Filmography(image: UIImage(named: "GreenBook")!, name: "GreenBook", date: "2013-2019", genre: "Crime"),
-                                                                                              Filmography(image: UIImage(named: "WindRiver")!, name: "Wind River", date: "2017", genre: "Action movie"),
-                                                                                              Filmography(image: UIImage(named: "21Bridges")!, name: "21 Bridges", date: "2019", genre: "Drama"),
-                                                                                              Filmography(image: UIImage(named: "TheGoodLiar")!, name: "The Good Liar", date: "2019", genre: "Drama"),
-                                                                                              Filmography(image: UIImage(named: "DoctorSleep")!, name: "Doctor Sleep ", date: "2019", genre: "Foreign")
-                                                                                      ]),
-                                                                                Acter(image: UIImage(named: "Bobby")!, firstName: "Bobby", lastName: "Cannavale",
-                                                                                      films: [Filmography(image: UIImage(named: "GreenBook")!, name: "GreenBook", date: "2013-2019", genre: "Crime"),
-                                                                                              Filmography(image: UIImage(named: "WindRiver")!, name: "Wind River", date: "2017", genre: "Action movie"),
-                                                                                              Filmography(image: UIImage(named: "21Bridges")!, name: "21 Bridges", date: "2019", genre: "Drama"),
-                                                                                              Filmography(image: UIImage(named: "TheGoodLiar")!, name: "The Good Liar", date: "2019", genre: "Drama"),
-                                                                                              Filmography(image: UIImage(named: "DoctorSleep")!, name: "Doctor Sleep ", date: "2019", genre: "Foreign")
-                                                                                      ]),
-                                                                                Acter(image: UIImage(named: "Nick")!, firstName: "Nick", lastName: "Jonas",
-                                                                                      films: [Filmography(image: UIImage(named: "GreenBook")!, name: "GreenBook", date: "2013-2019", genre: "Crime"),
-                                                                                              Filmography(image: UIImage(named: "WindRiver")!, name: "Wind River", date: "2017", genre: "Action movie"),
-                                                                                              Filmography(image: UIImage(named: "21Bridges")!, name: "21 Bridges", date: "2019", genre: "Drama"),
-                                                                                              Filmography(image: UIImage(named: "TheGoodLiar")!, name: "The Good Liar", date: "2019", genre: "Drama"),
-                                                                                              Filmography(image: UIImage(named: "DoctorSleep")!, name: "Doctor Sleep ", date: "2019", genre: "Foreign")
-                                                                                      ]),
-                                                                                Acter(image: UIImage(named: "Alex")!, firstName: "Alex", lastName: "Wolff",
-                                                                                      films: [Filmography(image: UIImage(named: "GreenBook")!, name: "GreenBook", date: "2013-2019", genre: "Crime"),
-                                                                                              Filmography(image: UIImage(named: "WindRiver")!, name: "Wind River", date: "2017", genre: "Action movie"),
-                                                                                              Filmography(image: UIImage(named: "21Bridges")!, name: "21 Bridges", date: "2019", genre: "Drama"),
-                                                                                              Filmography(image: UIImage(named: "TheGoodLiar")!, name: "The Good Liar", date: "2019", genre: "Drama"),
-                                                                                              Filmography(image: UIImage(named: "DoctorSleep")!, name: "Doctor Sleep ", date: "2019", genre: "Foreign")
-                                                                                      ]),
-                                                                                Acter(image: UIImage(named: "Ser'Dar")!, firstName: "Ser'Dar..", lastName: "Blain",
-                                                                                      films: [Filmography(image: UIImage(named: "GreenBook")!, name: "GreenBook", date: "2013-2019", genre: "Crime"),
-                                                                                              Filmography(image: UIImage(named: "WindRiver")!, name: "Wind River", date: "2017", genre: "Action movie"),
-                                                                                              Filmography(image: UIImage(named: "21Bridges")!, name: "21 Bridges", date: "2019", genre: "Drama"),
-                                                                                              Filmography(image: UIImage(named: "TheGoodLiar")!, name: "The Good Liar", date: "2019", genre: "Drama"),
-                                                                                              Filmography(image: UIImage(named: "DoctorSleep")!, name: "Doctor Sleep ", date: "2019", genre: "Foreign")
-                                                                                      ]),
-                                                                                Acter(image: UIImage(named: "Madison")!, firstName: "Madison", lastName: "Iseman",
-                                                                                      films: [Filmography(image: UIImage(named: "GreenBook")!, name: "GreenBook", date: "2013-2019", genre: "Crime"),
-                                                                                              Filmography(image: UIImage(named: "WindRiver")!, name: "Wind River", date: "2017", genre: "Action movie"),
-                                                                                              Filmography(image: UIImage(named: "21Bridges")!, name: "21 Bridges", date: "2019", genre: "Drama"),
-                                                                                              Filmography(image: UIImage(named: "TheGoodLiar")!, name: "The Good Liar", date: "2019", genre: "Drama"),
-                                                                                              Filmography(image: UIImage(named: "DoctorSleep")!, name: "Doctor Sleep ", date: "2019", genre: "Foreign")
-                                                                                      ])
-                                                                        ]),
-                                                                  Movie(image: UIImage(named: "Terminator")!, name: "Terminator:D...", date: "2019", genre: "Adventures", ratingIMDB: "8,3", ratingKP: "5,6",
-                                                                        acter: [Acter(image: UIImage(named: "Dwayne")!, firstName: "Dwayne", lastName: "Johnson",
-                                                                                      films: [Filmography(image: UIImage(named: "GreenBook")!, name: "GreenBook", date: "2013-2019", genre: "Crime"),
-                                                                                              Filmography(image: UIImage(named: "WindRiver")!, name: "Wind River", date: "2017", genre: "Action movie"),
-                                                                                              Filmography(image: UIImage(named: "21Bridges")!, name: "21 Bridges", date: "2019", genre: "Drama"),
-                                                                                              Filmography(image: UIImage(named: "TheGoodLiar")!, name: "The Good Liar", date: "2019", genre: "Drama"),
-                                                                                              Filmography(image: UIImage(named: "DoctorSleep")!, name: "Doctor Sleep ", date: "2019", genre: "Foreign")
-                                                                                      ]),
-                                                                                Acter(image: UIImage(named: "Kevin")!, firstName: "Kevin", lastName: "Hart",
-                                                                                      films: [Filmography(image: UIImage(named: "GreenBook")!, name: "GreenBook", date: "2013-2019", genre: "Crime"),
-                                                                                              Filmography(image: UIImage(named: "WindRiver")!, name: "Wind River", date: "2017", genre: "Action movie"),
-                                                                                              Filmography(image: UIImage(named: "21Bridges")!, name: "21 Bridges", date: "2019", genre: "Drama"),
-                                                                                              Filmography(image: UIImage(named: "TheGoodLiar")!, name: "The Good Liar", date: "2019", genre: "Drama"),
-                                                                                              Filmography(image: UIImage(named: "DoctorSleep")!, name: "Doctor Sleep ", date: "2019", genre: "Foreign")
-                                                                                      ]),
-                                                                                Acter(image: UIImage(named: "Jack")!, firstName: "Jack", lastName: "Black",
-                                                                                      films: [Filmography(image: UIImage(named: "GreenBook")!, name: "GreenBook", date: "2013-2019", genre: "Crime"),
-                                                                                              Filmography(image: UIImage(named: "WindRiver")!, name: "Wind River", date: "2017", genre: "Action movie"),
-                                                                                              Filmography(image: UIImage(named: "21Bridges")!, name: "21 Bridges", date: "2019", genre: "Drama"),
-                                                                                              Filmography(image: UIImage(named: "TheGoodLiar")!, name: "The Good Liar", date: "2019", genre: "Drama"),
-                                                                                              Filmography(image: UIImage(named: "DoctorSleep")!, name: "Doctor Sleep ", date: "2019", genre: "Foreign")
-                                                                                      ]),
-                                                                                Acter(image: UIImage(named: "Karen")!, firstName: "Karen", lastName: "Gillan",
-                                                                                      films: [Filmography(image: UIImage(named: "GreenBook")!, name: "GreenBook", date: "2013-2019", genre: "Crime"),
-                                                                                              Filmography(image: UIImage(named: "WindRiver")!, name: "Wind River", date: "2017", genre: "Action movie"),
-                                                                                              Filmography(image: UIImage(named: "21Bridges")!, name: "21 Bridges", date: "2019", genre: "Drama"),
-                                                                                              Filmography(image: UIImage(named: "TheGoodLiar")!, name: "The Good Liar", date: "2019", genre: "Drama"),
-                                                                                              Filmography(image: UIImage(named: "DoctorSleep")!, name: "Doctor Sleep ", date: "2019", genre: "Foreign")
-                                                                                      ]),
-                                                                                Acter(image: UIImage(named: "Rhys")!, firstName: "Rhys", lastName: "Darbv",
-                                                                                      films: [Filmography(image: UIImage(named: "GreenBook")!, name: "GreenBook", date: "2013-2019", genre: "Crime"),
-                                                                                              Filmography(image: UIImage(named: "WindRiver")!, name: "Wind River", date: "2017", genre: "Action movie"),
-                                                                                              Filmography(image: UIImage(named: "21Bridges")!, name: "21 Bridges", date: "2019", genre: "Drama"),
-                                                                                              Filmography(image: UIImage(named: "TheGoodLiar")!, name: "The Good Liar", date: "2019", genre: "Drama"),
-                                                                                              Filmography(image: UIImage(named: "DoctorSleep")!, name: "Doctor Sleep ", date: "2019", genre: "Foreign")
-                                                                                      ]),
-                                                                                Acter(image: UIImage(named: "Bobby")!, firstName: "Bobby", lastName: "Cannavale",
-                                                                                      films: [Filmography(image: UIImage(named: "GreenBook")!, name: "GreenBook", date: "2013-2019", genre: "Crime"),
-                                                                                              Filmography(image: UIImage(named: "WindRiver")!, name: "Wind River", date: "2017", genre: "Action movie"),
-                                                                                              Filmography(image: UIImage(named: "21Bridges")!, name: "21 Bridges", date: "2019", genre: "Drama"),
-                                                                                              Filmography(image: UIImage(named: "TheGoodLiar")!, name: "The Good Liar", date: "2019", genre: "Drama"),
-                                                                                              Filmography(image: UIImage(named: "DoctorSleep")!, name: "Doctor Sleep ", date: "2019", genre: "Foreign")
-                                                                                      ]),
-                                                                                Acter(image: UIImage(named: "Nick")!, firstName: "Nick", lastName: "Jonas",
-                                                                                      films: [Filmography(image: UIImage(named: "GreenBook")!, name: "GreenBook", date: "2013-2019", genre: "Crime"),
-                                                                                              Filmography(image: UIImage(named: "WindRiver")!, name: "Wind River", date: "2017", genre: "Action movie"),
-                                                                                              Filmography(image: UIImage(named: "21Bridges")!, name: "21 Bridges", date: "2019", genre: "Drama"),
-                                                                                              Filmography(image: UIImage(named: "TheGoodLiar")!, name: "The Good Liar", date: "2019", genre: "Drama"),
-                                                                                              Filmography(image: UIImage(named: "DoctorSleep")!, name: "Doctor Sleep ", date: "2019", genre: "Foreign")
-                                                                                      ]),
-                                                                                Acter(image: UIImage(named: "Alex")!, firstName: "Alex", lastName: "Wolff",
-                                                                                      films: [Filmography(image: UIImage(named: "GreenBook")!, name: "GreenBook", date: "2013-2019", genre: "Crime"),
-                                                                                              Filmography(image: UIImage(named: "WindRiver")!, name: "Wind River", date: "2017", genre: "Action movie"),
-                                                                                              Filmography(image: UIImage(named: "21Bridges")!, name: "21 Bridges", date: "2019", genre: "Drama"),
-                                                                                              Filmography(image: UIImage(named: "TheGoodLiar")!, name: "The Good Liar", date: "2019", genre: "Drama"),
-                                                                                              Filmography(image: UIImage(named: "DoctorSleep")!, name: "Doctor Sleep ", date: "2019", genre: "Foreign")
-                                                                                      ]),
-                                                                                Acter(image: UIImage(named: "Ser'Dar")!, firstName: "Ser'Dar..", lastName: "Blain",
-                                                                                      films: [Filmography(image: UIImage(named: "GreenBook")!, name: "GreenBook", date: "2013-2019", genre: "Crime"),
-                                                                                              Filmography(image: UIImage(named: "WindRiver")!, name: "Wind River", date: "2017", genre: "Action movie"),
-                                                                                              Filmography(image: UIImage(named: "21Bridges")!, name: "21 Bridges", date: "2019", genre: "Drama"),
-                                                                                              Filmography(image: UIImage(named: "TheGoodLiar")!, name: "The Good Liar", date: "2019", genre: "Drama"),
-                                                                                              Filmography(image: UIImage(named: "DoctorSleep")!, name: "Doctor Sleep ", date: "2019", genre: "Foreign")
-                                                                                      ]),
-                                                                                Acter(image: UIImage(named: "Madison")!, firstName: "Madison", lastName: "Iseman",
-                                                                                      films: [Filmography(image: UIImage(named: "GreenBook")!, name: "GreenBook", date: "2013-2019", genre: "Crime"),
-                                                                                              Filmography(image: UIImage(named: "WindRiver")!, name: "Wind River", date: "2017", genre: "Action movie"),
-                                                                                              Filmography(image: UIImage(named: "21Bridges")!, name: "21 Bridges", date: "2019", genre: "Drama"),
-                                                                                              Filmography(image: UIImage(named: "TheGoodLiar")!, name: "The Good Liar", date: "2019", genre: "Drama"),
-                                                                                              Filmography(image: UIImage(named: "DoctorSleep")!, name: "Doctor Sleep ", date: "2019", genre: "Foreign")
-                                                                                      ])
-                                                                        ]),
-                                                                  Movie(image: UIImage(named: "DoctorSleep")!, name: "Doctor Sleep", date: "2019", genre: "Foreign", ratingIMDB: "8,3", ratingKP: "5,6",
-                                                                        acter: [Acter(image: UIImage(named: "Dwayne")!, firstName: "Dwayne", lastName: "Johnson",
-                                                                                      films: [Filmography(image: UIImage(named: "GreenBook")!, name: "GreenBook", date: "2013-2019", genre: "Crime"),
-                                                                                              Filmography(image: UIImage(named: "WindRiver")!, name: "Wind River", date: "2017", genre: "Action movie"),
-                                                                                              Filmography(image: UIImage(named: "21Bridges")!, name: "21 Bridges", date: "2019", genre: "Drama"),
-                                                                                              Filmography(image: UIImage(named: "TheGoodLiar")!, name: "The Good Liar", date: "2019", genre: "Drama"),
-                                                                                              Filmography(image: UIImage(named: "DoctorSleep")!, name: "Doctor Sleep ", date: "2019", genre: "Foreign")
-                                                                                      ]),
-                                                                                Acter(image: UIImage(named: "Kevin")!, firstName: "Kevin", lastName: "Hart",
-                                                                                      films: [Filmography(image: UIImage(named: "GreenBook")!, name: "GreenBook", date: "2013-2019", genre: "Crime"),
-                                                                                              Filmography(image: UIImage(named: "WindRiver")!, name: "Wind River", date: "2017", genre: "Action movie"),
-                                                                                              Filmography(image: UIImage(named: "21Bridges")!, name: "21 Bridges", date: "2019", genre: "Drama"),
-                                                                                              Filmography(image: UIImage(named: "TheGoodLiar")!, name: "The Good Liar", date: "2019", genre: "Drama"),
-                                                                                              Filmography(image: UIImage(named: "DoctorSleep")!, name: "Doctor Sleep ", date: "2019", genre: "Foreign")
-                                                                                      ]),
-                                                                                Acter(image: UIImage(named: "Jack")!, firstName: "Jack", lastName: "Black",
-                                                                                      films: [Filmography(image: UIImage(named: "GreenBook")!, name: "GreenBook", date: "2013-2019", genre: "Crime"),
-                                                                                              Filmography(image: UIImage(named: "WindRiver")!, name: "Wind River", date: "2017", genre: "Action movie"),
-                                                                                              Filmography(image: UIImage(named: "21Bridges")!, name: "21 Bridges", date: "2019", genre: "Drama"),
-                                                                                              Filmography(image: UIImage(named: "TheGoodLiar")!, name: "The Good Liar", date: "2019", genre: "Drama"),
-                                                                                              Filmography(image: UIImage(named: "DoctorSleep")!, name: "Doctor Sleep ", date: "2019", genre: "Foreign")
-                                                                                      ]),
-                                                                                Acter(image: UIImage(named: "Karen")!, firstName: "Karen", lastName: "Gillan",
-                                                                                      films: [Filmography(image: UIImage(named: "GreenBook")!, name: "GreenBook", date: "2013-2019", genre: "Crime"),
-                                                                                              Filmography(image: UIImage(named: "WindRiver")!, name: "Wind River", date: "2017", genre: "Action movie"),
-                                                                                              Filmography(image: UIImage(named: "21Bridges")!, name: "21 Bridges", date: "2019", genre: "Drama"),
-                                                                                              Filmography(image: UIImage(named: "TheGoodLiar")!, name: "The Good Liar", date: "2019", genre: "Drama"),
-                                                                                              Filmography(image: UIImage(named: "DoctorSleep")!, name: "Doctor Sleep ", date: "2019", genre: "Foreign")
-                                                                                      ]),
-                                                                                Acter(image: UIImage(named: "Rhys")!, firstName: "Rhys", lastName: "Darbv",
-                                                                                      films: [Filmography(image: UIImage(named: "GreenBook")!, name: "GreenBook", date: "2013-2019", genre: "Crime"),
-                                                                                              Filmography(image: UIImage(named: "WindRiver")!, name: "Wind River", date: "2017", genre: "Action movie"),
-                                                                                              Filmography(image: UIImage(named: "21Bridges")!, name: "21 Bridges", date: "2019", genre: "Drama"),
-                                                                                              Filmography(image: UIImage(named: "TheGoodLiar")!, name: "The Good Liar", date: "2019", genre: "Drama"),
-                                                                                              Filmography(image: UIImage(named: "DoctorSleep")!, name: "Doctor Sleep ", date: "2019", genre: "Foreign")
-                                                                                      ]),
-                                                                                Acter(image: UIImage(named: "Bobby")!, firstName: "Bobby", lastName: "Cannavale",
-                                                                                      films: [Filmography(image: UIImage(named: "GreenBook")!, name: "GreenBook", date: "2013-2019", genre: "Crime"),
-                                                                                              Filmography(image: UIImage(named: "WindRiver")!, name: "Wind River", date: "2017", genre: "Action movie"),
-                                                                                              Filmography(image: UIImage(named: "21Bridges")!, name: "21 Bridges", date: "2019", genre: "Drama"),
-                                                                                              Filmography(image: UIImage(named: "TheGoodLiar")!, name: "The Good Liar", date: "2019", genre: "Drama"),
-                                                                                              Filmography(image: UIImage(named: "DoctorSleep")!, name: "Doctor Sleep ", date: "2019", genre: "Foreign")
-                                                                                      ]),
-                                                                                Acter(image: UIImage(named: "Nick")!, firstName: "Nick", lastName: "Jonas",
-                                                                                      films: [Filmography(image: UIImage(named: "GreenBook")!, name: "GreenBook", date: "2013-2019", genre: "Crime"),
-                                                                                              Filmography(image: UIImage(named: "WindRiver")!, name: "Wind River", date: "2017", genre: "Action movie"),
-                                                                                              Filmography(image: UIImage(named: "21Bridges")!, name: "21 Bridges", date: "2019", genre: "Drama"),
-                                                                                              Filmography(image: UIImage(named: "TheGoodLiar")!, name: "The Good Liar", date: "2019", genre: "Drama"),
-                                                                                              Filmography(image: UIImage(named: "DoctorSleep")!, name: "Doctor Sleep ", date: "2019", genre: "Foreign")
-                                                                                      ]),
-                                                                                Acter(image: UIImage(named: "Alex")!, firstName: "Alex", lastName: "Wolff",
-                                                                                      films: [Filmography(image: UIImage(named: "GreenBook")!, name: "GreenBook", date: "2013-2019", genre: "Crime"),
-                                                                                              Filmography(image: UIImage(named: "WindRiver")!, name: "Wind River", date: "2017", genre: "Action movie"),
-                                                                                              Filmography(image: UIImage(named: "21Bridges")!, name: "21 Bridges", date: "2019", genre: "Drama"),
-                                                                                              Filmography(image: UIImage(named: "TheGoodLiar")!, name: "The Good Liar", date: "2019", genre: "Drama"),
-                                                                                              Filmography(image: UIImage(named: "DoctorSleep")!, name: "Doctor Sleep ", date: "2019", genre: "Foreign")
-                                                                                      ]),
-                                                                                Acter(image: UIImage(named: "Ser'Dar")!, firstName: "Ser'Dar..", lastName: "Blain",
-                                                                                      films: [Filmography(image: UIImage(named: "GreenBook")!, name: "GreenBook", date: "2013-2019", genre: "Crime"),
-                                                                                              Filmography(image: UIImage(named: "WindRiver")!, name: "Wind River", date: "2017", genre: "Action movie"),
-                                                                                              Filmography(image: UIImage(named: "21Bridges")!, name: "21 Bridges", date: "2019", genre: "Drama"),
-                                                                                              Filmography(image: UIImage(named: "TheGoodLiar")!, name: "The Good Liar", date: "2019", genre: "Drama"),
-                                                                                              Filmography(image: UIImage(named: "DoctorSleep")!, name: "Doctor Sleep ", date: "2019", genre: "Foreign")
-                                                                                      ]),
-                                                                                Acter(image: UIImage(named: "Madison")!, firstName: "Madison", lastName: "Iseman",
-                                                                                      films: [Filmography(image: UIImage(named: "GreenBook")!, name: "GreenBook", date: "2013-2019", genre: "Crime"),
-                                                                                              Filmography(image: UIImage(named: "WindRiver")!, name: "Wind River", date: "2017", genre: "Action movie"),
-                                                                                              Filmography(image: UIImage(named: "21Bridges")!, name: "21 Bridges", date: "2019", genre: "Drama"),
-                                                                                              Filmography(image: UIImage(named: "TheGoodLiar")!, name: "The Good Liar", date: "2019", genre: "Drama"),
-                                                                                              Filmography(image: UIImage(named: "DoctorSleep")!, name: "Doctor Sleep ", date: "2019", genre: "Foreign")
-                                                                                      ])
-                                                                        ]),
-                                                                  Movie(image: UIImage(named: "DowntonAbbey")!, name: "Downton Abbey", date: "2019", genre: "Drama", ratingIMDB: "8,3", ratingKP: "5,6",
-                                                                        acter: [Acter(image: UIImage(named: "Dwayne")!, firstName: "Dwayne", lastName: "Johnson",
-                                                                                      films: [Filmography(image: UIImage(named: "GreenBook")!, name: "GreenBook", date: "2013-2019", genre: "Crime"),
-                                                                                              Filmography(image: UIImage(named: "WindRiver")!, name: "Wind River", date: "2017", genre: "Action movie"),
-                                                                                              Filmography(image: UIImage(named: "21Bridges")!, name: "21 Bridges", date: "2019", genre: "Drama"),
-                                                                                              Filmography(image: UIImage(named: "TheGoodLiar")!, name: "The Good Liar", date: "2019", genre: "Drama"),
-                                                                                              Filmography(image: UIImage(named: "DoctorSleep")!, name: "Doctor Sleep ", date: "2019", genre: "Foreign")
-                                                                                      ]),
-                                                                                Acter(image: UIImage(named: "Kevin")!, firstName: "Kevin", lastName: "Hart",
-                                                                                      films: [Filmography(image: UIImage(named: "GreenBook")!, name: "GreenBook", date: "2013-2019", genre: "Crime"),
-                                                                                              Filmography(image: UIImage(named: "WindRiver")!, name: "Wind River", date: "2017", genre: "Action movie"),
-                                                                                              Filmography(image: UIImage(named: "21Bridges")!, name: "21 Bridges", date: "2019", genre: "Drama"),
-                                                                                              Filmography(image: UIImage(named: "TheGoodLiar")!, name: "The Good Liar", date: "2019", genre: "Drama"),
-                                                                                              Filmography(image: UIImage(named: "DoctorSleep")!, name: "Doctor Sleep ", date: "2019", genre: "Foreign")
-                                                                                      ]),
-                                                                                Acter(image: UIImage(named: "Jack")!, firstName: "Jack", lastName: "Black",
-                                                                                      films: [Filmography(image: UIImage(named: "GreenBook")!, name: "GreenBook", date: "2013-2019", genre: "Crime"),
-                                                                                              Filmography(image: UIImage(named: "WindRiver")!, name: "Wind River", date: "2017", genre: "Action movie"),
-                                                                                              Filmography(image: UIImage(named: "21Bridges")!, name: "21 Bridges", date: "2019", genre: "Drama"),
-                                                                                              Filmography(image: UIImage(named: "TheGoodLiar")!, name: "The Good Liar", date: "2019", genre: "Drama"),
-                                                                                              Filmography(image: UIImage(named: "DoctorSleep")!, name: "Doctor Sleep ", date: "2019", genre: "Foreign")
-                                                                                      ]),
-                                                                                Acter(image: UIImage(named: "Karen")!, firstName: "Karen", lastName: "Gillan",
-                                                                                      films: [Filmography(image: UIImage(named: "GreenBook")!, name: "GreenBook", date: "2013-2019", genre: "Crime"),
-                                                                                              Filmography(image: UIImage(named: "WindRiver")!, name: "Wind River", date: "2017", genre: "Action movie"),
-                                                                                              Filmography(image: UIImage(named: "21Bridges")!, name: "21 Bridges", date: "2019", genre: "Drama"),
-                                                                                              Filmography(image: UIImage(named: "TheGoodLiar")!, name: "The Good Liar", date: "2019", genre: "Drama"),
-                                                                                              Filmography(image: UIImage(named: "DoctorSleep")!, name: "Doctor Sleep ", date: "2019", genre: "Foreign")
-                                                                                      ]),
-                                                                                Acter(image: UIImage(named: "Rhys")!, firstName: "Rhys", lastName: "Darbv",
-                                                                                      films: [Filmography(image: UIImage(named: "GreenBook")!, name: "GreenBook", date: "2013-2019", genre: "Crime"),
-                                                                                              Filmography(image: UIImage(named: "WindRiver")!, name: "Wind River", date: "2017", genre: "Action movie"),
-                                                                                              Filmography(image: UIImage(named: "21Bridges")!, name: "21 Bridges", date: "2019", genre: "Drama"),
-                                                                                              Filmography(image: UIImage(named: "TheGoodLiar")!, name: "The Good Liar", date: "2019", genre: "Drama"),
-                                                                                              Filmography(image: UIImage(named: "DoctorSleep")!, name: "Doctor Sleep ", date: "2019", genre: "Foreign")
-                                                                                      ]),
-                                                                                Acter(image: UIImage(named: "Bobby")!, firstName: "Bobby", lastName: "Cannavale",
-                                                                                      films: [Filmography(image: UIImage(named: "GreenBook")!, name: "GreenBook", date: "2013-2019", genre: "Crime"),
-                                                                                              Filmography(image: UIImage(named: "WindRiver")!, name: "Wind River", date: "2017", genre: "Action movie"),
-                                                                                              Filmography(image: UIImage(named: "21Bridges")!, name: "21 Bridges", date: "2019", genre: "Drama"),
-                                                                                              Filmography(image: UIImage(named: "TheGoodLiar")!, name: "The Good Liar", date: "2019", genre: "Drama"),
-                                                                                              Filmography(image: UIImage(named: "DoctorSleep")!, name: "Doctor Sleep ", date: "2019", genre: "Foreign")
-                                                                                      ]),
-                                                                                Acter(image: UIImage(named: "Nick")!, firstName: "Nick", lastName: "Jonas",
-                                                                                      films: [Filmography(image: UIImage(named: "GreenBook")!, name: "GreenBook", date: "2013-2019", genre: "Crime"),
-                                                                                              Filmography(image: UIImage(named: "WindRiver")!, name: "Wind River", date: "2017", genre: "Action movie"),
-                                                                                              Filmography(image: UIImage(named: "21Bridges")!, name: "21 Bridges", date: "2019", genre: "Drama"),
-                                                                                              Filmography(image: UIImage(named: "TheGoodLiar")!, name: "The Good Liar", date: "2019", genre: "Drama"),
-                                                                                              Filmography(image: UIImage(named: "DoctorSleep")!, name: "Doctor Sleep ", date: "2019", genre: "Foreign")
-                                                                                      ]),
-                                                                                Acter(image: UIImage(named: "Alex")!, firstName: "Alex", lastName: "Wolff",
-                                                                                      films: [Filmography(image: UIImage(named: "GreenBook")!, name: "GreenBook", date: "2013-2019", genre: "Crime"),
-                                                                                              Filmography(image: UIImage(named: "WindRiver")!, name: "Wind River", date: "2017", genre: "Action movie"),
-                                                                                              Filmography(image: UIImage(named: "21Bridges")!, name: "21 Bridges", date: "2019", genre: "Drama"),
-                                                                                              Filmography(image: UIImage(named: "TheGoodLiar")!, name: "The Good Liar", date: "2019", genre: "Drama"),
-                                                                                              Filmography(image: UIImage(named: "DoctorSleep")!, name: "Doctor Sleep ", date: "2019", genre: "Foreign")
-                                                                                      ]),
-                                                                                Acter(image: UIImage(named: "Ser'Dar")!, firstName: "Ser'Dar..", lastName: "Blain",
-                                                                                      films: [Filmography(image: UIImage(named: "GreenBook")!, name: "GreenBook", date: "2013-2019", genre: "Crime"),
-                                                                                              Filmography(image: UIImage(named: "WindRiver")!, name: "Wind River", date: "2017", genre: "Action movie"),
-                                                                                              Filmography(image: UIImage(named: "21Bridges")!, name: "21 Bridges", date: "2019", genre: "Drama"),
-                                                                                              Filmography(image: UIImage(named: "TheGoodLiar")!, name: "The Good Liar", date: "2019", genre: "Drama"),
-                                                                                              Filmography(image: UIImage(named: "DoctorSleep")!, name: "Doctor Sleep ", date: "2019", genre: "Foreign")
-                                                                                      ]),
-                                                                                Acter(image: UIImage(named: "Madison")!, firstName: "Madison", lastName: "Iseman",
-                                                                                      films: [Filmography(image: UIImage(named: "GreenBook")!, name: "GreenBook", date: "2013-2019", genre: "Crime"),
-                                                                                              Filmography(image: UIImage(named: "WindRiver")!, name: "Wind River", date: "2017", genre: "Action movie"),
-                                                                                              Filmography(image: UIImage(named: "21Bridges")!, name: "21 Bridges", date: "2019", genre: "Drama"),
-                                                                                              Filmography(image: UIImage(named: "TheGoodLiar")!, name: "The Good Liar", date: "2019", genre: "Drama"),
-                                                                                              Filmography(image: UIImage(named: "DoctorSleep")!, name: "Doctor Sleep ", date: "2019", genre: "Foreign")
-                                                                                      ])
-                                                                        ])
+    private let categoryMovies = [MainMovieSection(title: "New", movies: [Movie(image: UIImage(named: "21Bridges")!, name: "21 Bridges", date: "2019", genre: "Drama", ratingIMDB: "8,3", ratingKP: "5,6",
+                                                                                acter: [Acter(image: UIImage(named: "Dwayne")!, firstName: "Dwayne", lastName: "Johnson",
+                                                                                              films: [Filmography(image: UIImage(named: "GreenBook")!, name: "GreenBook", date: "2013-2019", genre: "Crime"),
+                                                                                                      Filmography(image: UIImage(named: "WindRiver")!, name: "Wind River", date: "2017", genre: "Action movie"),
+                                                                                                      Filmography(image: UIImage(named: "21Bridges")!, name: "21 Bridges", date: "2019", genre: "Drama"),
+                                                                                                      Filmography(image: UIImage(named: "TheGoodLiar")!, name: "The Good Liar", date: "2019", genre: "Drama"),
+                                                                                                      Filmography(image: UIImage(named: "DoctorSleep")!, name: "Doctor Sleep ", date: "2019", genre: "Foreign")
+                                                                                              ]),
+                                                                                        Acter(image: UIImage(named: "Kevin")!, firstName: "Kevin", lastName: "Hart",
+                                                                                              films: [Filmography(image: UIImage(named: "GreenBook")!, name: "GreenBook", date: "2013-2019", genre: "Crime"),
+                                                                                                      Filmography(image: UIImage(named: "WindRiver")!, name: "Wind River", date: "2017", genre: "Action movie"),
+                                                                                                      Filmography(image: UIImage(named: "21Bridges")!, name: "21 Bridges", date: "2019", genre: "Drama"),
+                                                                                                      Filmography(image: UIImage(named: "TheGoodLiar")!, name: "The Good Liar", date: "2019", genre: "Drama"),
+                                                                                                      Filmography(image: UIImage(named: "DoctorSleep")!, name: "Doctor Sleep ", date: "2019", genre: "Foreign")
+                                                                                              ]),
+                                                                                        Acter(image: UIImage(named: "Jack")!, firstName: "Jack", lastName: "Black",
+                                                                                              films: [Filmography(image: UIImage(named: "GreenBook")!, name: "GreenBook", date: "2013-2019", genre: "Crime"),
+                                                                                                      Filmography(image: UIImage(named: "WindRiver")!, name: "Wind River", date: "2017", genre: "Action movie"),
+                                                                                                      Filmography(image: UIImage(named: "21Bridges")!, name: "21 Bridges", date: "2019", genre: "Drama"),
+                                                                                                      Filmography(image: UIImage(named: "TheGoodLiar")!, name: "The Good Liar", date: "2019", genre: "Drama"),
+                                                                                                      Filmography(image: UIImage(named: "DoctorSleep")!, name: "Doctor Sleep ", date: "2019", genre: "Foreign")
+                                                                                              ]),
+                                                                                        Acter(image: UIImage(named: "Karen")!, firstName: "Karen", lastName: "Gillan",
+                                                                                              films: [Filmography(image: UIImage(named: "GreenBook")!, name: "GreenBook", date: "2013-2019", genre: "Crime"),
+                                                                                                      Filmography(image: UIImage(named: "WindRiver")!, name: "Wind River", date: "2017", genre: "Action movie"),
+                                                                                                      Filmography(image: UIImage(named: "21Bridges")!, name: "21 Bridges", date: "2019", genre: "Drama"),
+                                                                                                      Filmography(image: UIImage(named: "TheGoodLiar")!, name: "The Good Liar", date: "2019", genre: "Drama"),
+                                                                                                      Filmography(image: UIImage(named: "DoctorSleep")!, name: "Doctor Sleep ", date: "2019", genre: "Foreign")
+                                                                                              ]),
+                                                                                        Acter(image: UIImage(named: "Rhys")!, firstName: "Rhys", lastName: "Darbv",
+                                                                                              films: [Filmography(image: UIImage(named: "GreenBook")!, name: "GreenBook", date: "2013-2019", genre: "Crime"),
+                                                                                                      Filmography(image: UIImage(named: "WindRiver")!, name: "Wind River", date: "2017", genre: "Action movie"),
+                                                                                                      Filmography(image: UIImage(named: "21Bridges")!, name: "21 Bridges", date: "2019", genre: "Drama"),
+                                                                                                      Filmography(image: UIImage(named: "TheGoodLiar")!, name: "The Good Liar", date: "2019", genre: "Drama"),
+                                                                                                      Filmography(image: UIImage(named: "DoctorSleep")!, name: "Doctor Sleep ", date: "2019", genre: "Foreign")
+                                                                                              ]),
+                                                                                        Acter(image: UIImage(named: "Bobby")!, firstName: "Bobby", lastName: "Cannavale",
+                                                                                              films: [Filmography(image: UIImage(named: "GreenBook")!, name: "GreenBook", date: "2013-2019", genre: "Crime"),
+                                                                                                      Filmography(image: UIImage(named: "WindRiver")!, name: "Wind River", date: "2017", genre: "Action movie"),
+                                                                                                      Filmography(image: UIImage(named: "21Bridges")!, name: "21 Bridges", date: "2019", genre: "Drama"),
+                                                                                                      Filmography(image: UIImage(named: "TheGoodLiar")!, name: "The Good Liar", date: "2019", genre: "Drama"),
+                                                                                                      Filmography(image: UIImage(named: "DoctorSleep")!, name: "Doctor Sleep ", date: "2019", genre: "Foreign")
+                                                                                              ]),
+                                                                                        Acter(image: UIImage(named: "Nick")!, firstName: "Nick", lastName: "Jonas",
+                                                                                              films: [Filmography(image: UIImage(named: "GreenBook")!, name: "GreenBook", date: "2013-2019", genre: "Crime"),
+                                                                                                      Filmography(image: UIImage(named: "WindRiver")!, name: "Wind River", date: "2017", genre: "Action movie"),
+                                                                                                      Filmography(image: UIImage(named: "21Bridges")!, name: "21 Bridges", date: "2019", genre: "Drama"),
+                                                                                                      Filmography(image: UIImage(named: "TheGoodLiar")!, name: "The Good Liar", date: "2019", genre: "Drama"),
+                                                                                                      Filmography(image: UIImage(named: "DoctorSleep")!, name: "Doctor Sleep ", date: "2019", genre: "Foreign")
+                                                                                              ]),
+                                                                                        Acter(image: UIImage(named: "Alex")!, firstName: "Alex", lastName: "Wolff",
+                                                                                              films: [Filmography(image: UIImage(named: "GreenBook")!, name: "GreenBook", date: "2013-2019", genre: "Crime"),
+                                                                                                      Filmography(image: UIImage(named: "WindRiver")!, name: "Wind River", date: "2017", genre: "Action movie"),
+                                                                                                      Filmography(image: UIImage(named: "21Bridges")!, name: "21 Bridges", date: "2019", genre: "Drama"),
+                                                                                                      Filmography(image: UIImage(named: "TheGoodLiar")!, name: "The Good Liar", date: "2019", genre: "Drama"),
+                                                                                                      Filmography(image: UIImage(named: "DoctorSleep")!, name: "Doctor Sleep ", date: "2019", genre: "Foreign")
+                                                                                              ]),
+                                                                                        Acter(image: UIImage(named: "Ser'Dar")!, firstName: "Ser'Dar..", lastName: "Blain",
+                                                                                              films: [Filmography(image: UIImage(named: "GreenBook")!, name: "GreenBook", date: "2013-2019", genre: "Crime"),
+                                                                                                      Filmography(image: UIImage(named: "WindRiver")!, name: "Wind River", date: "2017", genre: "Action movie"),
+                                                                                                      Filmography(image: UIImage(named: "21Bridges")!, name: "21 Bridges", date: "2019", genre: "Drama"),
+                                                                                                      Filmography(image: UIImage(named: "TheGoodLiar")!, name: "The Good Liar", date: "2019", genre: "Drama"),
+                                                                                                      Filmography(image: UIImage(named: "DoctorSleep")!, name: "Doctor Sleep ", date: "2019", genre: "Foreign")
+                                                                                              ]),
+                                                                                        Acter(image: UIImage(named: "Madison")!, firstName: "Madison", lastName: "Iseman",
+                                                                                              films: [Filmography(image: UIImage(named: "GreenBook")!, name: "GreenBook", date: "2013-2019", genre: "Crime"),
+                                                                                                      Filmography(image: UIImage(named: "WindRiver")!, name: "Wind River", date: "2017", genre: "Action movie"),
+                                                                                                      Filmography(image: UIImage(named: "21Bridges")!, name: "21 Bridges", date: "2019", genre: "Drama"),
+                                                                                                      Filmography(image: UIImage(named: "TheGoodLiar")!, name: "The Good Liar", date: "2019", genre: "Drama"),
+                                                                                                      Filmography(image: UIImage(named: "DoctorSleep")!, name: "Doctor Sleep ", date: "2019", genre: "Foreign")
+                                                                                              ])
+                                                                                ]),
+                                                                          Movie(image: UIImage(named: "TheGoodLiar")!, name: "The Good Liar", date: "2019", genre: "Drama", ratingIMDB: "8,3", ratingKP: "5,6",
+                                                                                acter: [Acter(image: UIImage(named: "Dwayne")!, firstName: "Dwayne", lastName: "Johnson",
+                                                                                              films: [Filmography(image: UIImage(named: "GreenBook")!, name: "GreenBook", date: "2013-2019", genre: "Crime"),
+                                                                                                      Filmography(image: UIImage(named: "WindRiver")!, name: "Wind River", date: "2017", genre: "Action movie"),
+                                                                                                      Filmography(image: UIImage(named: "21Bridges")!, name: "21 Bridges", date: "2019", genre: "Drama"),
+                                                                                                      Filmography(image: UIImage(named: "TheGoodLiar")!, name: "The Good Liar", date: "2019", genre: "Drama"),
+                                                                                                      Filmography(image: UIImage(named: "DoctorSleep")!, name: "Doctor Sleep ", date: "2019", genre: "Foreign")
+                                                                                              ]),
+                                                                                        Acter(image: UIImage(named: "Kevin")!, firstName: "Kevin", lastName: "Hart",
+                                                                                              films: [Filmography(image: UIImage(named: "GreenBook")!, name: "GreenBook", date: "2013-2019", genre: "Crime"),
+                                                                                                      Filmography(image: UIImage(named: "WindRiver")!, name: "Wind River", date: "2017", genre: "Action movie"),
+                                                                                                      Filmography(image: UIImage(named: "21Bridges")!, name: "21 Bridges", date: "2019", genre: "Drama"),
+                                                                                                      Filmography(image: UIImage(named: "TheGoodLiar")!, name: "The Good Liar", date: "2019", genre: "Drama"),
+                                                                                                      Filmography(image: UIImage(named: "DoctorSleep")!, name: "Doctor Sleep ", date: "2019", genre: "Foreign")
+                                                                                              ]),
+                                                                                        Acter(image: UIImage(named: "Jack")!, firstName: "Jack", lastName: "Black",
+                                                                                              films: [Filmography(image: UIImage(named: "GreenBook")!, name: "GreenBook", date: "2013-2019", genre: "Crime"),
+                                                                                                      Filmography(image: UIImage(named: "WindRiver")!, name: "Wind River", date: "2017", genre: "Action movie"),
+                                                                                                      Filmography(image: UIImage(named: "21Bridges")!, name: "21 Bridges", date: "2019", genre: "Drama"),
+                                                                                                      Filmography(image: UIImage(named: "TheGoodLiar")!, name: "The Good Liar", date: "2019", genre: "Drama"),
+                                                                                                      Filmography(image: UIImage(named: "DoctorSleep")!, name: "Doctor Sleep ", date: "2019", genre: "Foreign")
+                                                                                              ]),
+                                                                                        Acter(image: UIImage(named: "Karen")!, firstName: "Karen", lastName: "Gillan",
+                                                                                              films: [Filmography(image: UIImage(named: "GreenBook")!, name: "GreenBook", date: "2013-2019", genre: "Crime"),
+                                                                                                      Filmography(image: UIImage(named: "WindRiver")!, name: "Wind River", date: "2017", genre: "Action movie"),
+                                                                                                      Filmography(image: UIImage(named: "21Bridges")!, name: "21 Bridges", date: "2019", genre: "Drama"),
+                                                                                                      Filmography(image: UIImage(named: "TheGoodLiar")!, name: "The Good Liar", date: "2019", genre: "Drama"),
+                                                                                                      Filmography(image: UIImage(named: "DoctorSleep")!, name: "Doctor Sleep ", date: "2019", genre: "Foreign")
+                                                                                              ]),
+                                                                                        Acter(image: UIImage(named: "Rhys")!, firstName: "Rhys", lastName: "Darbv",
+                                                                                              films: [Filmography(image: UIImage(named: "GreenBook")!, name: "GreenBook", date: "2013-2019", genre: "Crime"),
+                                                                                                      Filmography(image: UIImage(named: "WindRiver")!, name: "Wind River", date: "2017", genre: "Action movie"),
+                                                                                                      Filmography(image: UIImage(named: "21Bridges")!, name: "21 Bridges", date: "2019", genre: "Drama"),
+                                                                                                      Filmography(image: UIImage(named: "TheGoodLiar")!, name: "The Good Liar", date: "2019", genre: "Drama"),
+                                                                                                      Filmography(image: UIImage(named: "DoctorSleep")!, name: "Doctor Sleep ", date: "2019", genre: "Foreign")
+                                                                                              ]),
+                                                                                        Acter(image: UIImage(named: "Bobby")!, firstName: "Bobby", lastName: "Cannavale",
+                                                                                              films: [Filmography(image: UIImage(named: "GreenBook")!, name: "GreenBook", date: "2013-2019", genre: "Crime"),
+                                                                                                      Filmography(image: UIImage(named: "WindRiver")!, name: "Wind River", date: "2017", genre: "Action movie"),
+                                                                                                      Filmography(image: UIImage(named: "21Bridges")!, name: "21 Bridges", date: "2019", genre: "Drama"),
+                                                                                                      Filmography(image: UIImage(named: "TheGoodLiar")!, name: "The Good Liar", date: "2019", genre: "Drama"),
+                                                                                                      Filmography(image: UIImage(named: "DoctorSleep")!, name: "Doctor Sleep ", date: "2019", genre: "Foreign")
+                                                                                              ]),
+                                                                                        Acter(image: UIImage(named: "Nick")!, firstName: "Nick", lastName: "Jonas",
+                                                                                              films: [Filmography(image: UIImage(named: "GreenBook")!, name: "GreenBook", date: "2013-2019", genre: "Crime"),
+                                                                                                      Filmography(image: UIImage(named: "WindRiver")!, name: "Wind River", date: "2017", genre: "Action movie"),
+                                                                                                      Filmography(image: UIImage(named: "21Bridges")!, name: "21 Bridges", date: "2019", genre: "Drama"),
+                                                                                                      Filmography(image: UIImage(named: "TheGoodLiar")!, name: "The Good Liar", date: "2019", genre: "Drama"),
+                                                                                                      Filmography(image: UIImage(named: "DoctorSleep")!, name: "Doctor Sleep ", date: "2019", genre: "Foreign")
+                                                                                              ]),
+                                                                                        Acter(image: UIImage(named: "Alex")!, firstName: "Alex", lastName: "Wolff",
+                                                                                              films: [Filmography(image: UIImage(named: "GreenBook")!, name: "GreenBook", date: "2013-2019", genre: "Crime"),
+                                                                                                      Filmography(image: UIImage(named: "WindRiver")!, name: "Wind River", date: "2017", genre: "Action movie"),
+                                                                                                      Filmography(image: UIImage(named: "21Bridges")!, name: "21 Bridges", date: "2019", genre: "Drama"),
+                                                                                                      Filmography(image: UIImage(named: "TheGoodLiar")!, name: "The Good Liar", date: "2019", genre: "Drama"),
+                                                                                                      Filmography(image: UIImage(named: "DoctorSleep")!, name: "Doctor Sleep ", date: "2019", genre: "Foreign")
+                                                                                              ]),
+                                                                                        Acter(image: UIImage(named: "Ser'Dar")!, firstName: "Ser'Dar..", lastName: "Blain",
+                                                                                              films: [Filmography(image: UIImage(named: "GreenBook")!, name: "GreenBook", date: "2013-2019", genre: "Crime"),
+                                                                                                      Filmography(image: UIImage(named: "WindRiver")!, name: "Wind River", date: "2017", genre: "Action movie"),
+                                                                                                      Filmography(image: UIImage(named: "21Bridges")!, name: "21 Bridges", date: "2019", genre: "Drama"),
+                                                                                                      Filmography(image: UIImage(named: "TheGoodLiar")!, name: "The Good Liar", date: "2019", genre: "Drama"),
+                                                                                                      Filmography(image: UIImage(named: "DoctorSleep")!, name: "Doctor Sleep ", date: "2019", genre: "Foreign")
+                                                                                              ]),
+                                                                                        Acter(image: UIImage(named: "Madison")!, firstName: "Madison", lastName: "Iseman",
+                                                                                              films: [Filmography(image: UIImage(named: "GreenBook")!, name: "GreenBook", date: "2013-2019", genre: "Crime"),
+                                                                                                      Filmography(image: UIImage(named: "WindRiver")!, name: "Wind River", date: "2017", genre: "Action movie"),
+                                                                                                      Filmography(image: UIImage(named: "21Bridges")!, name: "21 Bridges", date: "2019", genre: "Drama"),
+                                                                                                      Filmography(image: UIImage(named: "TheGoodLiar")!, name: "The Good Liar", date: "2019", genre: "Drama"),
+                                                                                                      Filmography(image: UIImage(named: "DoctorSleep")!, name: "Doctor Sleep ", date: "2019", genre: "Foreign")
+                                                                                              ])
+                                                                                ]),
+                                                                          Movie(image: UIImage(named: "Terminator")!, name: "Terminator:D...", date: "2019", genre: "Adventures", ratingIMDB: "8,3", ratingKP: "5,6",
+                                                                                acter: [Acter(image: UIImage(named: "Dwayne")!, firstName: "Dwayne", lastName: "Johnson",
+                                                                                              films: [Filmography(image: UIImage(named: "GreenBook")!, name: "GreenBook", date: "2013-2019", genre: "Crime"),
+                                                                                                      Filmography(image: UIImage(named: "WindRiver")!, name: "Wind River", date: "2017", genre: "Action movie"),
+                                                                                                      Filmography(image: UIImage(named: "21Bridges")!, name: "21 Bridges", date: "2019", genre: "Drama"),
+                                                                                                      Filmography(image: UIImage(named: "TheGoodLiar")!, name: "The Good Liar", date: "2019", genre: "Drama"),
+                                                                                                      Filmography(image: UIImage(named: "DoctorSleep")!, name: "Doctor Sleep ", date: "2019", genre: "Foreign")
+                                                                                              ]),
+                                                                                        Acter(image: UIImage(named: "Kevin")!, firstName: "Kevin", lastName: "Hart",
+                                                                                              films: [Filmography(image: UIImage(named: "GreenBook")!, name: "GreenBook", date: "2013-2019", genre: "Crime"),
+                                                                                                      Filmography(image: UIImage(named: "WindRiver")!, name: "Wind River", date: "2017", genre: "Action movie"),
+                                                                                                      Filmography(image: UIImage(named: "21Bridges")!, name: "21 Bridges", date: "2019", genre: "Drama"),
+                                                                                                      Filmography(image: UIImage(named: "TheGoodLiar")!, name: "The Good Liar", date: "2019", genre: "Drama"),
+                                                                                                      Filmography(image: UIImage(named: "DoctorSleep")!, name: "Doctor Sleep ", date: "2019", genre: "Foreign")
+                                                                                              ]),
+                                                                                        Acter(image: UIImage(named: "Jack")!, firstName: "Jack", lastName: "Black",
+                                                                                              films: [Filmography(image: UIImage(named: "GreenBook")!, name: "GreenBook", date: "2013-2019", genre: "Crime"),
+                                                                                                      Filmography(image: UIImage(named: "WindRiver")!, name: "Wind River", date: "2017", genre: "Action movie"),
+                                                                                                      Filmography(image: UIImage(named: "21Bridges")!, name: "21 Bridges", date: "2019", genre: "Drama"),
+                                                                                                      Filmography(image: UIImage(named: "TheGoodLiar")!, name: "The Good Liar", date: "2019", genre: "Drama"),
+                                                                                                      Filmography(image: UIImage(named: "DoctorSleep")!, name: "Doctor Sleep ", date: "2019", genre: "Foreign")
+                                                                                              ]),
+                                                                                        Acter(image: UIImage(named: "Karen")!, firstName: "Karen", lastName: "Gillan",
+                                                                                              films: [Filmography(image: UIImage(named: "GreenBook")!, name: "GreenBook", date: "2013-2019", genre: "Crime"),
+                                                                                                      Filmography(image: UIImage(named: "WindRiver")!, name: "Wind River", date: "2017", genre: "Action movie"),
+                                                                                                      Filmography(image: UIImage(named: "21Bridges")!, name: "21 Bridges", date: "2019", genre: "Drama"),
+                                                                                                      Filmography(image: UIImage(named: "TheGoodLiar")!, name: "The Good Liar", date: "2019", genre: "Drama"),
+                                                                                                      Filmography(image: UIImage(named: "DoctorSleep")!, name: "Doctor Sleep ", date: "2019", genre: "Foreign")
+                                                                                              ]),
+                                                                                        Acter(image: UIImage(named: "Rhys")!, firstName: "Rhys", lastName: "Darbv",
+                                                                                              films: [Filmography(image: UIImage(named: "GreenBook")!, name: "GreenBook", date: "2013-2019", genre: "Crime"),
+                                                                                                      Filmography(image: UIImage(named: "WindRiver")!, name: "Wind River", date: "2017", genre: "Action movie"),
+                                                                                                      Filmography(image: UIImage(named: "21Bridges")!, name: "21 Bridges", date: "2019", genre: "Drama"),
+                                                                                                      Filmography(image: UIImage(named: "TheGoodLiar")!, name: "The Good Liar", date: "2019", genre: "Drama"),
+                                                                                                      Filmography(image: UIImage(named: "DoctorSleep")!, name: "Doctor Sleep ", date: "2019", genre: "Foreign")
+                                                                                              ]),
+                                                                                        Acter(image: UIImage(named: "Bobby")!, firstName: "Bobby", lastName: "Cannavale",
+                                                                                              films: [Filmography(image: UIImage(named: "GreenBook")!, name: "GreenBook", date: "2013-2019", genre: "Crime"),
+                                                                                                      Filmography(image: UIImage(named: "WindRiver")!, name: "Wind River", date: "2017", genre: "Action movie"),
+                                                                                                      Filmography(image: UIImage(named: "21Bridges")!, name: "21 Bridges", date: "2019", genre: "Drama"),
+                                                                                                      Filmography(image: UIImage(named: "TheGoodLiar")!, name: "The Good Liar", date: "2019", genre: "Drama"),
+                                                                                                      Filmography(image: UIImage(named: "DoctorSleep")!, name: "Doctor Sleep ", date: "2019", genre: "Foreign")
+                                                                                              ]),
+                                                                                        Acter(image: UIImage(named: "Nick")!, firstName: "Nick", lastName: "Jonas",
+                                                                                              films: [Filmography(image: UIImage(named: "GreenBook")!, name: "GreenBook", date: "2013-2019", genre: "Crime"),
+                                                                                                      Filmography(image: UIImage(named: "WindRiver")!, name: "Wind River", date: "2017", genre: "Action movie"),
+                                                                                                      Filmography(image: UIImage(named: "21Bridges")!, name: "21 Bridges", date: "2019", genre: "Drama"),
+                                                                                                      Filmography(image: UIImage(named: "TheGoodLiar")!, name: "The Good Liar", date: "2019", genre: "Drama"),
+                                                                                                      Filmography(image: UIImage(named: "DoctorSleep")!, name: "Doctor Sleep ", date: "2019", genre: "Foreign")
+                                                                                              ]),
+                                                                                        Acter(image: UIImage(named: "Alex")!, firstName: "Alex", lastName: "Wolff",
+                                                                                              films: [Filmography(image: UIImage(named: "GreenBook")!, name: "GreenBook", date: "2013-2019", genre: "Crime"),
+                                                                                                      Filmography(image: UIImage(named: "WindRiver")!, name: "Wind River", date: "2017", genre: "Action movie"),
+                                                                                                      Filmography(image: UIImage(named: "21Bridges")!, name: "21 Bridges", date: "2019", genre: "Drama"),
+                                                                                                      Filmography(image: UIImage(named: "TheGoodLiar")!, name: "The Good Liar", date: "2019", genre: "Drama"),
+                                                                                                      Filmography(image: UIImage(named: "DoctorSleep")!, name: "Doctor Sleep ", date: "2019", genre: "Foreign")
+                                                                                              ]),
+                                                                                        Acter(image: UIImage(named: "Ser'Dar")!, firstName: "Ser'Dar..", lastName: "Blain",
+                                                                                              films: [Filmography(image: UIImage(named: "GreenBook")!, name: "GreenBook", date: "2013-2019", genre: "Crime"),
+                                                                                                      Filmography(image: UIImage(named: "WindRiver")!, name: "Wind River", date: "2017", genre: "Action movie"),
+                                                                                                      Filmography(image: UIImage(named: "21Bridges")!, name: "21 Bridges", date: "2019", genre: "Drama"),
+                                                                                                      Filmography(image: UIImage(named: "TheGoodLiar")!, name: "The Good Liar", date: "2019", genre: "Drama"),
+                                                                                                      Filmography(image: UIImage(named: "DoctorSleep")!, name: "Doctor Sleep ", date: "2019", genre: "Foreign")
+                                                                                              ]),
+                                                                                        Acter(image: UIImage(named: "Madison")!, firstName: "Madison", lastName: "Iseman",
+                                                                                              films: [Filmography(image: UIImage(named: "GreenBook")!, name: "GreenBook", date: "2013-2019", genre: "Crime"),
+                                                                                                      Filmography(image: UIImage(named: "WindRiver")!, name: "Wind River", date: "2017", genre: "Action movie"),
+                                                                                                      Filmography(image: UIImage(named: "21Bridges")!, name: "21 Bridges", date: "2019", genre: "Drama"),
+                                                                                                      Filmography(image: UIImage(named: "TheGoodLiar")!, name: "The Good Liar", date: "2019", genre: "Drama"),
+                                                                                                      Filmography(image: UIImage(named: "DoctorSleep")!, name: "Doctor Sleep ", date: "2019", genre: "Foreign")
+                                                                                              ])
+                                                                                ]),
+                                                                          Movie(image: UIImage(named: "DoctorSleep")!, name: "Doctor Sleep", date: "2019", genre: "Foreign", ratingIMDB: "8,3", ratingKP: "5,6",
+                                                                                acter: [Acter(image: UIImage(named: "Dwayne")!, firstName: "Dwayne", lastName: "Johnson",
+                                                                                              films: [Filmography(image: UIImage(named: "GreenBook")!, name: "GreenBook", date: "2013-2019", genre: "Crime"),
+                                                                                                      Filmography(image: UIImage(named: "WindRiver")!, name: "Wind River", date: "2017", genre: "Action movie"),
+                                                                                                      Filmography(image: UIImage(named: "21Bridges")!, name: "21 Bridges", date: "2019", genre: "Drama"),
+                                                                                                      Filmography(image: UIImage(named: "TheGoodLiar")!, name: "The Good Liar", date: "2019", genre: "Drama"),
+                                                                                                      Filmography(image: UIImage(named: "DoctorSleep")!, name: "Doctor Sleep ", date: "2019", genre: "Foreign")
+                                                                                              ]),
+                                                                                        Acter(image: UIImage(named: "Kevin")!, firstName: "Kevin", lastName: "Hart",
+                                                                                              films: [Filmography(image: UIImage(named: "GreenBook")!, name: "GreenBook", date: "2013-2019", genre: "Crime"),
+                                                                                                      Filmography(image: UIImage(named: "WindRiver")!, name: "Wind River", date: "2017", genre: "Action movie"),
+                                                                                                      Filmography(image: UIImage(named: "21Bridges")!, name: "21 Bridges", date: "2019", genre: "Drama"),
+                                                                                                      Filmography(image: UIImage(named: "TheGoodLiar")!, name: "The Good Liar", date: "2019", genre: "Drama"),
+                                                                                                      Filmography(image: UIImage(named: "DoctorSleep")!, name: "Doctor Sleep ", date: "2019", genre: "Foreign")
+                                                                                              ]),
+                                                                                        Acter(image: UIImage(named: "Jack")!, firstName: "Jack", lastName: "Black",
+                                                                                              films: [Filmography(image: UIImage(named: "GreenBook")!, name: "GreenBook", date: "2013-2019", genre: "Crime"),
+                                                                                                      Filmography(image: UIImage(named: "WindRiver")!, name: "Wind River", date: "2017", genre: "Action movie"),
+                                                                                                      Filmography(image: UIImage(named: "21Bridges")!, name: "21 Bridges", date: "2019", genre: "Drama"),
+                                                                                                      Filmography(image: UIImage(named: "TheGoodLiar")!, name: "The Good Liar", date: "2019", genre: "Drama"),
+                                                                                                      Filmography(image: UIImage(named: "DoctorSleep")!, name: "Doctor Sleep ", date: "2019", genre: "Foreign")
+                                                                                              ]),
+                                                                                        Acter(image: UIImage(named: "Karen")!, firstName: "Karen", lastName: "Gillan",
+                                                                                              films: [Filmography(image: UIImage(named: "GreenBook")!, name: "GreenBook", date: "2013-2019", genre: "Crime"),
+                                                                                                      Filmography(image: UIImage(named: "WindRiver")!, name: "Wind River", date: "2017", genre: "Action movie"),
+                                                                                                      Filmography(image: UIImage(named: "21Bridges")!, name: "21 Bridges", date: "2019", genre: "Drama"),
+                                                                                                      Filmography(image: UIImage(named: "TheGoodLiar")!, name: "The Good Liar", date: "2019", genre: "Drama"),
+                                                                                                      Filmography(image: UIImage(named: "DoctorSleep")!, name: "Doctor Sleep ", date: "2019", genre: "Foreign")
+                                                                                              ]),
+                                                                                        Acter(image: UIImage(named: "Rhys")!, firstName: "Rhys", lastName: "Darbv",
+                                                                                              films: [Filmography(image: UIImage(named: "GreenBook")!, name: "GreenBook", date: "2013-2019", genre: "Crime"),
+                                                                                                      Filmography(image: UIImage(named: "WindRiver")!, name: "Wind River", date: "2017", genre: "Action movie"),
+                                                                                                      Filmography(image: UIImage(named: "21Bridges")!, name: "21 Bridges", date: "2019", genre: "Drama"),
+                                                                                                      Filmography(image: UIImage(named: "TheGoodLiar")!, name: "The Good Liar", date: "2019", genre: "Drama"),
+                                                                                                      Filmography(image: UIImage(named: "DoctorSleep")!, name: "Doctor Sleep ", date: "2019", genre: "Foreign")
+                                                                                              ]),
+                                                                                        Acter(image: UIImage(named: "Bobby")!, firstName: "Bobby", lastName: "Cannavale",
+                                                                                              films: [Filmography(image: UIImage(named: "GreenBook")!, name: "GreenBook", date: "2013-2019", genre: "Crime"),
+                                                                                                      Filmography(image: UIImage(named: "WindRiver")!, name: "Wind River", date: "2017", genre: "Action movie"),
+                                                                                                      Filmography(image: UIImage(named: "21Bridges")!, name: "21 Bridges", date: "2019", genre: "Drama"),
+                                                                                                      Filmography(image: UIImage(named: "TheGoodLiar")!, name: "The Good Liar", date: "2019", genre: "Drama"),
+                                                                                                      Filmography(image: UIImage(named: "DoctorSleep")!, name: "Doctor Sleep ", date: "2019", genre: "Foreign")
+                                                                                              ]),
+                                                                                        Acter(image: UIImage(named: "Nick")!, firstName: "Nick", lastName: "Jonas",
+                                                                                              films: [Filmography(image: UIImage(named: "GreenBook")!, name: "GreenBook", date: "2013-2019", genre: "Crime"),
+                                                                                                      Filmography(image: UIImage(named: "WindRiver")!, name: "Wind River", date: "2017", genre: "Action movie"),
+                                                                                                      Filmography(image: UIImage(named: "21Bridges")!, name: "21 Bridges", date: "2019", genre: "Drama"),
+                                                                                                      Filmography(image: UIImage(named: "TheGoodLiar")!, name: "The Good Liar", date: "2019", genre: "Drama"),
+                                                                                                      Filmography(image: UIImage(named: "DoctorSleep")!, name: "Doctor Sleep ", date: "2019", genre: "Foreign")
+                                                                                              ]),
+                                                                                        Acter(image: UIImage(named: "Alex")!, firstName: "Alex", lastName: "Wolff",
+                                                                                              films: [Filmography(image: UIImage(named: "GreenBook")!, name: "GreenBook", date: "2013-2019", genre: "Crime"),
+                                                                                                      Filmography(image: UIImage(named: "WindRiver")!, name: "Wind River", date: "2017", genre: "Action movie"),
+                                                                                                      Filmography(image: UIImage(named: "21Bridges")!, name: "21 Bridges", date: "2019", genre: "Drama"),
+                                                                                                      Filmography(image: UIImage(named: "TheGoodLiar")!, name: "The Good Liar", date: "2019", genre: "Drama"),
+                                                                                                      Filmography(image: UIImage(named: "DoctorSleep")!, name: "Doctor Sleep ", date: "2019", genre: "Foreign")
+                                                                                              ]),
+                                                                                        Acter(image: UIImage(named: "Ser'Dar")!, firstName: "Ser'Dar..", lastName: "Blain",
+                                                                                              films: [Filmography(image: UIImage(named: "GreenBook")!, name: "GreenBook", date: "2013-2019", genre: "Crime"),
+                                                                                                      Filmography(image: UIImage(named: "WindRiver")!, name: "Wind River", date: "2017", genre: "Action movie"),
+                                                                                                      Filmography(image: UIImage(named: "21Bridges")!, name: "21 Bridges", date: "2019", genre: "Drama"),
+                                                                                                      Filmography(image: UIImage(named: "TheGoodLiar")!, name: "The Good Liar", date: "2019", genre: "Drama"),
+                                                                                                      Filmography(image: UIImage(named: "DoctorSleep")!, name: "Doctor Sleep ", date: "2019", genre: "Foreign")
+                                                                                              ]),
+                                                                                        Acter(image: UIImage(named: "Madison")!, firstName: "Madison", lastName: "Iseman",
+                                                                                              films: [Filmography(image: UIImage(named: "GreenBook")!, name: "GreenBook", date: "2013-2019", genre: "Crime"),
+                                                                                                      Filmography(image: UIImage(named: "WindRiver")!, name: "Wind River", date: "2017", genre: "Action movie"),
+                                                                                                      Filmography(image: UIImage(named: "21Bridges")!, name: "21 Bridges", date: "2019", genre: "Drama"),
+                                                                                                      Filmography(image: UIImage(named: "TheGoodLiar")!, name: "The Good Liar", date: "2019", genre: "Drama"),
+                                                                                                      Filmography(image: UIImage(named: "DoctorSleep")!, name: "Doctor Sleep ", date: "2019", genre: "Foreign")
+                                                                                              ])
+                                                                                ]),
+                                                                          Movie(image: UIImage(named: "DowntonAbbey")!, name: "Downton Abbey", date: "2019", genre: "Drama", ratingIMDB: "8,3", ratingKP: "5,6",
+                                                                                acter: [Acter(image: UIImage(named: "Dwayne")!, firstName: "Dwayne", lastName: "Johnson",
+                                                                                              films: [Filmography(image: UIImage(named: "GreenBook")!, name: "GreenBook", date: "2013-2019", genre: "Crime"),
+                                                                                                      Filmography(image: UIImage(named: "WindRiver")!, name: "Wind River", date: "2017", genre: "Action movie"),
+                                                                                                      Filmography(image: UIImage(named: "21Bridges")!, name: "21 Bridges", date: "2019", genre: "Drama"),
+                                                                                                      Filmography(image: UIImage(named: "TheGoodLiar")!, name: "The Good Liar", date: "2019", genre: "Drama"),
+                                                                                                      Filmography(image: UIImage(named: "DoctorSleep")!, name: "Doctor Sleep ", date: "2019", genre: "Foreign")
+                                                                                              ]),
+                                                                                        Acter(image: UIImage(named: "Kevin")!, firstName: "Kevin", lastName: "Hart",
+                                                                                              films: [Filmography(image: UIImage(named: "GreenBook")!, name: "GreenBook", date: "2013-2019", genre: "Crime"),
+                                                                                                      Filmography(image: UIImage(named: "WindRiver")!, name: "Wind River", date: "2017", genre: "Action movie"),
+                                                                                                      Filmography(image: UIImage(named: "21Bridges")!, name: "21 Bridges", date: "2019", genre: "Drama"),
+                                                                                                      Filmography(image: UIImage(named: "TheGoodLiar")!, name: "The Good Liar", date: "2019", genre: "Drama"),
+                                                                                                      Filmography(image: UIImage(named: "DoctorSleep")!, name: "Doctor Sleep ", date: "2019", genre: "Foreign")
+                                                                                              ]),
+                                                                                        Acter(image: UIImage(named: "Jack")!, firstName: "Jack", lastName: "Black",
+                                                                                              films: [Filmography(image: UIImage(named: "GreenBook")!, name: "GreenBook", date: "2013-2019", genre: "Crime"),
+                                                                                                      Filmography(image: UIImage(named: "WindRiver")!, name: "Wind River", date: "2017", genre: "Action movie"),
+                                                                                                      Filmography(image: UIImage(named: "21Bridges")!, name: "21 Bridges", date: "2019", genre: "Drama"),
+                                                                                                      Filmography(image: UIImage(named: "TheGoodLiar")!, name: "The Good Liar", date: "2019", genre: "Drama"),
+                                                                                                      Filmography(image: UIImage(named: "DoctorSleep")!, name: "Doctor Sleep ", date: "2019", genre: "Foreign")
+                                                                                              ]),
+                                                                                        Acter(image: UIImage(named: "Karen")!, firstName: "Karen", lastName: "Gillan",
+                                                                                              films: [Filmography(image: UIImage(named: "GreenBook")!, name: "GreenBook", date: "2013-2019", genre: "Crime"),
+                                                                                                      Filmography(image: UIImage(named: "WindRiver")!, name: "Wind River", date: "2017", genre: "Action movie"),
+                                                                                                      Filmography(image: UIImage(named: "21Bridges")!, name: "21 Bridges", date: "2019", genre: "Drama"),
+                                                                                                      Filmography(image: UIImage(named: "TheGoodLiar")!, name: "The Good Liar", date: "2019", genre: "Drama"),
+                                                                                                      Filmography(image: UIImage(named: "DoctorSleep")!, name: "Doctor Sleep ", date: "2019", genre: "Foreign")
+                                                                                              ]),
+                                                                                        Acter(image: UIImage(named: "Rhys")!, firstName: "Rhys", lastName: "Darbv",
+                                                                                              films: [Filmography(image: UIImage(named: "GreenBook")!, name: "GreenBook", date: "2013-2019", genre: "Crime"),
+                                                                                                      Filmography(image: UIImage(named: "WindRiver")!, name: "Wind River", date: "2017", genre: "Action movie"),
+                                                                                                      Filmography(image: UIImage(named: "21Bridges")!, name: "21 Bridges", date: "2019", genre: "Drama"),
+                                                                                                      Filmography(image: UIImage(named: "TheGoodLiar")!, name: "The Good Liar", date: "2019", genre: "Drama"),
+                                                                                                      Filmography(image: UIImage(named: "DoctorSleep")!, name: "Doctor Sleep ", date: "2019", genre: "Foreign")
+                                                                                              ]),
+                                                                                        Acter(image: UIImage(named: "Bobby")!, firstName: "Bobby", lastName: "Cannavale",
+                                                                                              films: [Filmography(image: UIImage(named: "GreenBook")!, name: "GreenBook", date: "2013-2019", genre: "Crime"),
+                                                                                                      Filmography(image: UIImage(named: "WindRiver")!, name: "Wind River", date: "2017", genre: "Action movie"),
+                                                                                                      Filmography(image: UIImage(named: "21Bridges")!, name: "21 Bridges", date: "2019", genre: "Drama"),
+                                                                                                      Filmography(image: UIImage(named: "TheGoodLiar")!, name: "The Good Liar", date: "2019", genre: "Drama"),
+                                                                                                      Filmography(image: UIImage(named: "DoctorSleep")!, name: "Doctor Sleep ", date: "2019", genre: "Foreign")
+                                                                                              ]),
+                                                                                        Acter(image: UIImage(named: "Nick")!, firstName: "Nick", lastName: "Jonas",
+                                                                                              films: [Filmography(image: UIImage(named: "GreenBook")!, name: "GreenBook", date: "2013-2019", genre: "Crime"),
+                                                                                                      Filmography(image: UIImage(named: "WindRiver")!, name: "Wind River", date: "2017", genre: "Action movie"),
+                                                                                                      Filmography(image: UIImage(named: "21Bridges")!, name: "21 Bridges", date: "2019", genre: "Drama"),
+                                                                                                      Filmography(image: UIImage(named: "TheGoodLiar")!, name: "The Good Liar", date: "2019", genre: "Drama"),
+                                                                                                      Filmography(image: UIImage(named: "DoctorSleep")!, name: "Doctor Sleep ", date: "2019", genre: "Foreign")
+                                                                                              ]),
+                                                                                        Acter(image: UIImage(named: "Alex")!, firstName: "Alex", lastName: "Wolff",
+                                                                                              films: [Filmography(image: UIImage(named: "GreenBook")!, name: "GreenBook", date: "2013-2019", genre: "Crime"),
+                                                                                                      Filmography(image: UIImage(named: "WindRiver")!, name: "Wind River", date: "2017", genre: "Action movie"),
+                                                                                                      Filmography(image: UIImage(named: "21Bridges")!, name: "21 Bridges", date: "2019", genre: "Drama"),
+                                                                                                      Filmography(image: UIImage(named: "TheGoodLiar")!, name: "The Good Liar", date: "2019", genre: "Drama"),
+                                                                                                      Filmography(image: UIImage(named: "DoctorSleep")!, name: "Doctor Sleep ", date: "2019", genre: "Foreign")
+                                                                                              ]),
+                                                                                        Acter(image: UIImage(named: "Ser'Dar")!, firstName: "Ser'Dar..", lastName: "Blain",
+                                                                                              films: [Filmography(image: UIImage(named: "GreenBook")!, name: "GreenBook", date: "2013-2019", genre: "Crime"),
+                                                                                                      Filmography(image: UIImage(named: "WindRiver")!, name: "Wind River", date: "2017", genre: "Action movie"),
+                                                                                                      Filmography(image: UIImage(named: "21Bridges")!, name: "21 Bridges", date: "2019", genre: "Drama"),
+                                                                                                      Filmography(image: UIImage(named: "TheGoodLiar")!, name: "The Good Liar", date: "2019", genre: "Drama"),
+                                                                                                      Filmography(image: UIImage(named: "DoctorSleep")!, name: "Doctor Sleep ", date: "2019", genre: "Foreign")
+                                                                                              ]),
+                                                                                        Acter(image: UIImage(named: "Madison")!, firstName: "Madison", lastName: "Iseman",
+                                                                                              films: [Filmography(image: UIImage(named: "GreenBook")!, name: "GreenBook", date: "2013-2019", genre: "Crime"),
+                                                                                                      Filmography(image: UIImage(named: "WindRiver")!, name: "Wind River", date: "2017", genre: "Action movie"),
+                                                                                                      Filmography(image: UIImage(named: "21Bridges")!, name: "21 Bridges", date: "2019", genre: "Drama"),
+                                                                                                      Filmography(image: UIImage(named: "TheGoodLiar")!, name: "The Good Liar", date: "2019", genre: "Drama"),
+                                                                                                      Filmography(image: UIImage(named: "DoctorSleep")!, name: "Doctor Sleep ", date: "2019", genre: "Foreign")
+                                                                                              ])
+                                                                                ])
     ]),
     MainMovieSection(title: "Movies", movies: [Movie(image: UIImage(named: "GreenBook")!, name: "Green Book", date: "2018", genre: "Comedy", ratingIMDB: "8,3", ratingKP: "5,6",
                                                      acter: [Acter(image: UIImage(named: "Dwayne")!, firstName: "Dwayne", lastName: "Johnson",
@@ -1471,8 +1470,6 @@ final class MainViewController: BaseViewController {
         setupUI()
     }
     
-    // MARK: Actions
-    
     private func setupUI() {
         navigationItem.title = Constans.navigationTitle
         navigationController?.navigationBar.prefersLargeTitles = true
@@ -1481,47 +1478,43 @@ final class MainViewController: BaseViewController {
                                                                 brightness: Constans.brightness,
                                                                 alpha: Constans.alpha)
         navigationItem.backButtonTitle = ""
-        mainTableView.register(
-            UINib(nibName: MainTableViewCell.reuseIdentifier,
+        categoryTableView.register(
+            UINib(nibName: CategoryTableViewCell.reuseIdentifier,
                   bundle: nil),
-            forCellReuseIdentifier: MainTableViewCell.reuseIdentifier)
-        mainTableView.rowHeight = Constans.rowHeight
+            forCellReuseIdentifier: CategoryTableViewCell.reuseIdentifier)
+        categoryTableView.tableFooterView = UIView()
+    }
+}
+
+// MARK: - UITableViewDelegate
+extension CategoryViewController: UITableViewDelegate {
+    func tableView(
+        _ tableView: UITableView,
+        didSelectRowAt indexPath: IndexPath) {
+        let detailCategoryViewController = DetailCategoryViewController()
+        detailCategoryViewController.movies = categoryMovies[indexPath.row].movies
+        navigationController?.pushViewController(detailCategoryViewController,animated: true)
     }
 }
 
 // MARK: - UITableViewDataSource
-extension MainViewController: UITableViewDataSource {
+extension CategoryViewController: UITableViewDataSource {
     func tableView(
         _ tableView: UITableView,
         numberOfRowsInSection section: Int) -> Int {
-        return movies.count
+        categoryMovies.count
     }
     
     func tableView(
         _ tableView: UITableView,
         cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(
-                withIdentifier: MainTableViewCell.reuseIdentifier,
-                for: indexPath) as? MainTableViewCell else {
+                withIdentifier: CategoryTableViewCell.reuseIdentifier,
+                for: indexPath) as? CategoryTableViewCell else {
             return UITableViewCell()
         }
-        cell.delegate = self
-        cell.configure(model: movies[indexPath.row])
+        cell.configure(model: categoryMovies[indexPath.row])
+        
         return cell
-    }
-}
-
-// MARK: - MainTableViewCellDelagete
-extension MainViewController: MainTableViewCellDelegate {
-    func detailWasTappedCollection(at index: Movie) {
-        let detailMoviesViewController = DetailMoviesViewController()
-        detailMoviesViewController.movies = [index]
-        self.navigationController?.pushViewController(detailMoviesViewController, animated: true)
-    }
-    
-    func detailWasTapped(at section: [Movie]) {
-        let detailMainViewController = DetailMainViewController()
-        detailMainViewController.movies = section
-        self.navigationController?.pushViewController(detailMainViewController, animated: true)
     }
 }

@@ -11,6 +11,7 @@ final class CastTableViewCell: UITableViewCell {
     
     private enum Constans {
         static let contentInsert: CGFloat = 16
+        static let collectionViewSize = CGSize(width: 72, height: 124)
     }
     
     // MARK: IBOutlets
@@ -27,7 +28,7 @@ final class CastTableViewCell: UITableViewCell {
         super.awakeFromNib()
         setupUI()
     }
-
+    
     // MARK: Actions
     
     @IBAction func castAllButtonPressed(_ sender: UIButton) {
@@ -35,9 +36,10 @@ final class CastTableViewCell: UITableViewCell {
     }
     
     private func setupUI() {
-        castCollectionView.register(UINib(nibName: CastCollectionViewCell.reuseIdentifier,
-                                          bundle: nil),
-                                    forCellWithReuseIdentifier: CastCollectionViewCell.reuseIdentifier)
+        castCollectionView.register(
+            UINib(nibName: CastCollectionViewCell.reuseIdentifier,
+                  bundle: nil),
+            forCellWithReuseIdentifier: CastCollectionViewCell.reuseIdentifier)
         castCollectionView.delegate = self
         castCollectionView.dataSource = self
         castCollectionView.contentInset.left = Constans.contentInsert
@@ -51,20 +53,27 @@ final class CastTableViewCell: UITableViewCell {
 
 // MARK: - UICollectionViewDelegate
 extension CastTableViewCell: UICollectionViewDelegate {
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    func collectionView(
+        _ collectionView: UICollectionView,
+        didSelectItemAt indexPath: IndexPath) {
         delegate?.detailWasTappedCollection(at: acters[indexPath.row])
     }
 }
 
 // MARK: - UICollectionViewDataSource
 extension CastTableViewCell: UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(
+        _ collectionView: UICollectionView,
+        numberOfItemsInSection section: Int) -> Int {
         acters.count
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CastCollectionViewCell.reuseIdentifier,
-                                                            for: indexPath) as? CastCollectionViewCell else {
+    func collectionView(
+        _ collectionView: UICollectionView,
+        cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(
+                withReuseIdentifier: CastCollectionViewCell.reuseIdentifier,
+                for: indexPath) as? CastCollectionViewCell else {
             return UICollectionViewCell()
         }
         cell.configure(model: acters[indexPath.row])
@@ -74,9 +83,10 @@ extension CastTableViewCell: UICollectionViewDataSource {
 
 // MARK: - UICollectionViewDelegateFlowLayout
 extension CastTableViewCell: UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView,
-                        layout collectionViewLayout: UICollectionViewLayout,
-                        sizeForItemAt indexPath: IndexPath) -> CGSize {
-        CGSize(width: 72 , height: 124)
+    func collectionView(
+        _ collectionView: UICollectionView,
+        layout collectionViewLayout: UICollectionViewLayout,
+        sizeForItemAt indexPath: IndexPath) -> CGSize {
+        Constans.collectionViewSize
     }
 }

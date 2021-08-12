@@ -76,6 +76,10 @@
                                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9mL-1o-fRp">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="276"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <connections>
+                                        <outlet property="dataSource" destination="-1" id="9WP-0j-zmm"/>
+                                        <outlet property="delegate" destination="-1" id="Jv1-qW-Aqw"/>
+                                    </connections>
                                 </tableView>
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -99,7 +103,7 @@
                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="B5E-Ie-a9c">
                                     <rect key="frame" x="0.0" y="37" width="343" height="1283"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                    <mutableString key="text">A person with the pseudonym Skala is known to literally all lovers of wrestling. Dwayne Johnson (Skala) was born in 1972 in a family of, so to speak, hereditary wrestlers. Dwayne's father and grandfather were fighters. In high school, he showed sports talents - he played American football. Many universities gave him a scholarship to play for his team. As a result, Dwayne chooses the University of Miami, but is injured and forced to say goodbye to professional sports. In 1995 he graduated from the university with a bachelor's degree in criminology and psychology.
+                                    <string key="text">A person with the pseudonym Skala is known to literally all lovers of wrestling. Dwayne Johnson (Skala) was born in 1972 in a family of, so to speak, hereditary wrestlers. Dwayne's father and grandfather were fighters. In high school, he showed sports talents - he played American football. Many universities gave him a scholarship to play for his team. As a result, Dwayne chooses the University of Miami, but is injured and forced to say goodbye to professional sports. In 1995 he graduated from the university with a bachelor's degree in criminology and psychology.
 
 He made his debut in the fight in 1996. He performed under the pseudonym Rocky Maivia (composed of the names of his father and grandfather). A career in the ring went up until the audience was tired of his uniform, good character. In 1997, he uses the name Rock of Rocky Mayvia, which is then simply shortened to Rock. Becomes a successful and popular wrestler, confidently defending his league title until 2004. After that, occasionally appears in the ring, giving all his time to a cinematic career.
 
@@ -109,7 +113,7 @@ Dwayne Johnson proved himself to be a versatile actor and acts in various genres
 
 The best films featuring Dwayne Johnson: Witch Mountain, Fast and Furious 6, Treasures of the Amazon, Fast and the Furious 5, Game Plan, Tooth Fairy, Walking Wide and others. The actor also wrote an autobiographical book (says Skala), which took a leading position on the 2001 bestseller list.
 
-Dwayne Johnson has brown eyes, naturally dark hair color, dark skin and middle lips. The face shape is oval, the forehead is high, the hair is straight, soft. Dwayne Johnson does not change hair color, preferring natural. The actor has a large wide nose and an oval chin. Duan Johnson sometimes lets go of his mustache and beard. The growth of the actor is 194 cm, there are tattoos.</mutableString>
+Dwayne Johnson has brown eyes, naturally dark hair color, dark skin and middle lips. The face shape is oval, the forehead is high, the hair is straight, soft. Dwayne Johnson does not change hair color, preferring natural. The actor has a large wide nose and an oval chin. Duan Johnson sometimes lets go of his mustache and beard. The growth of the actor is 194 cm, there are tattoos.</string>
                                     <color key="textColor" systemColor="labelColor"/>
                                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>

@@ -15,30 +15,31 @@ final class CastDetailTableViewCell: UITableViewCell {
     // MARK: Properties
     
     static let reuseIdentifier = "CastDetailTableViewCell"
-    var movies = [Movie]()
+    var acters = [Filmography]()
     
     override func awakeFromNib() {
         super.awakeFromNib()
         setupCollectionViewCell()
     }
- 
+    
     // MARK: Actions
     
     @IBAction func castAllButtonPressed(_ sender: UIButton) {
     }
     
     private func setupCollectionViewCell() {
-        castDetailCollectionView.register(UINib(nibName: CastDetailCollectionViewCell.reuseIdentifier,
-                                          bundle: nil),
-                                    forCellWithReuseIdentifier: CastDetailCollectionViewCell.reuseIdentifier)
+        castDetailCollectionView.register(
+            UINib(nibName: CastDetailCollectionViewCell.reuseIdentifier,
+                  bundle: nil),
+            forCellWithReuseIdentifier: CastDetailCollectionViewCell.reuseIdentifier)
         castDetailCollectionView.delegate = self
         castDetailCollectionView.dataSource = self
         castDetailCollectionView.contentInset.left = Constans.contentInsert
         castDetailCollectionView.contentInset.right = Constans.contentInsert
     }
     
-    func configure(model: Movie) {
-        movies = [model]
+    func configure(model: Acter) {
+        acters = model.films
     }
 }
 
@@ -49,17 +50,23 @@ extension CastDetailTableViewCell: UICollectionViewDelegate {
 
 // MARK: - UICollectionViewDataSource
 extension CastDetailTableViewCell: UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        movies.count
+    func collectionView(
+        _ collectionView: UICollectionView,
+        numberOfItemsInSection section: Int) -> Int {
+        acters.count
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    func collectionView(
+        _ collectionView: UICollectionView,
+        cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(
-                                                            withReuseIdentifier: CastDetailCollectionViewCell.reuseIdentifier,
-                                                            for: indexPath) as? CastDetailCollectionViewCell else {
+                withReuseIdentifier: CastDetailCollectionViewCell.reuseIdentifier,
+                for: indexPath) as? CastDetailCollectionViewCell else {
             return UICollectionViewCell()
         }
-        cell.configure(model: movies[indexPath.item])
+        
+        cell.configure(model: acters[indexPath.item])
+        
         return cell
     }
 }

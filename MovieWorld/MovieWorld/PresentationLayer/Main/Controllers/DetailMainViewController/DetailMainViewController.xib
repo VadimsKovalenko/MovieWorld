@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DetailMainViewController" customModule="MovieWorld" customModuleProvider="target">
             <connections>
+                <outlet property="detailMainCollectionView" destination="Bil-0j-dl2" id="D2e-Qo-236"/>
                 <outlet property="detailMainTableView" destination="TNe-Kz-VeB" id="xnW-8u-VbM"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -20,23 +21,44 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="TNe-Kz-VeB">
-                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <rect key="frame" x="0.0" y="140" width="414" height="722"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="0uV-nU-BWr"/>
                         <outlet property="delegate" destination="-1" id="6X9-Wb-1DX"/>
                     </connections>
                 </tableView>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Bil-0j-dl2">
+                    <rect key="frame" x="0.0" y="60" width="414" height="60"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="caj-7U-v8G"/>
+                    </constraints>
+                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="wcH-pb-Acr">
+                        <size key="itemSize" width="100" height="26"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="16" minY="0.0" maxX="16" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="u6g-7k-i8l"/>
+                        <outlet property="delegate" destination="-1" id="BQ4-uk-VXG"/>
+                    </connections>
+                </collectionView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="TNe-Kz-VeB" secondAttribute="bottom" id="0JO-0Z-kIE"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="TNe-Kz-VeB" secondAttribute="trailing" id="1Zt-ST-liJ"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Bil-0j-dl2" secondAttribute="trailing" id="9yl-uR-CBJ"/>
+                <constraint firstItem="Bil-0j-dl2" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="16" id="E9S-xu-1JZ"/>
+                <constraint firstItem="Bil-0j-dl2" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="NDd-hQ-teM"/>
+                <constraint firstItem="TNe-Kz-VeB" firstAttribute="top" secondItem="Bil-0j-dl2" secondAttribute="bottom" constant="20" id="fsT-30-qMs"/>
                 <constraint firstItem="TNe-Kz-VeB" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="ucY-8N-XpK"/>
-                <constraint firstItem="TNe-Kz-VeB" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="vCm-PR-aNq"/>
             </constraints>
-            <point key="canvasLocation" x="132" y="78"/>
+            <point key="canvasLocation" x="131.8840579710145" y="77.678571428571431"/>
         </view>
     </objects>
     <resources>

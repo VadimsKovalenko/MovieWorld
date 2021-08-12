@@ -7,7 +7,7 @@ final class FavoritesViewController: UIViewController {
     private enum Constans {
         static let navigationTitle = "Favorites"
     }
-
+    
     // MARK: IBOutlets
     
     @IBOutlet private weak var favoritesTableView: UITableView!
@@ -34,7 +34,6 @@ final class FavoritesViewController: UIViewController {
     // MARK: IBActions
     
     @IBAction private func segmentControllPressed(_ segmentControll: UISegmentedControl) {
-        
     }
     
     // MARK: Actions

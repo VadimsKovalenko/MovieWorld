@@ -23,17 +23,22 @@ extension AppDelegate {
     
     func showHome(completion: (() -> Void)? = nil) {
         let home = TabBarController()
-        switchRootViewController(rootViewController: home, animated: true, completion: completion)
+        switchRootViewController(
+            rootViewController: home,
+            animated: true,
+            completion: completion)
         
     }
     
-    private func switchRootViewController(rootViewController: UIViewController,
-                                          animated: Bool,
-                                          completion: (() -> Void)?) {
+    private func switchRootViewController(
+        rootViewController: UIViewController,
+        animated: Bool,
+        completion: (() -> Void)?) {
         if animated {
-            UIView.transition(with: window!,
-                              duration: 0.5,
-                              options: .transitionCrossDissolve) {
+            UIView.transition(
+                with: window!,
+                duration: 0.5,
+                options: .transitionCrossDissolve) {
                 let oldState: Bool = UIView.areAnimationsEnabled
                 UIView.setAnimationsEnabled(false)
                 self.window?.rootViewController = rootViewController

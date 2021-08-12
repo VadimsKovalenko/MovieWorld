@@ -23,5 +23,4 @@ final class HistoryTableViewCell: UITableViewCell {
         genreLabel.text = model.genre
         scoreLabel.text = "IMDB \(model.ratingIMDB), KP \(model.ratingKP)"
     }
-
 }

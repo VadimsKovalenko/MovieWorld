@@ -22,8 +22,10 @@ final class TrailerAndGalleryTableViewCell: UITableViewCell {
     }
     
     private func setupCollectionViewCell() {
-        trailerAndGalleryCollectionView.register(UINib(nibName: TrailersAndGalleryCollectionViewCell.reuseIdentifier, bundle: nil),
-                                                 forCellWithReuseIdentifier: TrailersAndGalleryCollectionViewCell.reuseIdentifier)
+        trailerAndGalleryCollectionView.register(
+            UINib(nibName: TrailersAndGalleryCollectionViewCell.reuseIdentifier,
+                  bundle: nil),
+            forCellWithReuseIdentifier: TrailersAndGalleryCollectionViewCell.reuseIdentifier)
         trailerAndGalleryCollectionView.contentInset.left = Constans.contentInsert
         trailerAndGalleryCollectionView.contentInset.right = Constans.contentInsert
     }
@@ -37,11 +39,15 @@ extension TrailerAndGalleryTableViewCell: UICollectionViewDelegate {
 
 // MARK: - UICollectionViewDataSource
 extension TrailerAndGalleryTableViewCell: UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(
+        _ collectionView: UICollectionView,
+        numberOfItemsInSection section: Int) -> Int {
         1
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    func collectionView(
+        _ collectionView: UICollectionView,
+        cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         UICollectionViewCell()
     }
 }
