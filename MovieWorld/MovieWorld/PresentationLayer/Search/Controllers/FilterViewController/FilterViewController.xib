@@ -20,7 +20,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="QAJ-PE-9Jn">
-                    <rect key="frame" x="0.0" y="44" width="414" height="738"/>
+                    <rect key="frame" x="0.0" y="120" width="414" height="662"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="pOH-If-EjU"/>
@@ -46,19 +46,35 @@
                         <action selector="showButtonPressed:" destination="-1" eventType="touchUpInside" id="SAb-d7-mgo"/>
                     </connections>
                 </button>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="5Bc-Tq-YBd">
+                    <rect key="frame" x="0.0" y="44" width="414" height="60"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="4zr-te-vFa"/>
+                    </constraints>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="n8s-TS-AYP">
+                        <size key="itemSize" width="128" height="128"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="QAJ-PE-9Jn" secondAttribute="trailing" id="4OG-ef-tHw"/>
+                <constraint firstItem="5Bc-Tq-YBd" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="AjN-lD-id1"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Q0s-KM-W7a" secondAttribute="bottom" constant="20" id="LV8-5E-bVs"/>
+                <constraint firstItem="5Bc-Tq-YBd" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="MK1-RW-Tm2"/>
+                <constraint firstItem="5Bc-Tq-YBd" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="P9Q-YK-YFA"/>
                 <constraint firstItem="QAJ-PE-9Jn" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="PI3-Ga-rGW"/>
+                <constraint firstItem="QAJ-PE-9Jn" firstAttribute="top" secondItem="5Bc-Tq-YBd" secondAttribute="bottom" constant="16" id="PQG-mW-mO8"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Q0s-KM-W7a" secondAttribute="trailing" constant="16" id="dcY-jN-v7o"/>
                 <constraint firstItem="Q0s-KM-W7a" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="eL7-Sf-6Qf"/>
                 <constraint firstItem="Q0s-KM-W7a" firstAttribute="top" secondItem="QAJ-PE-9Jn" secondAttribute="bottom" constant="16" id="qme-XZ-heU"/>
-                <constraint firstItem="QAJ-PE-9Jn" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="v00-2L-rZR"/>
             </constraints>
-            <point key="canvasLocation" x="132" y="80"/>
+            <point key="canvasLocation" x="131.8840579710145" y="79.6875"/>
         </view>
     </objects>
     <resources>

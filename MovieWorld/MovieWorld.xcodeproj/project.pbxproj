@@ -82,6 +82,12 @@
 		519C15D426BA93CE005084D4 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519C15D226BA93CE005084D4 /* ProfileViewController.swift */; };
 		519C15D526BA93CE005084D4 /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 519C15D326BA93CE005084D4 /* ProfileViewController.xib */; };
 		519C15D926BAAE9C005084D4 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519C15D726BAAE9C005084D4 /* BaseViewController.swift */; };
+		51B1DAC626C693E100FF98FA /* CountryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B1DAC426C693E100FF98FA /* CountryTableViewCell.swift */; };
+		51B1DAC726C693E100FF98FA /* CountryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51B1DAC526C693E100FF98FA /* CountryTableViewCell.xib */; };
+		51B1DACA26C693F100FF98FA /* FilterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B1DAC826C693F100FF98FA /* FilterTableViewCell.swift */; };
+		51B1DACB26C693F100FF98FA /* FilterTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51B1DAC926C693F100FF98FA /* FilterTableViewCell.xib */; };
+		51B1DACE26C6940600FF98FA /* FilterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B1DACC26C6940600FF98FA /* FilterCollectionViewCell.swift */; };
+		51B1DACF26C6940600FF98FA /* FilterCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51B1DACD26C6940600FF98FA /* FilterCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -162,6 +168,12 @@
 		519C15D226BA93CE005084D4 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		519C15D326BA93CE005084D4 /* ProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
 		519C15D726BAAE9C005084D4 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		51B1DAC426C693E100FF98FA /* CountryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryTableViewCell.swift; sourceTree = "<group>"; };
+		51B1DAC526C693E100FF98FA /* CountryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CountryTableViewCell.xib; sourceTree = "<group>"; };
+		51B1DAC826C693F100FF98FA /* FilterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterTableViewCell.swift; sourceTree = "<group>"; };
+		51B1DAC926C693F100FF98FA /* FilterTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterTableViewCell.xib; sourceTree = "<group>"; };
+		51B1DACC26C6940600FF98FA /* FilterCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCollectionViewCell.swift; sourceTree = "<group>"; };
+		51B1DACD26C6940600FF98FA /* FilterCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterCollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -455,8 +467,10 @@
 		516A270626BD6695008890FB /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				516A270726BD66AC008890FB /* SearchTableViewCell.swift */,
-				516A270826BD66AC008890FB /* SearchTableViewCell.xib */,
+				51B1DAC326C693A600FF98FA /* CountryTableViewCell */,
+				51B1DAC226C6936500FF98FA /* FilterCollectionViewCell */,
+				51B1DAC126C6935600FF98FA /* FilterTableViewCell */,
+				51B1DAC026C6933E00FF98FA /* SearchTableViewCell */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -698,6 +712,42 @@
 			path = TabBar;
 			sourceTree = "<group>";
 		};
+		51B1DAC026C6933E00FF98FA /* SearchTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				516A270726BD66AC008890FB /* SearchTableViewCell.swift */,
+				516A270826BD66AC008890FB /* SearchTableViewCell.xib */,
+			);
+			path = SearchTableViewCell;
+			sourceTree = "<group>";
+		};
+		51B1DAC126C6935600FF98FA /* FilterTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				51B1DAC826C693F100FF98FA /* FilterTableViewCell.swift */,
+				51B1DAC926C693F100FF98FA /* FilterTableViewCell.xib */,
+			);
+			path = FilterTableViewCell;
+			sourceTree = "<group>";
+		};
+		51B1DAC226C6936500FF98FA /* FilterCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				51B1DACC26C6940600FF98FA /* FilterCollectionViewCell.swift */,
+				51B1DACD26C6940600FF98FA /* FilterCollectionViewCell.xib */,
+			);
+			path = FilterCollectionViewCell;
+			sourceTree = "<group>";
+		};
+		51B1DAC326C693A600FF98FA /* CountryTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				51B1DAC426C693E100FF98FA /* CountryTableViewCell.swift */,
+				51B1DAC526C693E100FF98FA /* CountryTableViewCell.xib */,
+			);
+			path = CountryTableViewCell;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -764,6 +814,7 @@
 				5120E19D26C3C2E60050E7FA /* CastViewController.xib in Resources */,
 				516A271026BD6877008890FB /* DetailCategoryViewController.xib in Resources */,
 				5120E1B726C4001F0050E7FA /* DetailMainCollectionViewCell.xib in Resources */,
+				51B1DACB26C693F100FF98FA /* FilterTableViewCell.xib in Resources */,
 				516A26CE26BD3A4C008890FB /* CategoryTableViewCell.xib in Resources */,
 				516A273B26C2A460008890FB /* CastTableViewCell.xib in Resources */,
 				516A272526C13B24008890FB /* CountryViewController.xib in Resources */,
@@ -779,10 +830,12 @@
 				516A274326C2A4CA008890FB /* TrailersAndGalleryCollectionViewCell.xib in Resources */,
 				516A26C326BBF599008890FB /* MainCollectionViewCell.xib in Resources */,
 				516A26F326BD5994008890FB /* ReportAProblemViewController.xib in Resources */,
+				51B1DAC726C693E100FF98FA /* CountryTableViewCell.xib in Resources */,
 				516A26D826BD479A008890FB /* DetailMainViewController.xib in Resources */,
 				516A26D326BD4168008890FB /* ProfileTableViewCell.xib in Resources */,
 				516A26DE26BD49AB008890FB /* DetailMainTableViewCell.xib in Resources */,
 				5120E1AE26C3DC850050E7FA /* CastDetailCollectionViewCell.xib in Resources */,
+				51B1DACF26C6940600FF98FA /* FilterCollectionViewCell.xib in Resources */,
 				516A26FF26BD5EA7008890FB /* HistoryTableViewCell.xib in Resources */,
 				516A271A26C11845008890FB /* SplashViewController.xib in Resources */,
 				516A271F26C1395E008890FB /* FilterViewController.xib in Resources */,
@@ -817,6 +870,8 @@
 				516A26BB26BBEAC0008890FB /* MainTableViewCell.swift in Sources */,
 				519C15CC26BA938C005084D4 /* CategoryViewController.swift in Sources */,
 				516A274226C2A4CA008890FB /* TrailersAndGalleryCollectionViewCell.swift in Sources */,
+				51B1DAC626C693E100FF98FA /* CountryTableViewCell.swift in Sources */,
+				51B1DACE26C6940600FF98FA /* FilterCollectionViewCell.swift in Sources */,
 				516A26FE26BD5EA7008890FB /* HistoryTableViewCell.swift in Sources */,
 				516A26C626BC01C4008890FB /* ModelsMovie.swift in Sources */,
 				516A26E626BD595E008890FB /* FavoritesViewController.swift in Sources */,
@@ -832,6 +887,7 @@
 				516A26FA26BD5E81008890FB /* FavoritesTableViewCell.swift in Sources */,
 				519C15A726BA85C3005084D4 /* AppDelegate.swift in Sources */,
 				516A271926C11845008890FB /* SplashViewController.swift in Sources */,
+				51B1DACA26C693F100FF98FA /* FilterTableViewCell.swift in Sources */,
 				516A26C226BBF599008890FB /* MainCollectionViewCell.swift in Sources */,
 				516A26D726BD479A008890FB /* DetailMainViewController.swift in Sources */,
 				516A270926BD66AC008890FB /* SearchTableViewCell.swift in Sources */,

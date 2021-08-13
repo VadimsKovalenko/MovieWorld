@@ -12,10 +12,13 @@ final class SearchTableViewCell: UITableViewCell {
     
     // MARK: Properties
     
-    static let reuseIdentifier = "HistoryTableViewCell"
-    
-    // MARK: Actions
+    static let reuseIdentifier = "SearchTableViewCell"
     
     func configure(model: Movie) {
+        imageViewSearch.image = model.image
+        titleLabel.text = model.name
+        dateLabel.text = model.date
+        genreLabel.text = model.genre
+        scoreLabel.text = "IMDB \(model.ratingIMDB), KP \(model.ratingKP)"
     }
 }
