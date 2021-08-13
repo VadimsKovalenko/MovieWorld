@@ -6,6 +6,10 @@ final class ProfileViewController: BaseViewController {
     
     private enum Constans {
         static let navigationTitle = "Profile"
+        static let hue: CGFloat = 6
+        static let saturation: CGFloat = 58
+        static let brightness: CGFloat = 90
+        static let alpha: CGFloat = 1
     }
     
     // MARK: IBOutlets
@@ -45,13 +49,21 @@ final class ProfileViewController: BaseViewController {
         case 2:
             return SettingsViewController()
         default:
-            return  ReportAProblemViewController()
+            let reportAProblem = ReportAProblemViewController()
+            reportAProblem.modalPresentationStyle = .currentContext
+            return reportAProblem
         }
     }
     
     private func setupUI() {
         navigationItem.title = Constans.navigationTitle
+        navigationItem.backButtonTitle = ""
         navigationController?.navigationBar.prefersLargeTitles = true
+        navigationController?.navigationBar.tintColor = UIColor(
+            hue: Constans.hue,
+            saturation: Constans.saturation,
+            brightness: Constans.brightness,
+            alpha: Constans.alpha)
         profileTableView.register(
             UINib(nibName: ProfileTableViewCell.reuseIdentifier,
                   bundle: nil),

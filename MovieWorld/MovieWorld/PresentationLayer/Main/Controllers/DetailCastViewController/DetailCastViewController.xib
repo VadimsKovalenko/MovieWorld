@@ -133,7 +133,7 @@ Dwayne Johnson has brown eyes, naturally dark hair color, dark skin and middle l
                     </subviews>
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="Pu8-Fg-So9" secondAttribute="trailing" constant="16" id="AKP-xx-r34"/>
-                        <constraint firstAttribute="bottom" secondItem="Pu8-Fg-So9" secondAttribute="bottom" constant="140" id="FVA-of-JBc"/>
+                        <constraint firstAttribute="bottom" secondItem="Pu8-Fg-So9" secondAttribute="bottom" id="FVA-of-JBc"/>
                         <constraint firstItem="vjp-hN-Jb0" firstAttribute="leading" secondItem="YjA-E5-NLh" secondAttribute="leading" id="Jg8-0f-0xQ"/>
                         <constraint firstItem="RbB-kf-zyQ" firstAttribute="centerX" secondItem="YjA-E5-NLh" secondAttribute="centerX" id="LsV-uY-8h3"/>
                         <constraint firstItem="RbB-kf-zyQ" firstAttribute="top" secondItem="YjA-E5-NLh" secondAttribute="top" constant="16" id="Pyb-Iv-mKz"/>

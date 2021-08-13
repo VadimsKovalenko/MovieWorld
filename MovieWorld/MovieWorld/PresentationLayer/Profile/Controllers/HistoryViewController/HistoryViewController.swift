@@ -2,6 +2,12 @@ import UIKit
 
 final class HistoryViewController: UIViewController {
     
+    // MARK: Constans
+    
+    private enum Constans {
+        static let navigationTitle = "History"
+    }
+    
     // MARK: IBOutelts
     
     @IBOutlet private weak var historyTableView: UITableView!
@@ -16,7 +22,7 @@ final class HistoryViewController: UIViewController {
     // MARK: Actions
     
     private func setupUI() {
-        navigationItem.title = "History"
+        navigationItem.title = Constans.navigationTitle
         navigationController?.navigationBar.prefersLargeTitles = true
         historyTableView.register(
             UINib(nibName: HistoryTableViewCell.reuseIdentifier,

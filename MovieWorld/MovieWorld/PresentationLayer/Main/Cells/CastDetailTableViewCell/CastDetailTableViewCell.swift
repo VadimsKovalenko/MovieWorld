@@ -1,5 +1,9 @@
 import UIKit
 
+protocol CastDetailTableViewCellDelegate: AnyObject {
+    func pushController()
+}
+
 final class CastDetailTableViewCell: UITableViewCell {
     
     // MARK: Constans
@@ -16,6 +20,7 @@ final class CastDetailTableViewCell: UITableViewCell {
     
     static let reuseIdentifier = "CastDetailTableViewCell"
     var acters = [Filmography]()
+    weak var delegate: CastDetailTableViewCellDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -25,6 +30,7 @@ final class CastDetailTableViewCell: UITableViewCell {
     // MARK: Actions
     
     @IBAction func castAllButtonPressed(_ sender: UIButton) {
+        delegate?.pushController()
     }
     
     private func setupCollectionViewCell() {
@@ -45,7 +51,6 @@ final class CastDetailTableViewCell: UITableViewCell {
 
 // MARK: - UICollectionViewDelegate
 extension CastDetailTableViewCell: UICollectionViewDelegate {
-    
 }
 
 // MARK: - UICollectionViewDataSource

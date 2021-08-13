@@ -14,7 +14,7 @@ final class TrailerAndGalleryTableViewCell: UITableViewCell {
     
     // MARK: IBOutlets
     
-    @IBOutlet private weak var trailerAndGalleryCollectionView: UICollectionView!
+  //  @IBOutlet private weak var trailerAndGalleryCollectionView: UICollectionView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -22,12 +22,12 @@ final class TrailerAndGalleryTableViewCell: UITableViewCell {
     }
     
     private func setupCollectionViewCell() {
-        trailerAndGalleryCollectionView.register(
-            UINib(nibName: TrailersAndGalleryCollectionViewCell.reuseIdentifier,
-                  bundle: nil),
-            forCellWithReuseIdentifier: TrailersAndGalleryCollectionViewCell.reuseIdentifier)
-        trailerAndGalleryCollectionView.contentInset.left = Constans.contentInsert
-        trailerAndGalleryCollectionView.contentInset.right = Constans.contentInsert
+//        trailerAndGalleryCollectionView.register(
+//            UINib(nibName: TrailersAndGalleryCollectionViewCell.reuseIdentifier,
+//                  bundle: nil),
+//            forCellWithReuseIdentifier: TrailersAndGalleryCollectionViewCell.reuseIdentifier)
+//        trailerAndGalleryCollectionView.contentInset.left = Constans.contentInsert
+//        trailerAndGalleryCollectionView.contentInset.right = Constans.contentInsert
     }
     
 }

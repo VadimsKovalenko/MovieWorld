@@ -76,7 +76,15 @@ extension DetailCastViewController: UITableViewDataSource {
                 for: indexPath) as? CastDetailTableViewCell else {
             return UITableViewCell()
         }
+        cell.delegate = self
         cell.configure(model: acters[indexPath.row])
         return cell
+    }
+}
+
+// MARK: -
+extension DetailCastViewController: CastDetailTableViewCellDelegate {
+    func pushController() {
+        navigationController?.popToRootViewController(animated: true)
     }
 }

@@ -13,6 +13,7 @@ final class DetailMainCollectionViewCell: UICollectionViewCell {
     // MARK: Actions
     
     @IBAction private func settingsButtonPressed(_ sender: UIButton) {
+        settingButton.backgroundColor = .red
     }
     
     func configure(model: Settings) {

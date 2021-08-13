@@ -56,6 +56,7 @@ class DetailMainViewController: UIViewController {
     
     private func setupUI() {
         navigationItem.title = Constans.navigationTitle
+        navigationItem.backButtonTitle = ""
         navigationController?.navigationBar.prefersLargeTitles = true
         detailMainCollectionView.register(
             UINib(nibName: DetailMainCollectionViewCell.reuseIdentifier,
